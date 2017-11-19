@@ -1,0 +1,78 @@
+@import "variables";
+
+.nav-bar {
+  color: $background;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 75px;
+  background-color: white;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.nav-bar div {
+  display: flex;
+  margin: auto 25px;
+  height: 30px;
+}
+
+.nav-bar a,
+.nav-bar p {
+  margin: auto 5px;
+  padding: 5px;
+  text-decoration: none;
+  transition: background-color .5s;
+  border-radius: 3px;
+}
+
+.nav-bar a {
+  font-weight: 500;  
+}
+
+.nav-bar a:hover {
+  background-color: rgba(204, 204, 204, 0.39);
+}  
+
+.nav-bar-title1,
+.nav-bar-title2 {
+  margin: auto 5px;
+  padding: 5px;
+}
+
+.nav-bar-title1 {
+  margin-right: 0px;
+  border: 2px solid $background;
+}
+
+.nav-bar-title2 {
+  margin-left: 0px;
+  border: 2px solid $background;  
+  background-color: $background;
+  color: white;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;  
+}
+
+button {
+  background-color: $background;
+  letter-spacing: 1px;
+  color: white;
+  font-weight: 300;
+  font-size: 20px;
+  border-radius: 0px;
+  text-align: center;
+  padding: 5px 15px;
+  transition: background-color .5s;
+  cursor: pointer;  
+  // padding: 20px;
+}
+
+button:hover {
+  background-color: $dark-background;
+}  

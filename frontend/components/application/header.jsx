@@ -25,6 +25,10 @@ class Header extends React.Component{
     return (
       <header className = "nav-bar">
         <div>
+          <label className = "nav-bar-title1">Programming</label>
+          <label className = "nav-bar-title2">101</label>
+        </div>
+        <div >
           {display}
         </div>
       </header>
