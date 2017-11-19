@@ -1,11 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {deleteSession, postSession, postUser} from './utils/api/user_util';
+import configureStore from './store/store';
+import Root from './components/root';
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("root");
-  window.postSession = postSession;
-  window.deleteSession = deleteSession;
-  window.postUser = postUser;
-  ReactDOM.render(<div> React is god</div>, root);
+  const store = configureStore({});
+  ReactDOM.render(<Root store = {store} />, root);
 });
