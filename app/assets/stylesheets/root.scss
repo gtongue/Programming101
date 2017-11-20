@@ -2,3 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#root {
+  height: 100%;
+}
+
+.app {
+  height: 100%;
+  z-index: -100000;
+}

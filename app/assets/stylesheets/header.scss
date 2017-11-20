@@ -10,6 +10,7 @@
   background-color: white;
   font-size: 20px;
   font-weight: 300;
+  box-shadow: 1px 1px 2px #ccdddd;
 }
 
 .nav-bar div {
@@ -62,6 +63,8 @@
 button {
   background-color: $background;
   letter-spacing: 1px;
+  border: none;
+  border-style: none;
   color: white;
   font-weight: 300;
   font-size: 20px;

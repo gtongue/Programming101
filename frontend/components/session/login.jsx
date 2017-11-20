@@ -9,7 +9,10 @@ class Login extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-
+  componentWillReceiveProps(newProps)
+  {
+    console.log(newProps);
+  }
   handleInput(type) {
     return (e) => {
       this.setState({[type]: e.target.value });
@@ -24,23 +27,29 @@ class Login extends React.Component {
 
   render() {
     return (
-        <div className='session-form'>
-        <h2>Login</h2>
-        <form>
-          <label htmlFor="">
-          Username
-          <input 
+      <div className='session-div'>
+        <form className = 'session-form'>
+          {this.props.errors ? <div className="errors"> {this.props.errors.toString()} </div>: ""}
+          <h2>Login</h2>
+          <label htmlFor="username">
+            <input 
+            name = "username"
+            placeholder = "Username"
             type="text"
             value= {this.state.username}
             onChange = {this.handleInput('username')}/>
           </label>
-          <label htmlFor="">
-          Password
-          <input 
+
+          <label htmlFor="password"> 
+            <input 
+            name = "password"    
+            placeholder = "Password"                   
             type="password"
             value= {this.state.password}
             onChange = {this.handleInput('password')}/>
           </label>
+
+
 
           <button onClick= {this.handleSubmit}>Login</button>
         </form>

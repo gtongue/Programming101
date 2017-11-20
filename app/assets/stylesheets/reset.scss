@@ -5,13 +5,14 @@ del, dfn, em, font, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td {
+table, caption, tbody, tfoot, thead, tr, th, td, header{
   margin: 0;
   padding: 0;
   border: 0;
   outline: 0;
   font-weight: inherit;
   font-style: inherit;
+  color: inherit;
   font-size: 100%;
   font-family: inherit;
   vertical-align: baseline;
@@ -32,6 +33,7 @@ table {
   border-collapse: separate;
   border-spacing: 0;
 }
+
 caption, th, td {
   text-align: left;
   font-weight: normal;
@@ -43,3 +45,27 @@ q:before, q:after {
 blockquote, q {
   quotes: "" "";
 }
+
+input
+{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+header {
+  // position: absolute;
+}
+// body { 
+//   height: 100%;
+// }
+html, body{
+  height: 100vh !important;
+}
+
+.cf:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+// body {
+//   height: inherit;
+// }

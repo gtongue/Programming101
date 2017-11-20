@@ -8,7 +8,6 @@ class Header extends React.Component{
 
   render(){
     let { currentUser, logout } = this.props;
-    console.log(this.props);
     const display = currentUser ?  (
       <div className = "user-info">
         <p>Hello, {currentUser.username} </p>

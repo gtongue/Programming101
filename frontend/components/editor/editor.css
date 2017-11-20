@@ -1,0 +1,56 @@
+
+.challenge
+{
+  font-size: 15px;
+  width: 100%;
+  height: calc(100% - 125px);
+  padding-top: 50px;
+}
+
+.challenge-editor
+{
+  font-size: 16px;
+  width: 50%;
+  height: calc(100% - 50px);
+  float: left;
+}
+
+.challenge-footer
+{
+  clear: both;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  height: 50px;
+  background-color: #4b4b4b;
+}
+
+.ReactCodeMirror
+{
+  float: left;
+  width: 100%;
+  height: 100%;
+}
+
+
+.CodeMirror
+{
+  height: 100%;
+}
+
+.challenge-terminal
+{
+  width: calc(50% - 50px);
+  background-color: black;
+  float: left;
+  margin: 0 25px;
+  height: 100%;
+  border: 1px solid #52A9E0;
+}
+
+.challenge-button {
+  /* float: right; */
+  font-weight: 200;
+  margin: auto 10px;
+  padding: 5px 30px;
+}
