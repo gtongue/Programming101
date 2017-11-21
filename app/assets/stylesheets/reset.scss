@@ -18,9 +18,11 @@ table, caption, tbody, tfoot, thead, tr, th, td, header{
   vertical-align: baseline;
   box-sizing: border-box;
 }
+
 :focus {
   outline: 0;
 }
+
 body {
   line-height: 1;
   color: black;
@@ -58,7 +60,7 @@ header {
 //   height: 100%;
 // }
 html, body{
-  height: 100vh !important;
+  height: 100vh;
 }
 
 .cf:after {
