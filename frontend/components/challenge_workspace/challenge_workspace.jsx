@@ -1,7 +1,7 @@
 import React from 'react';
 import CodeMirror from 'react-codemirror';
-// import Terminal from '../terminal/terminal';
 import TerminalContainer from '../terminal/terminal_container';
+import { runCode } from '../../utils/terminal/terminal_util';
 
 require('codemirror/lib/codemirror.css');
 require('codemirror/theme/monokai.css');
@@ -11,26 +11,31 @@ require('codemirror/mode/javascript/javascript');
 require('./challenge_workspace.css');
 
 import { formatOutput } from '../../utils/terminal/terminal_util';
+import { clearTimeout } from 'timers';
 
 class ChallengeWorkspace extends React.Component {
   constructor(props){    
     super(props);
     this.state = {
-      code: `const hello = function(){
-        console.log('hello');
+      code: 
+      `const hello = function(){
+        for(let i = 0; i < 29; i++){
+          console.log(i);
+        }
         return 4;
-      }.bind(this);
-            
+      }
+      
       const test = function(){
         console.log("test");
         return 5;
-      }.bind(this);
+      }
       
       hello();
       test();`,
       output: '',
       return_value: 'undefined'
     };
+    this.runCode = this.runCode.bind(this);
     this.asyncOutput = '';
     this.log = this.log.bind(this);
   }
@@ -41,34 +46,45 @@ class ChallengeWorkspace extends React.Component {
     };
   }
 
-  log(string){
-    this.asyncOutput += `\n=>\u0020\u0020\u0020${string}`;
-  }
-
-  returnLog(returnValue){
-    this.asyncOutput += `\n${returnValue}`;
-    return returnValue;
-  }
-
-  // onRun(){
-  //   return () => {
-  //     this.setState( {output: ''});
-  //     this.asyncOutput = '';
-  //     let formattedCode = formatOutput(this.state.code).join(" ");
-  //     try{      
-  //       let newFunction = new Function(formattedCode);
-  //       newFunction.call(this);
-  //       this.setState( {output: this.asyncOutput});              
-  //     }catch(e){
-  //       this.setState( {output: e.toString()} );
-  //     }
-  //   };
-  // }
-
   onRun(){
     return () => {
-      this.props.runCode(this.state.code);
+      this.props.clearTerminal();
+      this.runCode(this.state.code);
     };
+  }
+
+  log(id, ...strings){
+    for(let i = 0; i < strings.length; i++)
+    {
+      // this.props.receiveOutput(strings[i]);
+      this.asyncOutput += strings[i] + "\n";
+    }
+    clearTimeout(id);
+  }
+  
+  runCode (code) {
+    let output = "";
+    let log = console.log;
+    let i = 0;
+    console['log'] = (...strings) => {
+      let id = setTimeout(this.log, null, id, ...strings);
+    };
+
+    let id  = setInterval(() => {
+      if(this.asyncOutput === '')
+      {
+        clearInterval(id);
+      }else{
+        this.props.receiveOutput(this.asyncOutput);
+        this.asyncOutput = '';
+      }
+    }, 10);
+
+    let func = Function(code);
+    func.call();
+
+    console['log'] = log;
+    return output;    
   }
 
   render(){
@@ -91,12 +107,11 @@ class ChallengeWorkspace extends React.Component {
                     Save
             </button>
             <button className = "editor-button"
-                    onClick = {this.onRun()}>
+                    onClick = {() => setTimeout(this.onRun(), null)}>
                     Run
             </button>
           </div>
         </div>
-        {/* <Terminal output = {this.state.output} /> */}
         <TerminalContainer />
       </div>
     );

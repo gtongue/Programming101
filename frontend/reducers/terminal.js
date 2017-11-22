@@ -1,4 +1,6 @@
-import { RUN_CODE } from '../actions/terminals';
+import { RECEIVE_OUTPUT, CLEAR_TERMINAL } from '../actions/terminals';
+import { runCode } from '../utils/terminal/terminal_util';
+import { merge } from 'lodash';
 
 const _emptyTerminal = {
   output: ""
@@ -7,8 +9,10 @@ const _emptyTerminal = {
 export default (state = _emptyTerminal, action) => {
   Object.freeze(state);
   switch(action.type){
-    case RUN_CODE:
-      return { output: action.code };
+    case RECEIVE_OUTPUT:
+      return { output: state.output + ("=>" + action.output + "\n") };
+    case CLEAR_TERMINAL:
+      return _emptyTerminal;
     default: 
       return state;
   }

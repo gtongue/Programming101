@@ -1,5 +1,8 @@
-import { CLEAR_SESSION_ERRORS, RECEIVE_SESSION_ERRORS} from '../actions/errors';
+import { CLEAR_SESSION_ERRORS, 
+        RECEIVE_SESSION_ERRORS,
+        RECEIVE_TERMINAL_ERRORS} from '../actions/errors';
 import { merge } from 'lodash';
+
 const _nullErrors = {
   session_errors: null
 };
@@ -11,6 +14,8 @@ export default (state = _nullErrors, action) => {
       return merge({}, state, {session_errors: action.errors});
     case CLEAR_SESSION_ERRORS:
       return merge({}, state, {session_errors: null});
+    case RECEIVE_TERMINAL_ERRORS:
+      return merge({}, state, {terminal_errors: null});
     default:
       return state;
   }

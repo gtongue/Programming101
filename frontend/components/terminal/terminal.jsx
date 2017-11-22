@@ -1,15 +1,15 @@
 import React from 'react';
 import { formatOutput } from '../../utils/terminal/terminal_util';
 class Terminal extends React.Component{
+  
   constructor(props){
     super(props);
-    // this.state = {output: props.output};
-    this.log = this.log.bind(this);
   }
 
-  log(string){
-    console.log("string: " + string);
-    this.setState( {output: this.state.output + `\n ${string}`});
+  componentDidUpdate(){
+    console.log("here");
+    let objDiv = document.querySelector(".terminal");
+    objDiv.scrollTop = objDiv.scrollHeight;
   }
 
   render()
@@ -18,10 +18,16 @@ class Terminal extends React.Component{
     output = formatOutput(output);
     return (
       <div className = "terminal">
-        { output.map(line => <div key = {Math.random()*10000}>{line}</div>) }
+          {output.map((line, idx) => (
+              <span key = {idx}>
+                {line}
+                <br></br>
+              </span>
+          ))}
       </div>
     );
   }
+
 }
 
 export default Terminal;
