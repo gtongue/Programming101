@@ -6,14 +6,23 @@ class Header extends React.Component{
     super(props);
     this.openMenu = this.openMenu.bind(this);
     this.closeMenu = this.closeMenu.bind(this);
+    this.open = false;
   }
 
   componentDidMount()
   {
-    $(".hamburger").click(() => {
-      if (  $(".hamburger").css( "transform" ) === 'none' ){
+    let hamburger = $('.hamburger');
+    hamburger.click(() => {
+      if (  hamburger.css( "transform" ) === 'none' ){
         this.openMenu();
       } else {
+        this.closeMenu();
+      }
+    });
+
+    $(".app").click( evt => {
+      console.log(evt.target.className);
+      if(this.open && !evt.target.className.includes("hamburger")){
         this.closeMenu();
       }
     });
@@ -21,16 +30,18 @@ class Header extends React.Component{
 
   openMenu()
   {
-    let hamburger =  $(".hamburger-menu");         
+    let menu =  $(".hamburger-menu");         
     $(".hamburger").css("transform","rotate(90deg)");
-    hamburger.css("transform", "translate(-25px, 0)");
+    menu.css("transform", "translate(-26px, 0)");
+    this.open = true;
   }
 
   closeMenu()
   {
-    let hamburger =  $(".hamburger-menu");                  
+    let menu =  $(".hamburger-menu");                  
     $(".hamburger").css("transform","none");
-    hamburger.css("transform", "translate(-350px, 0)");
+    menu.css("transform", "translate(-350px, 0)");
+    this.open = false;
   }
 
   render(){
@@ -50,14 +61,13 @@ class Header extends React.Component{
 
     return (
       <header className = "nav-bar">
-        {/* <div>asdas</div> */}
         <div className = "title">
           <i className ="fa fa-bars fa-lg hamburger" aria-hidden="true"></i>
           <div className = "hamburger-menu">
             <Link to = '/' 
                   className = "hamburger-link"
                   onClick = {this.closeMenu}> Home </Link>
-            <Link to = '/' 
+            <Link to = '/account' 
                   className = "hamburger-link"
                   onClick = {this.closeMenu}> My Account </Link>
             <Link to = '/challenge' 

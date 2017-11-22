@@ -1,0 +1,9 @@
+@import "variables";
+
+.account-show{
+  background-color: white;
+  width: 100%;
+  height: $body-height; 
+  padding: 10px;
+  border: 10px solid $background;
+}
