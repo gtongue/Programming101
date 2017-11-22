@@ -1,7 +1,12 @@
 {
   "name": "One-O-One",
   "private": true,
+  "engines": {
+    "node": "8.2.1",
+    "npm": "5.5.1"
+  },
   "scripts": {
+    "postinstall": "webpack",
     "webpack": "webpack --watch"
   },
   "dependencies": {
