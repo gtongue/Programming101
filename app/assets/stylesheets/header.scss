@@ -14,13 +14,14 @@
   border-bottom: 1px solid $dark-background;
 }
 
-.nav-bar div {
+.title, 
+.session-display {
   display: flex;
   margin: auto 25px;
   height: 30px;
 }
 
-.nav-bar a,
+.nav-links,
 .nav-bar p {
   margin: auto 5px;
   padding: 5px;
@@ -29,11 +30,11 @@
   border-radius: 3px;
 }
 
-.nav-bar a {
+.nav-links {
   font-weight: 500;  
 }
 
-.nav-bar a:hover {
+.nav-links:hover {
   background-color: rgba(204, 204, 204, 0.39);
 }  
 
@@ -81,21 +82,49 @@ button:hover {
   background-color: $dark-background;
 }  
 
-.hamburger-icon{
-  background-image: image-url('hamburger-icon.png');
-  background-size: cover;
-  padding: 0;
-  margin: 0;
+.hamburger {
   cursor: pointer;
-  width: 35px;
-  height: 35px;
+  margin: auto 0;
+  margin-right: 10px;
   transition: transform .5s;
-  border: none;
-  margin: 0 0;
+  z-index: 200;
 }
 
-.hamburger-icon:active {
-  transform: rotate(90deg);
-  -webkit-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
+.hamburger-menu
+{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 100%;
+  top: 0px;
+  background: $dark-background;
+  padding-top: 100px;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  transform: translate(-350px, 0);
+  transition: transform 0.5s;
+  z-index: 100;
+}
+
+.hamburger-link{
+  text-align: center;
+  font-size: 30px;
+  margin: 0 auto;
+  padding: 25px 0;
+  width: 80%;
+  border-bottom: 1px solid $background;
+  font-weight: 400;
+  color: white;
+  transition: color .5s;
+}
+
+.hamburger-link:hover{
+  color: $background;
+}
+
+.hamburger-check {
+  width: 50px; 
+  height: 50px;
+  display: block;
 }

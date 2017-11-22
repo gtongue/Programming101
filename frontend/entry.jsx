@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
         currentUser: window.currentUser
       }
     };
+    delete window.currentUser;
   }
   const store = configureStore(initialState);
   window.store = store;
