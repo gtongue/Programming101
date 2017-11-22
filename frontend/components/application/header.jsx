@@ -21,7 +21,6 @@ class Header extends React.Component{
     });
 
     $(".app").click( evt => {
-      console.log(evt.target.className);
       if(this.open && !evt.target.className.includes("hamburger")){
         this.closeMenu();
       }

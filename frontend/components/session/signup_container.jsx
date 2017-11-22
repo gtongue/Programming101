@@ -5,5 +5,7 @@ import Singnup from './signup';
 const mapDispatchToProps = dispatch => ({
   createNewUser: user => dispatch(createNewUser(user))
 });
-
-export default connect(null, mapDispatchToProps)(Singnup);
+const mapStateToProps = state => ({
+  errors: state.errors.session_errors
+});
+export default connect(mapStateToProps, mapDispatchToProps)(Singnup);

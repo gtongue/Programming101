@@ -8,7 +8,18 @@ class Account extends React.Component{
   render(){
     return (
       <div className = "account-show">
-        Hello There! {JSON.stringify(this.props.user)}
+        <div className = "account-title">
+          <h2>
+            {this.props.user.username}
+          </h2>
+          <h1>
+            Lines of Code: 99,423,123
+          </h1>
+          <h2>
+            Something else
+          </h2>
+        </div>
+        <div className = "line"/>
       </div>
     );
   }

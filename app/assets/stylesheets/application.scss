@@ -23,3 +23,9 @@ body {
   // color: $background;
   background-color: $background;
 }
+
+.line {
+  border-bottom: 1.5px solid $dark-background;
+  margin: 0 auto;
+  width: 80%;
+}

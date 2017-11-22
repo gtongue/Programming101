@@ -2,8 +2,41 @@
 
 .account-show{
   background-color: white;
-  width: 100%;
-  height: $body-height; 
-  padding: 10px;
-  border: 10px solid $background;
+  width: calc(100%-20px);
+  height: calc(#{$body-height} - 40px); 
+  margin: 20px;
+  padding: 20px;
+  color: $dark-background;
+  // border: 1px solid $dark-background;
+  box-shadow: 1px 0px 2px black;
+}
+
+.account-show hr {
+  width: 80%;
+  color: red;
+  height: 2px;
+}
+
+.account-show h2 {
+  text-transform: capitalize;
+  font-size: 20px;
+  font-weight: bold;
+  width: 20%;
+}
+
+.account-show h1 {
+  font-size: 24px;
+  width: 60%;
+}
+
+.account-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.account-title * {
+  padding-top: 5px;
+  padding-bottom: 20px;
+  text-align: center;
 }
