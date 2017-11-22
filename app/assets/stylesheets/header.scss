@@ -80,3 +80,22 @@ button {
 button:hover {
   background-color: $dark-background;
 }  
+
+.hamburger-icon{
+  background-image: image-url('hamburger-icon.png');
+  background-size: cover;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  transition: transform .5s;
+  border: none;
+  margin: 0 0;
+}
+
+.hamburger-icon:active {
+  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+}

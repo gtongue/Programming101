@@ -5,7 +5,16 @@ class Header extends React.Component{
   constructor(props){
     super(props);
   }
-
+  componentDidMount()
+  {
+    $( ".hamburger-icon" ).click(function() {
+      if (  $( this ).css( "transform" ) == 'none' ){
+          $(this).css("transform","rotate(45deg)");
+      } else {
+          $(this).css("transform","" );
+      }
+    });
+  }
   render(){
     let { currentUser, logout } = this.props;
     const display = currentUser ?  (
@@ -24,6 +33,7 @@ class Header extends React.Component{
     return (
       <header className = "nav-bar">
         <div>
+          <img className = "hamburger-icon"/>
           <label className = "nav-bar-title1">Programming</label>
           <label className = "nav-bar-title2">101</label>
         </div>
