@@ -1,9 +1,11 @@
 import { connect } from 'react-redux';
 import { createNewUser } from '../../actions/sessions';
 import Singnup from './signup';
+import { clearSessionErrors } from '../../actions/errors';
 
 const mapDispatchToProps = dispatch => ({
-  createNewUser: user => dispatch(createNewUser(user))
+  createNewUser: user => dispatch(createNewUser(user)),
+  clearErrors: () => dispatch(clearSessionErrors())  
 });
 const mapStateToProps = state => ({
   errors: state.errors.session_errors

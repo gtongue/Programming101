@@ -5,7 +5,14 @@ class Terminal extends React.Component{
   constructor(props){
     super(props);
   }
-
+  componentDidMount(){
+    if(!window.programming101env)
+    {
+      window.programming101env = {
+      };
+    }
+    window.programming101env.logTerminal = this.props.receiveOutput;
+  }
   componentDidUpdate(){
     let objDiv = document.querySelector(".terminal");
     objDiv.scrollTop = objDiv.scrollHeight;
@@ -20,7 +27,7 @@ class Terminal extends React.Component{
           {output.map((line, idx) => (
               <span key = {idx}>
                 {line}
-                <br></br>
+                <br/>
               </span>
           ))}
       </div>

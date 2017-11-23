@@ -4,8 +4,6 @@ import { receiveOutput, clearTerminal } from '../../actions/terminals';
 import { receiveTerminalErrors } from '../../actions/errors';
 
 const mapDispatchToProps = dispatch => ({
-  receiveOutput: output => {dispatch(receiveOutput(output));},
-  receiveTerminalErrors: errors => {dispatch(receiveTerminalErrors(errors));},
   clearTerminal: () => {dispatch(clearTerminal());}
 });
 

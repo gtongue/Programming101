@@ -23,7 +23,7 @@ export const runCodeAsync = (codeString) => {
           if(typeof strings[i] === 'object')
           {
             response.output +=  strings[i] + " {" + "\n";
-            Object.keys(strings[i]).forEach(key => (response.output += key + "\n"));
+            Object.keys(strings[i]).forEach(key => (response.output += "\u0020\u0020\u0020\u0020" + key + "\n"));
             response.output += "}" + "\n";
           }else{
             response.output += strings[i] + "\n";
@@ -33,24 +33,28 @@ export const runCodeAsync = (codeString) => {
       new Function(formatCode(response.code))();
       response.code = "";
       console['log'] = log;
-      console.log(response);
     }
     if(!response.output)
     {
       thread.kill();
     }else{
-      //TODO check for terminal available
       let outputArray = response.output.split("\n");
-      window.loggingtest(outputArray.splice(0,750).join("\n"));
-      response.output = outputArray.join("\n");
-      // window.loggingtest(response.output);
-      // response.output = "";
-      thread.send({
-        integer: response.integer + 1,
-        code: response.code, 
-        output: response.output});
+      if(window.programming101env && window.programming101env.logTerminal){
+        window.programming101env.logTerminal(outputArray.splice(0,1000).join("\n"));
+        response.output = outputArray.join("\n");
+        //This is to log all at once instead of 1000 outputs at a time
+        //window.programming101env.logTerminal(response.output);
+        //response.output = "";
+        thread.send({
+          integer: response.integer + 1,
+          code: response.code, 
+          output: response.output});
+      }else{
+        console.log(response.output);
+        thread.kill();
       }
+    }
   }).on('exit', function() {
-    console.log('Worker has been terminated.');
+    console.log('Worker is done.');
   });
 };
