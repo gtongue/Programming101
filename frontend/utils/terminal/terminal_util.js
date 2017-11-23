@@ -1,6 +1,13 @@
 export const formatOutput = (output) => {
-  output = output.replace(/console.log/g, "this.log");
+  // output = output.replace(/console.log/g, "this.log");
   return output.split(/\n/);
+};
+
+export const formatCode = code => {
+  code = '"use strict" \n' + code;
+  // code = code.replace(/let /g, "this.");  
+
+  return code;
 };
 
 export const runCode = code => {

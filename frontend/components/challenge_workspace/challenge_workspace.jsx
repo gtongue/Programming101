@@ -1,7 +1,10 @@
 import React from 'react';
 import CodeMirror from 'react-codemirror';
 import TerminalContainer from '../terminal/terminal_container';
-import { runCode } from '../../utils/terminal/terminal_util';
+import { formatCode } from '../../utils/terminal/terminal_util';
+
+import { spawn } from 'threads';
+import { runCodeAsync } from '../../utils/code/code_runner';
 
 require('codemirror/lib/codemirror.css');
 require('codemirror/theme/monokai.css');
@@ -12,6 +15,12 @@ require('./challenge_workspace.css');
 
 import { formatOutput } from '../../utils/terminal/terminal_util';
 import { clearTimeout } from 'timers';
+
+class Test {
+  static test(){
+
+  }
+}
 
 class ChallengeWorkspace extends React.Component {
   constructor(props){    
@@ -35,9 +44,26 @@ class ChallengeWorkspace extends React.Component {
       output: '',
       return_value: 'undefined'
     };
-    this.runCode = this.runCode.bind(this);
     this.asyncOutput = '';
     this.log = this.log.bind(this);
+    this.workerTest = this.workerTest.bind(this);
+  }
+
+  componentDidMount()
+  {
+    if(!window.programming101env)
+    {
+      window.programming101env = {
+        variables: {}
+      };
+    }
+    // this.thread = spawn((input, done) => {
+    //   done({integer: input.integer, code: input.code, func: input.func});
+    // });
+    this.thread = spawn((input, done) => {
+      done({integer: input.integer, code: input.code, output: input.output});
+    });
+    // window.programming101env.eval = window.eval.bind(window.programming101env);
   }
 
   handleInput() {
@@ -49,20 +75,35 @@ class ChallengeWorkspace extends React.Component {
   onRun(){
     return () => {
       this.props.clearTerminal();
-      this.runCode(this.state.code);
+      this.runCode(formatCode(this.state.code));
     };
   }
 
   log(id, ...strings){
     for(let i = 0; i < strings.length; i++)
     {
+      console.log(typeof strings[i]);
       // this.props.receiveOutput(strings[i]);
-      this.asyncOutput += strings[i] + "\n";
+      if(typeof strings[i] === 'object')
+      {
+        this.asyncOutput +=  strings[i] + " {" + "\n";
+        Object.keys(strings[i]).forEach(key => (this.asyncOutput += key + "\n"));
+        this.asyncOutput += "}" + "\n";
+      }else{
+        this.asyncOutput += strings[i] + "\n";
+      }
     }
     clearTimeout(id);
   }
-  
+
+  workerTest(){
+    window.loggingtest = this.props.receiveOutput;
+    runCodeAsync(this.state.code);
+  }
+
+  //
   runCode (code) {
+    window.testing = Test;
     let output = "";
     let log = console.log;
     let i = 0;
@@ -79,10 +120,7 @@ class ChallengeWorkspace extends React.Component {
         this.asyncOutput = '';
       }
     }, 10);
-
-    let func = Function(code);
-    func.call();
-
+    new Function(code)();
     console['log'] = log;
     return output;    
   }
@@ -107,7 +145,9 @@ class ChallengeWorkspace extends React.Component {
                     Save
             </button>
             <button className = "editor-button"
-                    onClick = {() => setTimeout(this.onRun(), null)}>
+                    // onClick = {() => setTimeout(this.onRun(), null)}
+                    onClick = {this.workerTest}
+                    >
                     Run
             </button>
           </div>

@@ -7,7 +7,6 @@ class Terminal extends React.Component{
   }
 
   componentDidUpdate(){
-    console.log("here");
     let objDiv = document.querySelector(".terminal");
     objDiv.scrollTop = objDiv.scrollHeight;
   }
