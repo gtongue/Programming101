@@ -5,6 +5,14 @@ const formatCode = code => {
   return code;
 };
 
+const formatTest = code => {
+  return code.replace(/Testing./g, "window.programming101env.tester.");
+};
+
+export const testCodeAsync = (codeString, testString) => {
+  runCodeAsync(codeString + formatTest(testString));
+};
+
 export const runCodeAsync = (codeString) => {
   let thread = spawn((input, done) => {
     done({integer: input.integer, code: input.code, output: input.output});    

@@ -26,7 +26,7 @@ class Terminal extends React.Component{
       <div className = "terminal">
           {output.map((line, idx) => (
               <span key = {idx}>
-                {line}
+                =>   {line}
                 <br/>
               </span>
           ))}

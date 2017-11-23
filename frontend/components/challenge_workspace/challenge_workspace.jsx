@@ -1,10 +1,11 @@
 import React from 'react';
 import CodeMirror from 'react-codemirror';
 import TerminalContainer from '../terminal/terminal_container';
+import TestsContainer from '../tests/tests_container';
 import { formatCode } from '../../utils/terminal/terminal_util';
-
+import TestingLibrary from '../../utils/code/code_tester';
 import { spawn } from 'threads';
-import { runCodeAsync } from '../../utils/code/code_runner';
+import { runCodeAsync, testCodeAsync } from '../../utils/code/code_runner';
 
 require('codemirror/lib/codemirror.css');
 require('codemirror/theme/monokai.css');
@@ -35,8 +36,19 @@ class ChallengeWorkspace extends React.Component {
       hello();
       test();`,
       output: '',
+      testing: `Testing.isEqual(mergeSort([1,2,3,4,5]), [1,2,3,4,5], "Doesn't edit original array.");
+      Testing.isEqual(mergeSort([]), [], "Works with empty array");
+      Testing.isEqual(mergeSort([4,2,3,2,5]), [2,2,3,4,5], "Sorts array.");`,
       return_value: 'undefined'
     };
+  }
+
+  componentDidMount(){
+    if(!window.propgramming101env)
+    {
+      window.propgramming101env = {};
+    }
+    window.programming101env.tester = TestingLibrary;
   }
 
   handleInput() {
@@ -48,7 +60,8 @@ class ChallengeWorkspace extends React.Component {
   onRun(){
     return () => {
       this.props.clearTerminal();
-      runCodeAsync(this.state.code);
+      testCodeAsync(this.state.code, this.state.testing);
+      // runCodeAsync(this.state.code);
     };
   }
 
@@ -78,7 +91,10 @@ class ChallengeWorkspace extends React.Component {
             </button>
           </div>
         </div>
-        <TerminalContainer />
+        <div className = "right-side">
+          <TerminalContainer />
+          <TestsContainer />
+        </div>
       </div>
     );
   }

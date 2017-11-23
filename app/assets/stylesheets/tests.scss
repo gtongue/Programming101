@@ -1,0 +1,35 @@
+@import "variables";
+.tests{
+  width: 100%;
+  margin-top: 10px;
+  height: calc(50% - 10px);
+  background-color: $light-grey;
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  padding: 10px;
+  color: black;
+  // box-shadow: -.5px  10px 2px black; 
+  border: 1px solid $dark-background; 
+  overflow: auto;
+}
+
+.test-index{
+  width: 100%;
+  padding: 20px;
+  font-size: 20px;
+  border-bottom: 1px solid $dark-background;
+  margin: 0 auto;
+  // background-color: red;
+}
+.test-index i {
+  float: right;
+}
+
+.test-index:nth-child(even){
+  color: $failed;
+}
+
+.test-index:nth-child(odd){
+  color: $passed;
+}

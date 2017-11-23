@@ -10,7 +10,7 @@ export default (state = _emptyTerminal, action) => {
   Object.freeze(state);
   switch(action.type){
     case RECEIVE_OUTPUT:
-      return { output: state.output + ("=>" + action.output + "\n") };
+      return { output: state.output + (action.output) };
     case CLEAR_TERMINAL:
       return _emptyTerminal;
     default: 

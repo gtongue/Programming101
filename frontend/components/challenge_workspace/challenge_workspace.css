@@ -32,29 +32,23 @@
   height: 100%;
 }
 
-
 .CodeMirror
-{
+{  
+  font-family: 'Roboto Mono', monospace;
+  line-height: 20px;
+  /* letter-spacing: 2px; */
   height: 100%;
-}
-
-.terminal
-{
-  width: calc(50% - 25px);
-  background-color: rgba(0, 0, 0, .9);
-  line-height: 150%;
-  font-size: 16px;
-  font-weight: 200;
-  padding: 10px;
-  color: #00dd00;
-  float: left;
-  margin: 0 0 0 25px;
-  height: 100%;
-  overflow: scroll;
 }
 
 .editor-button {
   font-weight: 200;
   margin: auto 10px;
   padding: 5px 30px;
+}
+
+.right-side {
+  float: left;  
+  width: calc(50% - 25px);  
+  height: 100%;  
+  margin: 0 0 0 25px;  
 }
