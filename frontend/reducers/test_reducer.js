@@ -14,7 +14,7 @@ export default (state = _emptyTests, action) => {
     case RECEIVE_SUCCESS:
       return merge({}, state, {success: state.success.concat(action.output)});
     case RECEIVE_FAIL:
-    return merge({}, state, {fail: state.fail.concat(action.output)});
+      return merge({}, state, {fail: state.fail.concat(action.output)});
     case CLEAR_TESTS:
       return _emptyTests;
     default:

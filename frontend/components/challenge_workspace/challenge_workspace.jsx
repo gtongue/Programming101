@@ -48,7 +48,8 @@ class ChallengeWorkspace extends React.Component {
     {
       window.propgramming101env = {};
     }
-    window.programming101env.tester = TestingLibrary;
+    //TODO check if window.programming101env.testing exists
+    window.programming101env.testing.testingLibrary = TestingLibrary;
   }
 
   handleInput() {
@@ -67,6 +68,7 @@ class ChallengeWorkspace extends React.Component {
   onTest(){
     return () => {
       this.props.clearTerminal();
+      this.props.clearTests();
       testCodeAsync(this.state.code, this.state.testing);
     };
   }

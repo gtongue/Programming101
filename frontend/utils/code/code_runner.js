@@ -6,7 +6,18 @@ const formatCode = code => {
 };
 
 const formatTest = code => {
-  return code.replace(/Testing./g, "window.programming101env.tester.");
+  return code.replace(/Testing./g, "window.programming101env.testing.testingLibrary.");
+};
+
+const setupTestLogging = () => {
+  return `
+  // console.log = (string) => {
+  //   window.programming101env.testing.logSuccess(string);
+  // };
+  let consoleError = console.error;
+  console.error = (string) => {
+    window.programming101env.testing.logFail(string);
+  };`;
 };
 
 export const testCodeAsync = (codeString, testString) => {
@@ -24,8 +35,10 @@ export const runCodeAsync = (codeString) => {
   }).on('message', (response) => {
     if(response.code)
     {
-      let log = console.log;
-      console['log'] = (...strings) => {
+      let consoleLog = console.log;
+      let consoleError = console.error;
+
+      console.log = (...strings) => {
         for(let i = 0; i < strings.length; i++)
         { 
           if(typeof strings[i] === 'object')
@@ -38,9 +51,14 @@ export const runCodeAsync = (codeString) => {
           }
         }
       };
-      new Function(formatCode(response.code))();
+      try{
+        new Function(formatCode(response.code))();
+      }catch(error){
+        console.warn(error);
+      }
       response.code = "";
-      console['log'] = log;
+      console.log = consoleLog;
+      console.error = consoleError;
     }
     if(!response.output)
     {

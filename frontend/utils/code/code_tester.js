@@ -9,30 +9,29 @@ class Testing {
       }
     }else{
       if(!(returnedValue instanceof Array)){
-        this.errorLog(returnedValue, expectedValue, errorText);
+        this.errorLog(returnedValue, "[ " + expectedValue + " ]", errorText);
       }else{
         for(let i = 0; i < returnedValue.length; i++){
           if(returnedValue[i] !== expectedValue[i]){
-            this.errorLog(returnedValue, expectedValue, errorText);            
+            this.errorLog("[ " + returnedValue + " ]", "[ " + expectedValue + " ]", errorText);            
             return;
           }
         }
-        this.successLog(returnedValue, expectedValue);
+        this.successLog("[ " + returnedValue + " ]", "[ " + expectedValue + " ]");
       }
     }
   }
 
   static successLog(returnedValue, expectedValue){
-    console.log(`Passed: ${returnedValue} === ${expectedValue}`);    
+    // console.log(`Passed: ${returnedValue} === ${expectedValue}`);    
+    window.programming101env.testing.logSuccess(`Passed: ${returnedValue} === ${expectedValue}`);    
   }
 
   static errorLog(returnedValue, expectedValue, errorText){
-    console.error(`${errorText}: Expected: ${expectedValue}, Got: ${returnedValue}`);
+    // console.error(`${errorText}: Expected: ${expectedValue}, Got: ${returnedValue}`);
+    window.programming101env.testing.logFail(`${errorText}: Expected: ${expectedValue}, Got: ${returnedValue}`);
   }
 
 }
-
-Testing.isEqual(5,5,"Should be equal");
-
 export default Testing;
 
