@@ -32,6 +32,7 @@ class Header extends React.Component{
     let menu =  $(".hamburger-menu");         
     $(".hamburger").css("transform","rotate(90deg)");
     menu.css("transform", "translate(-26px, 0)");
+    $(".opaque").css("opacity", ".5");
     this.open = true;
   }
 
@@ -40,6 +41,7 @@ class Header extends React.Component{
     let menu =  $(".hamburger-menu");                  
     $(".hamburger").css("transform","none");
     menu.css("transform", "translate(-350px, 0)");
+    $(".opaque").css("opacity", "0");    
     this.open = false;
   }
 
@@ -60,6 +62,7 @@ class Header extends React.Component{
 
     return (
       <header className = "nav-bar">
+        <div className = "opaque" />
         <div className = "title">
           <i className ="fa fa-bars fa-lg hamburger" aria-hidden="true"></i>
           <div className = "hamburger-menu">

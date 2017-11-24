@@ -9,14 +9,12 @@ class Tests extends React.Component{
   render(){
     return (
       <div className = "tests">
-        <TestIndex testOutput = "Merge sort should return a sorted array"/>
-        <TestIndex testOutput = "Merge sort should return a sorted array"/>
-        <TestIndex testOutput = "Merge sort should return a sorted array"/>
-        <TestIndex testOutput = "Merge sort should return a sorted array"/>
-        <TestIndex testOutput = "Merge sort should return a sorted array"/>
-        <TestIndex testOutput = "Merge sort should return a sorted array"/>
-        <TestIndex testOutput = "Merge sort should return a sorted array"/>
-        <TestIndex testOutput = "Merge sort should return a sorted array"/>
+        {this.props.tests.success.map(test => (
+          <TestIndex testOutput = {test} success = "true"/>
+        ))}
+        {this.props.tests.fail.map(test => (
+          <TestIndex testOutput = {test} success = "false"/>
+        ))}
       </div>
     );
   }

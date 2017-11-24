@@ -36,7 +36,7 @@ class ChallengeWorkspace extends React.Component {
       hello();
       test();`,
       output: '',
-      testing: `Testing.isEqual(mergeSort([1,2,3,4,5]), [1,2,3,4,5], "Doesn't edit original array.");
+      testing: `Testing.isEqual(mergeSort([1,2,3,4,5]), [1,2,4,5], "Doesn't edit original array.");
       Testing.isEqual(mergeSort([]), [], "Works with empty array");
       Testing.isEqual(mergeSort([4,2,3,2,5]), [2,2,3,4,5], "Sorts array.");`,
       return_value: 'undefined'
@@ -60,8 +60,14 @@ class ChallengeWorkspace extends React.Component {
   onRun(){
     return () => {
       this.props.clearTerminal();
+      runCodeAsync(this.state.code);
+    };
+  }
+  
+  onTest(){
+    return () => {
+      this.props.clearTerminal();
       testCodeAsync(this.state.code, this.state.testing);
-      // runCodeAsync(this.state.code);
     };
   }
 
@@ -83,6 +89,11 @@ class ChallengeWorkspace extends React.Component {
           <div className="editor-footer">
             <button className = "editor-button">
                     Save
+            </button>
+            <button className = "editor-button"
+                    onClick = {this.onTest()}
+                    >
+                    Test
             </button>
             <button className = "editor-button"
                     onClick = {this.onRun()}

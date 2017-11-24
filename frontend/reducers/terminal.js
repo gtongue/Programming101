@@ -1,5 +1,4 @@
 import { RECEIVE_OUTPUT, CLEAR_TERMINAL } from '../actions/terminals';
-import { runCode } from '../utils/terminal/terminal_util';
 import { merge } from 'lodash';
 
 const _emptyTerminal = {
