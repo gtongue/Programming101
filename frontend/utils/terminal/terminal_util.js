@@ -1,6 +1,6 @@
 export const formatOutput = (output) => {
-  // output = output.replace(/console.log/g, "this.log");
-  return output.split(/\n/);
+  // return output.split(/\n/);
+  return output;
 };
 
 export const formatCode = code => {

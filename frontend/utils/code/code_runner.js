@@ -31,7 +31,7 @@ export const runCodeAsync = (codeString) => {
   thread.send({
     integer: 1,
     code: codeString,
-    output: ""
+    output: []
   }).on('message', (response) => {
     if(response.code)
     {
@@ -43,11 +43,11 @@ export const runCodeAsync = (codeString) => {
         { 
           if(typeof strings[i] === 'object')
           {
-            response.output +=  strings[i] + " {" + "\n";
-            Object.keys(strings[i]).forEach(key => (response.output += "\u0020\u0020\u0020\u0020" + key + "\n"));
-            response.output += "}" + "\n";
+            response.output.push(strings[i] + " {");
+            Object.keys(strings[i]).forEach(key => (response.output.push("\u0020\u0020\u0020\u0020" + key)));
+            response.output.push("}");
           }else{
-            response.output += strings[i] + "\n";
+            response.output.push(strings[i]);
           }
         }
       };
@@ -60,17 +60,21 @@ export const runCodeAsync = (codeString) => {
       console.log = consoleLog;
       console.error = consoleError;
     }
-    if(!response.output)
+    if(response.output.length === 0)
     {
       thread.kill();
     }else{
-      let outputArray = response.output.split("\n");
+      // let outputArray = response.output.split("\n");
+      let outputArray = response.output;
       if(window.programming101env && window.programming101env.logTerminal){
-        window.programming101env.logTerminal(outputArray.splice(0,1000).join("\n"));
-        response.output = outputArray.join("\n");
+        window.programming101env.logTerminal(outputArray.splice(0,100));
+        response.output = outputArray;
+
         //This is to log all at once instead of 1000 outputs at a time
         //window.programming101env.logTerminal(response.output);
         //response.output = "";
+        // thread.kill();
+
         thread.send({
           integer: response.integer + 1,
           code: response.code, 
