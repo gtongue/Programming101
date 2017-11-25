@@ -8,7 +8,7 @@ class Terminal extends React.Component{
     super(props);
     this.state = {output: this.props.output};
   }
-  
+
   componentDidMount(){
     if(!window.programming101env)
     {
@@ -37,15 +37,18 @@ class Terminal extends React.Component{
   {
     console.time("setstate");
     return (
-      <div className = "terminal">
-          {this.state.output.map((line, idx) => (
-              <span key = {Math.random()}>
-                =>   {line}
-                <br/>
-              </span>
-          ))}
-          {/* {this.state.output.toString()} */}
-      </div>
+      // <div className = "terminal">
+      //     {this.state.output.map((line, idx) => (
+      //         <span key = {Math.random()}>
+      //           =>   {line}
+      //           <br/>
+      //         </span>
+      //     ))}
+      //     {/* {this.state.output.toString()} */}
+      // </div>
+      <textarea className = "terminal" 
+        value = {this.state.output}
+      />
     );
   }
 
