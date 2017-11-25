@@ -1,0 +1,2 @@
+class TagsJoin < ApplicationRecord
+end

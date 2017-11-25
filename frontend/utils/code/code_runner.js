@@ -54,7 +54,7 @@ export const runCodeAsync = (codeString) => {
       try{
         new Function(formatCode(response.code))();
       }catch(error){
-        console.warn(error);
+        console.log(error);
       }
       response.code = "";
       console.log = consoleLog;

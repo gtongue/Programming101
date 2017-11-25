@@ -10,10 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171118231808) do
+ActiveRecord::Schema.define(version: 20171125005642) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "challenges", force: :cascade do |t|
+    t.integer "language_id", null: false
+    t.string "title", null: false
+    t.text "skeleton", null: false
+    t.text "solution", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["language_id"], name: "index_challenges_on_language_id"
+  end
+
+  create_table "languages", force: :cascade do |t|
+    t.string "name", null: false
+    t.index ["name"], name: "index_languages_on_name"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "tag", null: false
+    t.index ["tag"], name: "index_tags_on_tag"
+  end
+
+  create_table "tags_joins", force: :cascade do |t|
+    t.integer "challenge_id", null: false
+    t.integer "tag_id", null: false
+    t.index ["challenge_id"], name: "index_tags_joins_on_challenge_id"
+    t.index ["tag_id"], name: "index_tags_joins_on_tag_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username", null: false
