@@ -1,0 +1,1 @@
+json.extract! @challenge, :title, :skeleton, :solution

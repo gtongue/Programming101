@@ -1,17 +1,42 @@
 import React from 'react';
+import TestItem from './test_item';
 
-export default ({ testOutput, success }) => (
-  <div className = "test-index">
-    {(success === 'true')? 
-      <div className = "success">
-        {testOutput}
-        <i className ="fa fa-check-circle-o fa-lg" aria-hidden="true"></i>
+class TestIndex extends React.Component{
+  constructor(props){
+    super(props);
+  }
+
+  componentDidMount()
+  {
+    if(!window.programming101env){
+      window.programming101env = {};
+    }
+    if(!window.programming101env.testing)
+    {
+      window.programming101env.testing = {
+        logSuccess: this.props.logSuccess,
+        logFail: this.props.logFail,
+        clearTests: this.props.clearTests
+      };
+    }else{
+      window.logSuccess = this.props.logSuccess;
+      window.logFail = this.props.logFail;
+      window.clearTests = this.props.clearTests;
+    }
+  }
+
+  render(){
+    return (
+      <div className = "tests">
+        {this.props.tests.success.map(test => (
+          <TestItem key = {test} testOutput = {test} success = "true"/>
+        ))}
+        {this.props.tests.fail.map(test => (
+          <TestItem key = {test} testOutput = {test} success = "false"/>
+        ))}
       </div>
-      :
-      <div className = "fail">
-        {testOutput}
-        <i className ="fa fa-times-circle-o fa-lg fail" aria-hidden="true"></i>
-      </div>
-      } 
-  </div>
-);
+    );
+  }
+}
+
+export default TestIndex;

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Tests from './tests';
+import TestIndex from './test_index';
 
 import { receiveSuccess, 
         clearTests, 
@@ -15,4 +15,4 @@ const mapDispatchToProps = dispatch => ({
   clearTests: () => dispatch(clearTests())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Tests);
+export default connect(mapStateToProps, mapDispatchToProps)(TestIndex);

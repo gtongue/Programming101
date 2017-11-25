@@ -1,7 +1,7 @@
 import React from 'react';
 import CodeMirror from 'react-codemirror';
 import TerminalContainer from '../terminal/terminal_container';
-import TestsContainer from '../tests/tests_container';
+import TestIndexContainer from '../tests/test_index_container';
 import { formatCode } from '../../utils/terminal/terminal_util';
 import TestingLibrary from '../../utils/code/code_tester';
 import { spawn } from 'threads';
@@ -106,7 +106,7 @@ class ChallengeWorkspace extends React.Component {
         </div>
         <div className = "right-side">
           <TerminalContainer />
-          <TestsContainer />
+          <TestIndexContainer />
         </div>
       </div>
     );
