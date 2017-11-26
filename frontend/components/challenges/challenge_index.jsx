@@ -3,52 +3,16 @@ import React from 'react';
 class ChallengeIndex extends React.Component {
   constructor(props){
     super(props);
-    this.state = {
-      challenges: [
-        {
-          title: "Merge Sort",
-          tags: ["sorting", "medium"]
-        },
-        {
-          title: "Quick Sort",
-          tags: ["sorting", "medium"]
-        },
-        {
-          title: "Merge Sort",
-          tags: ["sorting", "medium"]
-        },
-        {
-          title: "Quick Sort",
-          tags: ["sorting", "medium"]
-        },
-        {
-          title: "Merge Sort",
-          tags: ["sorting", "medium"]
-        },
-        {
-          title: "Quick Sort",
-          tags: ["sorting", "medium"]
-        },
-        {
-          title: "Merge Sort",
-          tags: ["sorting", "medium"]
-        },
-        {
-          title: "Quick Sort",
-          tags: ["sorting", "medium"]
-        },
-        {
-          title: "Merge Sort",
-          tags: ["sorting", "medium"]
-        },
-        {
-          title: "Quick Sort",
-          tags: ["sorting", "medium"]
-        }
-      ]
-    };
+    this.state = {challenges: props.challenges};
   }
-
+  componentDidMount()
+  {
+    console.log(this.props);
+    this.props.fetchChallenges();
+  }
+  componentWillReceiveProps(newProps){
+    this.setState({ challenges: newProps.challenges });
+  }
   render(){
     return (
       <div className = "challenge-index">
