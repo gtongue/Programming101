@@ -1,5 +1,5 @@
 import React from 'react';
-import CodeMirror from 'react-codemirror';
+import {Controlled as CodeMirror} from 'react-codemirror2';
 import TerminalContainer from '../terminal/terminal_container';
 import TestIndexContainer from '../tests/test_index_container';
 import StepsContainer from '../challenge_workspace/steps_container';
@@ -21,38 +21,48 @@ import { formatOutput } from '../../utils/terminal/terminal_util';
 class ChallengeWorkspace extends React.Component {
   constructor(props){    
     super(props);
-    console.log(props);
     this.state = {
-      code: 
-      `const hello = function(){
-        for(let i = 0; i < 29; i++){
-          console.log(i);
-        }
-        return 4;
-      }
-      
-      const test = function(){
-        console.log("test");
-        return 5;
-      }
-      
-      hello();
-      test();`,
+      code: '',
       output: '',
-      testing: `Testing.isEqual(mergeSort([1,2,3,4,5]), [1,2,4,5], "Doesn't edit original array.");
-      Testing.isEqual(mergeSort([]), [], "Works with empty array");
-      Testing.isEqual(mergeSort([4,2,3,2,5]), [2,2,3,4,5], "Sorts array.");`,
-      return_value: 'undefined'
+      testing: ''
     };
+    // this.state = {
+    //   code: 
+    //   `const hello = function(){
+    //     for(let i = 0; i < 29; i++){
+    //       console.log(i);
+    //     }
+    //     return 4;
+    //   }
+      
+    //   const test = function(){
+    //     console.log("test");
+    //     return 5;
+    //   }
+      
+    //   hello();
+    //   test();`,
+    //   output: '',
+    //   testing: `Testing.isEqual(mergeSort([1,2,3,4,5]), [1,2,4,5], "Doesn't edit original array.");
+    //   Testing.isEqual(mergeSort([]), [], "Works with empty array");
+    //   Testing.isEqual(mergeSort([4,2,3,2,5]), [2,2,3,4,5], "Sorts array.");`,
+    //   return_value: 'undefined'
+    // };
   }
 
   componentDidMount(){
+    this.props.fetchChallenge();
     if(!window.propgramming101env)
     {
       window.propgramming101env = {};
     }
-    //TODO check if window.programming101env.testing exists
     window.programming101env.testing.testingLibrary = TestingLibrary;
+  }
+
+  componentWillReceiveProps(newProps){
+    this.setState({
+      code: newProps.challenge.skeleton
+    });
   }
 
   handleInput() {
@@ -66,6 +76,11 @@ class ChallengeWorkspace extends React.Component {
       this.props.clearTerminal();
       runCodeAsync(this.state.code);
     };
+    // return () => {
+    //   this.setState({
+    //     code: "adssdawd"
+    //   });
+    // };
   }
   
   onTest(){
@@ -92,7 +107,11 @@ class ChallengeWorkspace extends React.Component {
         <div className = "editor">
           <CodeMirror 
             value={this.state.code} 
-            onChange={this.handleInput()} 
+            onBeforeChange={(editor, data, value) => {
+              this.setState({code: value});
+            }}
+            onChange={(editor, data, value) => {
+            }}
             options={options} />
           <div className="editor-footer">
             <button className = "editor-button">
