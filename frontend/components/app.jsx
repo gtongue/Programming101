@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../utils/route_utils';
 import HeaderContainer from '../components/application/header_container';
 import Footer from '../components/application/footer';
@@ -18,11 +18,13 @@ import AccountContainer from '../components/user/account_container';
 export default () => (
   <div className = "app">
     <Route path = "/" component={HeaderContainer} />
-    <AuthRoute path = "/signup" component={SignupContainer} />
-    <AuthRoute path = "/login" component={LoginContainer} />
-    <ProtectedRoute path = "/challenge" component={ChallengeWorkspaceContainer} />
-    <ProtectedRoute path = "/challenges" component={ChallengeIndexContainer} />
-    <ProtectedRoute path = "/account" component={AccountContainer} />
+    <Switch>
+      <AuthRoute path = "/signup" component={SignupContainer} />
+      <AuthRoute path = "/login" component={LoginContainer} />
+      <ProtectedRoute path = "/challenges/:challengeId" component={ChallengeWorkspaceContainer} />
+      <ProtectedRoute path = "/challenges" component={ChallengeIndexContainer} />
+      <ProtectedRoute path = "/account" component={AccountContainer} />
+    </Switch>
     <Route path = "/" component={Footer} />
   </div>
 );

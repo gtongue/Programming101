@@ -21,6 +21,7 @@ import { formatOutput } from '../../utils/terminal/terminal_util';
 class ChallengeWorkspace extends React.Component {
   constructor(props){    
     super(props);
+    console.log(props);
     this.state = {
       code: 
       `const hello = function(){

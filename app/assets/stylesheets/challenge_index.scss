@@ -11,6 +11,7 @@
 }
 
 .challenge-item {
+  position: relative;
   margin: 0;
   width: calc(20% - 20px);
   height: 300px;
@@ -37,4 +38,30 @@
   .challenge-item {
     width: calc(100% - 20px);
   }
+}
+
+.challenge-title {
+  width: 80%;
+  color: $background;
+  font-size: 25px;
+  text-align: center;
+  margin: 0 auto;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid $dark-background;
+}
+
+
+.challenge-tags {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.challenge-tag {
+  padding: 10px;
+  margin: 10px;
+  color: white;
+  background-color: $background;
 }

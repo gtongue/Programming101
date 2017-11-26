@@ -9,4 +9,8 @@ const mapDispatchToProps = dispatch => ({
   clearTests: () => dispatch(clearTests())
 });
 
-export default connect(null, mapDispatchToProps)(ChallengeWorkspace);
+const mapStateToProps = (state, ownProps) => ({
+  challenge: state.entities.challenges[ownProps.match.params.challengeId]
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ChallengeWorkspace);

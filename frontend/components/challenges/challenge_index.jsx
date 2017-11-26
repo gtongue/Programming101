@@ -5,21 +5,39 @@ class ChallengeIndex extends React.Component {
     super(props);
     this.state = {challenges: props.challenges};
   }
+
   componentDidMount()
   {
     console.log(this.props);
     this.props.fetchChallenges();
   }
+  
   componentWillReceiveProps(newProps){
     this.setState({ challenges: newProps.challenges });
   }
+
+  handleClick(id){
+    return () => {
+      this.props.history.push(`/challenges/${id}`);
+    };
+  }
+
   render(){
     return (
       <div className = "challenge-index">
-        {this.state.challenges.map( el => (
-          <div className = "challenge-item">
-            {el.title}
-            {el.tags}
+        {this.state.challenges.map( challenge => (
+          <div key = {challenge.id} className = "challenge-item"
+              onClick = {this.handleClick(challenge.id)}>
+            <div className = "challenge-title">
+              {challenge.title}
+            </div>
+            <div className = "challenge-tags">
+              {challenge.tags.map(tag => (
+                <div key = {tag} className = "challenge-tag">
+                  {tag}
+                </div>
+              ))}
+            </div>
           </div>
         ))}
       </div>

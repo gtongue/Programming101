@@ -32,7 +32,75 @@ Challenge.create({
   ",
   solution: "TODO",
 })
+Challenge.create({
+  language_id: 1,
+  title: "Merge Sort",
+  skeleton: "
+  function mergeSort(arr){
+
+  }
+
+  function merge(arr1, arr2){
+
+  }
+  ",
+  solution: "TODO",
+})
+Challenge.create({
+  language_id: 1,
+  title: "Merge Sort",
+  skeleton: "
+  function mergeSort(arr){
+
+  }
+
+  function merge(arr1, arr2){
+
+  }
+  ",
+  solution: "TODO",
+})
+Challenge.create({
+  language_id: 1,
+  title: "Merge Sort",
+  skeleton: "
+  function mergeSort(arr){
+
+  }
+
+  function merge(arr1, arr2){
+
+  }
+  ",
+  solution: "TODO",
+})
+Challenge.create({
+  language_id: 1,
+  title: "Merge Sort",
+  skeleton: "
+  function mergeSort(arr){
+
+  }
+
+  function merge(arr1, arr2){
+
+  }
+  ",
+  solution: "TODO",
+})
 
 TagsJoin.create({challenge_id: 1, tag_id: 2})
 TagsJoin.create({challenge_id: 1, tag_id: 4})
+
+TagsJoin.create({challenge_id: 2, tag_id: 2})
+TagsJoin.create({challenge_id: 2, tag_id: 4})
+
+TagsJoin.create({challenge_id: 3, tag_id: 2})
+TagsJoin.create({challenge_id: 3, tag_id: 4})
+
+TagsJoin.create({challenge_id: 4, tag_id: 2})
+TagsJoin.create({challenge_id: 4, tag_id: 4})
+
+TagsJoin.create({challenge_id: 5, tag_id: 2})
+TagsJoin.create({challenge_id: 5, tag_id: 4})
 

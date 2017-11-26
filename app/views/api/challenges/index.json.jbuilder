@@ -7,6 +7,6 @@
 # end
 
 json.array! @challenges do |challenge| 
-  json.extract! challenge, :title
+  json.extract! challenge, :title, :id
   json.tags challenge.tags.map {|tag| tag.tag }
 end

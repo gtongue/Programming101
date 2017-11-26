@@ -4,3 +4,10 @@ export const getChallenges = () => (
     method: "GET"
   })
 );
+
+export const getChallenge = id => (
+  $.ajax({
+    url: "/api/challenges/" + id,
+    method: "GET"
+  })
+);
