@@ -1,0 +1,40 @@
+@import "variables";
+
+.challenge-index {
+  width: 100%;
+  height: $body-height;
+  overflow-y: auto;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+.challenge-item {
+  margin: 0;
+  width: calc(20% - 20px);
+  height: 300px;
+  background-color: white;
+  padding: 10px;
+  border: 1px solid $dark-background;
+  box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.4);
+  transition: border .5s;
+  transition: background-color .5s;
+  margin: 10px;
+}
+
+.challenge-item:hover {
+  cursor: pointer;
+  border: 1px solid black;
+  background-color: $light-grey;
+}
+@media screen and (max-width: 1200px){
+  .challenge-item {
+    width: calc(33.33% - 20px);
+  }
+}
+@media screen and (max-width: 750px){
+  .challenge-item {
+    width: calc(100% - 20px);
+  }
+}

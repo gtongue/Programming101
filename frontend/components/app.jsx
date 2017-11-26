@@ -9,7 +9,10 @@ import LoginContainer from '../components/session/login_container';
 
 import ChallengeWorkspaceContainer from 
       '../components/challenge_workspace/challenge_workspace_container';
-      
+
+import ChallengeIndexContainer from 
+      '../components/challenges/challenge_index_container';
+
 import AccountContainer from '../components/user/account_container';
 
 export default () => (
@@ -18,6 +21,7 @@ export default () => (
     <AuthRoute path = "/signup" component={SignupContainer} />
     <AuthRoute path = "/login" component={LoginContainer} />
     <ProtectedRoute path = "/challenge" component={ChallengeWorkspaceContainer} />
+    <ProtectedRoute path = "/challenges" component={ChallengeIndexContainer} />
     <ProtectedRoute path = "/account" component={AccountContainer} />
     <Route path = "/" component={Footer} />
   </div>
