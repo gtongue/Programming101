@@ -72,7 +72,7 @@ class Header extends React.Component{
             <Link to = '/account' 
                   className = "hamburger-link"
                   onClick = {this.closeMenu}> My Account </Link>
-            <Link to = '/challenge' 
+            <Link to = '/challenges' 
                   className = "hamburger-link"
                   onClick = {this.closeMenu}> Challenges </Link>
           </div>
