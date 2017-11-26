@@ -25,9 +25,6 @@ class Terminal extends React.Component{
 
   componentWillReceiveProps(newProps)
   {
-    // this.setState({
-    //   output: this.state.output.concat(formatOutput(newProps.output))
-    // });
     this.setState({
       output: newProps.output
     });
@@ -37,15 +34,6 @@ class Terminal extends React.Component{
   {
     console.time("setstate");
     return (
-      // <div className = "terminal">
-      //     {this.state.output.map((line, idx) => (
-      //         <span key = {Math.random()}>
-      //           =>   {line}
-      //           <br/>
-      //         </span>
-      //     ))}
-      //     {/* {this.state.output.toString()} */}
-      // </div>
       <textarea className = "terminal" 
         value = {this.state.output}
       />

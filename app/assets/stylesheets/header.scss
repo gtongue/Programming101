@@ -1,17 +1,17 @@
 @import "variables";
 
 .nav-bar {
-  color: $background;
+  color: white;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-  height: 75px;
-  background-color: white;
+  height: 50px;
+  background-color: $dark-background;
   font-size: 20px;
   font-weight: 300;
   // box-shadow: 1px 1px 2px $light-grey;
-  border-bottom: 1px solid $dark-background;
+  border-bottom: 1px solid $background;
 }
 
 .title, 

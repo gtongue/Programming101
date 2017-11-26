@@ -17,7 +17,7 @@ table, caption, tbody, tfoot, thead, tr, th, td, header{
   font-size: 100%;
   font-family: inherit;
   vertical-align: baseline;
-  box-sizing: border-box;
+  box-sizing: inherit;
 }
 
 :focus {
@@ -28,6 +28,7 @@ body {
   line-height: 1;
   color: black;
   background: white;
+  box-sizing: border-box;
 }
 ol, ul {
   list-style: none;

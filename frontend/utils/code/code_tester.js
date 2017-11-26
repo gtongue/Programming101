@@ -8,8 +8,8 @@ class Testing {
         this.errorLog(returnedValue, expectedValue, errorText);
       }
     }else{
-      if(!(returnedValue instanceof Array)){
-        this.errorLog(returnedValue, "[ " + expectedValue + " ]", errorText);
+      if(!(returnedValue instanceof Array) || returnedValue.length !== expectedValue.length){
+        this.errorLog("[ " + returnedValue + " ]" , "[ " + expectedValue + " ]", errorText);
       }else{
         for(let i = 0; i < returnedValue.length; i++){
           if(returnedValue[i] !== expectedValue[i]){

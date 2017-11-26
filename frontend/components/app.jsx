@@ -7,7 +7,9 @@ import Footer from '../components/application/footer';
 import SignupContainer from '../components/session/signup_container';
 import LoginContainer from '../components/session/login_container';
 
-import ChallengeWorkspaceContainer from '../components/challenge_workspace/challenge_workspace_container';
+import ChallengeWorkspaceContainer from 
+      '../components/challenge_workspace/challenge_workspace_container';
+      
 import AccountContainer from '../components/user/account_container';
 
 export default () => (

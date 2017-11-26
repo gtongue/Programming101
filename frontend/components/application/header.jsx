@@ -77,7 +77,7 @@ class Header extends React.Component{
                   onClick = {this.closeMenu}> Challenges </Link>
           </div>
           <label className = "nav-bar-title1">Programming</label>
-          <label className = "nav-bar-title2">101</label>
+          <label className = "nav-bar-title2">200</label>
         </div>
         <div className = "session-display">
           {display}

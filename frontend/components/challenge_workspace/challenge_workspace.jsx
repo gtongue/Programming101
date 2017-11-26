@@ -2,6 +2,8 @@ import React from 'react';
 import CodeMirror from 'react-codemirror';
 import TerminalContainer from '../terminal/terminal_container';
 import TestIndexContainer from '../tests/test_index_container';
+import StepsContainer from '../challenge_workspace/steps_container';
+
 import { formatCode } from '../../utils/terminal/terminal_util';
 import TestingLibrary from '../../utils/code/code_tester';
 import { spawn } from 'threads';
@@ -83,6 +85,9 @@ class ChallengeWorkspace extends React.Component {
     };
     return (
       <div className= "challenge cf">
+        <div className = "left-side">
+          <StepsContainer />
+        </div>
         <div className = "editor">
           <CodeMirror 
             value={this.state.code} 
