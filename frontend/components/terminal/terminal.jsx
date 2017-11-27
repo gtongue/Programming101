@@ -9,14 +9,6 @@ class Terminal extends React.Component{
     this.state = {output: this.props.output};
   }
 
-  componentDidMount(){
-    if(!window.programming101env)
-    {
-      window.programming101env = {
-      };
-    }
-    window.programming101env.logTerminal = this.props.receiveOutput;
-  }
   componentDidUpdate(){
     console.timeEnd("setstate");    
     let objDiv = document.querySelector(".terminal");

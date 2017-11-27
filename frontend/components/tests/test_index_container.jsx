@@ -10,9 +10,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  logSuccess: output => dispatch(receiveSuccess(output)),
-  logFail: output => dispatch(receiveFail(output)),
-  clearTests: () => dispatch(clearTests())
+
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(TestIndex);
