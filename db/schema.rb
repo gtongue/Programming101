@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 20171125005642) do
     t.string "title", null: false
     t.text "skeleton", null: false
     t.text "solution", null: false
+    t.text "tests", null: false
+    t.text "steps", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["language_id"], name: "index_challenges_on_language_id"

@@ -30,77 +30,19 @@ Challenge.create({
 
   }
   ",
+  tests: %q[Testing.isEqual(mergeSort([1,2,3,4,5]), [1,2,4,5], "Doesn't edit original array.");
+  Testing.isEqual(mergeSort([]), [], "Works with empty array");
+  Testing.isEqual(mergeSort([4,2,3,2,5]), [2,2,3,4,5], "Sorts array.");],
   solution: "TODO",
+  steps: %q[* MVP's
+  - `Working code editor`
+  - `Testing library`
+  - `User show page with progress`
+  - `Search challenges`]
 })
-Challenge.create({
-  language_id: 1,
-  title: "Merge Sort",
-  skeleton: "
-  function mergeSort(arr){
 
-  }
 
-  function merge(arr1, arr2){
-
-  }
-  ",
-  solution: "TODO",
-})
-Challenge.create({
-  language_id: 1,
-  title: "Merge Sort",
-  skeleton: "
-  function mergeSort(arr){
-
-  }
-
-  function merge(arr1, arr2){
-
-  }
-  ",
-  solution: "TODO",
-})
-Challenge.create({
-  language_id: 1,
-  title: "Merge Sort",
-  skeleton: "
-  function mergeSort(arr){
-
-  }
-
-  function merge(arr1, arr2){
-
-  }
-  ",
-  solution: "TODO",
-})
-Challenge.create({
-  language_id: 1,
-  title: "Merge Sort",
-  skeleton: "
-  function mergeSort(arr){
-
-  }
-
-  function merge(arr1, arr2){
-
-  }
-  ",
-  solution: "TODO",
-})
 
 TagsJoin.create({challenge_id: 1, tag_id: 2})
 TagsJoin.create({challenge_id: 1, tag_id: 4})
-
-TagsJoin.create({challenge_id: 2, tag_id: 2})
-TagsJoin.create({challenge_id: 2, tag_id: 4})
-
-TagsJoin.create({challenge_id: 3, tag_id: 2})
-TagsJoin.create({challenge_id: 3, tag_id: 4})
-
-TagsJoin.create({challenge_id: 4, tag_id: 2})
-TagsJoin.create({challenge_id: 4, tag_id: 4})
-
-TagsJoin.create({challenge_id: 5, tag_id: 2})
-TagsJoin.create({challenge_id: 5, tag_id: 4})
 

@@ -10,9 +10,8 @@ class Terminal extends React.Component{
   }
 
   componentDidUpdate(){
-    console.timeEnd("setstate");    
-    let objDiv = document.querySelector(".terminal");
-    objDiv.scrollTop = objDiv.scrollHeight;
+    let terminalDiv = document.querySelector(".terminal");
+    terminalDiv.scrollTop = terminalDiv.scrollHeight;
   }
 
   componentWillReceiveProps(newProps)
@@ -24,7 +23,6 @@ class Terminal extends React.Component{
   
   render()
   {
-    console.time("setstate");
     return (
       <textarea className = "terminal" 
         value = {this.state.output}

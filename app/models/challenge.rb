@@ -12,7 +12,7 @@
 #
 
 class Challenge < ApplicationRecord
-  validates :language_id, :title, :skeleton, :solution, presence: true
+  validates :language_id, :title, :skeleton, :solution, :tests, :steps, presence: true
 
   belongs_to :language
   has_many :tags_joins

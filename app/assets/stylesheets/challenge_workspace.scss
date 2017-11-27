@@ -1,3 +1,4 @@
+@import "variables";
 
 .challenge
 {
@@ -25,23 +26,6 @@
   background-color: #4b4b4b;
 }
 
-.react-codemirror2
-{
-  float: left;
-  width: 100%;
-  height: 100%;
-}
-
-.CodeMirror
-{  
-  font-family: 'Roboto Mono', monospace;
-  font-weight: 300;
-  line-height: 20px;
-  font-size: 14px;
-  /* letter-spacing: 0px; */
-  height: 100%;
-}
-
 .editor-button {
   font-weight: 200;
   margin: auto 10px;
@@ -60,4 +44,35 @@
   width: calc(30% - 5px);
   height: 100%;
   margin-right: 5px;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.challenge-errors {
+  position: absolute;
+  right: 0;
+  top: 70px;
+  width: 300px;
+  border: 1px solid $failed;
+  background: white;
+  animation-name: slideInRight;
+  animation-duration: 1s;
+  z-index: 100;
+}
+
+
+.challenge-errors li {
+  width: 100%;
+  padding: 20px;
+  border-bottom: 1px solid black;
+  color: $failed;
 }

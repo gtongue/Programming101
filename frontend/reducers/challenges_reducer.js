@@ -9,7 +9,7 @@ export default (state = _emptyChallenges, action) => {
   Object.freeze(state);
   switch(action.type){
     case RECEIVE_CHALLENGES:
-      return action.challenges;
+      return merge({}, action.challenges, state);
     case RECEIVE_CHALLENGE:
       return merge({}, state, action.challenge);
     default: 

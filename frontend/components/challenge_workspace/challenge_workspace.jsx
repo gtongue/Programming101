@@ -4,6 +4,7 @@ import TerminalContainer from '../terminal/terminal_container';
 import TestIndexContainer from '../tests/test_index_container';
 import StepsContainer from '../challenge_workspace/steps_container';
 
+
 import { formatCode } from '../../utils/terminal/terminal_util';
 import { spawn } from 'threads';
 import { runCodeAsync, testCodeAsync } from '../../utils/code/code_runner';
@@ -13,7 +14,7 @@ require('codemirror/theme/monokai.css');
 require('codemirror/addon/edit/matchbrackets');
 require('codemirror/addon/edit/closebrackets');
 require('codemirror/mode/javascript/javascript');
-require('./challenge_workspace.css');
+require('./codemirror.css');
 
 import { formatOutput } from '../../utils/terminal/terminal_util';
 
@@ -23,28 +24,35 @@ class ChallengeWorkspace extends React.Component {
     this.state = {
       code: '',
       output: '',
-
-        testing: `Testing.isEqual(mergeSort([1,2,3,4,5]), [1,2,4,5], "Doesn't edit original array.");
-        Testing.isEqual(mergeSort([]), [], "Works with empty array");
-        Testing.isEqual(mergeSort([4,2,3,2,5]), [2,2,3,4,5], "Sorts array.");`,
+      tests: '',
+      steps: ''
     };
   }
 
   componentDidMount(){
-    console.log(this.props);
     if(this.props.challenge && this.props.challenge.skeleton){
       this.setState({
-        code: this.props.challenge.skeleton
+        code: this.props.challenge.skeleton,
+        tests: this.props.challenge.tests,
+        steps: this.props.challenge.steps
       });
     }else{
       this.props.fetchChallenge();
     }
   }
-
+  componentWillUnmount(){
+    this.props.clearErrors();
+    this.props.clearTests();
+    this.props.clearTerminal();
+  }
   componentWillReceiveProps(newProps){
-    this.setState({
-      code: newProps.challenge.skeleton
-    });
+    if(!this.state.tests){
+      this.setState({
+        code: newProps.challenge.skeleton,
+        tests: newProps.challenge.tests,
+        steps: newProps.challenge.steps
+      });
+    }
   }
 
   handleInput() {
@@ -56,6 +64,7 @@ class ChallengeWorkspace extends React.Component {
   onRun(){
     return () => {
       this.props.clearTerminal();
+      this.props.clearErrors();
       runCodeAsync(this.state.code);
     };
   }
@@ -63,13 +72,14 @@ class ChallengeWorkspace extends React.Component {
   onTest(){
     return () => {
       this.props.clearTerminal();
+      this.props.clearErrors();
       this.props.clearTests();
-      testCodeAsync(this.state.code, this.state.testing);
+      testCodeAsync(this.state.code, this.state.tests);
     };
   }
 
   render(){
-    var options = {
+    let options = {
       lineNumbers: true,
       theme: 'monokai',
       mode: "javascript",
@@ -79,7 +89,7 @@ class ChallengeWorkspace extends React.Component {
     return (
       <div className= "challenge cf">
         <div className = "left-side">
-          <StepsContainer />
+          <StepsContainer steps = {this.state.steps}/>
         </div>
         <div className = "editor">
           <CodeMirror 
@@ -110,6 +120,16 @@ class ChallengeWorkspace extends React.Component {
           <TerminalContainer />
           <TestIndexContainer />
         </div>
+        {
+          this.props.errors.length > 0 ? 
+            <ul className = "challenge-errors">
+              {this.props.errors.map(error => (
+                <li key = {error}>
+                  {error}
+                </li>
+              ))}
+            </ul>
+        :""}
       </div>
     );
   }

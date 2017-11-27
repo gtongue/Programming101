@@ -6,17 +6,17 @@ const formatCode = code => {
 };
 
 const formatTest = code => {
-  return code.replace(/Testing./g, "window.programming101env.testing.testingLibrary.");
+  return code.replace(/Testing./g, "window.programming200env.testing.testingLibrary.");
 };
 
 const setupTestLogging = () => {
   return `
   // console.log = (string) => {
-  //   window.programming101env.testing.logSuccess(string);
+  //   window.programming200env.testing.logSuccess(string);
   // };
   let consoleError = console.error;
   console.error = (string) => {
-    window.programming101env.testing.logFail(string);
+    window.programming200env.testing.logFail(string);
   };`;
 };
 
@@ -54,7 +54,7 @@ export const runCodeAsync = (codeString) => {
       try{
         new Function(formatCode(response.code))();
       }catch(error){
-        console.log(error);
+        window.programming200env.logError(error.message);
       }
       response.code = "";
       console.log = consoleLog;
@@ -64,11 +64,11 @@ export const runCodeAsync = (codeString) => {
     {
       thread.kill();
     }else{
-      if(window.programming101env && window.programming101env.logTerminal){
-        // window.programming101env.logTerminal(outputArray.splice(0,500).join("\n"));
+      if(window.programming200env && window.programming200env.logTerminal){
+        // window.programming200env.logTerminal(outputArray.splice(0,500).join("\n"));
         // response.output = outputArray.join("\n");
         //This is to log all at once instead of 1000 outputs at a time
-        window.programming101env.logTerminal(response.output);
+        window.programming200env.logTerminal(response.output);
         response.output = "";
         thread.send({
           integer: response.integer + 1,

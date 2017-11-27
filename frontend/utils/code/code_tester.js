@@ -24,12 +24,12 @@ class Testing {
 
   static successLog(returnedValue, expectedValue){
     // console.log(`Passed: ${returnedValue} === ${expectedValue}`);    
-    window.programming101env.testing.logSuccess(`Passed: ${returnedValue} === ${expectedValue}`);    
+    window.programming200env.testing.logSuccess(`Passed: ${returnedValue} === ${expectedValue}`);    
   }
 
   static errorLog(returnedValue, expectedValue, errorText){
     // console.error(`${errorText}: Expected: ${expectedValue}, Got: ${returnedValue}`);
-    window.programming101env.testing.logFail(`${errorText}: Expected: ${expectedValue}, Got: ${returnedValue}`);
+    window.programming200env.testing.logFail(`${errorText}: Expected: ${expectedValue}, Got: ${returnedValue}`);
   }
 
 }
