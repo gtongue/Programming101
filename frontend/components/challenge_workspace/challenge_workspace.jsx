@@ -31,18 +31,9 @@ class ChallengeWorkspace extends React.Component {
   }
 
   componentDidMount(){
-    if(this.props.saved){
-      if(this.props.savedFile)
-      {
-       this.setState({
-         code: this.props.savedFile.content
-       }); 
-      }else{
-        this.props.getFile(this.props.match.params.challengeId);
-      }
-    }
     if(this.props.challenge && this.props.challenge.skeleton){
       this.setState({
+        code: this.props.challenge.skeleton,
         tests: this.props.challenge.tests,
         steps: this.props.challenge.steps
       });
@@ -50,6 +41,7 @@ class ChallengeWorkspace extends React.Component {
       this.props.fetchChallenge();
     }
   }
+  
   componentWillUnmount(){
     this.props.clearErrors();
     this.props.clearTests();
@@ -57,16 +49,11 @@ class ChallengeWorkspace extends React.Component {
   }
 
   componentWillReceiveProps(newProps){
-    console.log(newProps);
     if(!this.state.tests && newProps.challenge){
       this.setState({
+        code: newProps.challenge.skeleton,
         tests: newProps.challenge.tests,
         steps: newProps.challenge.steps
-      });
-    }
-    if(!this.state.code && this.props.saved && this.props.savedFile){
-      this.setState({
-        code: newProps.savedFile.content
       });
     }
   }
