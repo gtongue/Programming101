@@ -19,16 +19,18 @@ const mapStateToProps = (state, ownProps) => {
   let saved = false;
   for(let i = 0; i < state.session.currentUser.savedFiles.length; i++){
     let file = state.session.currentUser.savedFiles[i];
-    if(file === ownProps.match.params.challengeId){
+    if(parseInt(file) === parseInt(ownProps.match.params.challengeId)){
       saved = true;
       break;
     }
   }
+  console.log(saved);
   return {
     user_id: state.session.currentUser.id,
     challenge: state.entities.challenges[ownProps.match.params.challengeId],
     errors: state.errors.code_errors,
-    saved: saved
+    saved: saved,
+    savedFile: state.entities.files[ownProps.match.params.challengeId]
   };
 };
 

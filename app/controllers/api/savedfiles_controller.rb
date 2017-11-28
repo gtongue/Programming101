@@ -4,6 +4,10 @@ class Api::SavedfilesController < ApplicationController
     render :show
   end
 
+  def show
+    @saved_file = SavedFile.find_by(challenge_id: params[:id])
+    render :show
+  end
 
   private
 
