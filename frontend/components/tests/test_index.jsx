@@ -6,7 +6,7 @@ class TestIndex extends React.Component{
     super(props);
   }
 
-  render(){
+  render(){    
     return (
       <div className = "tests">
         {this.props.tests.success.map(test => (

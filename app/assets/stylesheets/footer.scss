@@ -6,3 +6,15 @@
   background-color: $dark-background;
   height: 40px;
 }
+
+.footer i {
+  margin: 5px 0;
+  padding: 0px 10px;
+  color: white;
+  transition: color .5s;
+  cursor: pointer;
+}
+
+.footer i:hover {
+  color: $background;
+}

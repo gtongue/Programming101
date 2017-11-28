@@ -145,3 +145,9 @@ button:hover {
   left: 0;
   z-index: 50;
 }
+
+@media screen and (max-width: 500px){
+  .session-display {
+    display: none;
+  }
+}

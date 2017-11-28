@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20171127220252) do
   create_table "completed_challenges", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "challenge_id", null: false
+    t.integer "lines_written", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["challenge_id"], name: "index_completed_challenges_on_challenge_id"

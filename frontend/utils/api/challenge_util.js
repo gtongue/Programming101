@@ -11,3 +11,11 @@ export const getChallenge = id => (
     method: "GET"
   })
 );
+
+export const postCompletedChallenge = (challenge_id, user_id, lines_written) => (
+  $.ajax({
+    url: '/api/completed_challenges',
+    method: "POST",
+    data: {completedchallenge: {challenge_id, user_id, lines_written}}
+  })
+);

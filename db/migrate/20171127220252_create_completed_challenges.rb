@@ -3,6 +3,7 @@ class CreateCompletedChallenges < ActiveRecord::Migration[5.1]
     create_table :completed_challenges do |t|
       t.integer :user_id, null: false
       t.integer :challenge_id, null: false
+      t.integer :lines_written, null: false
       t.timestamps
     end
     add_index :completed_challenges, :user_id

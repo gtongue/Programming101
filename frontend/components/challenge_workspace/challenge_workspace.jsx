@@ -56,11 +56,19 @@ class ChallengeWorkspace extends React.Component {
         steps: newProps.challenge.steps
       });
     }
+    if(this.state.tests){
+      if(newProps.tests.success.length === (this.state.tests.match(/;/g) || []).length){
+        this.props.completeChallenge(
+            this.props.challenge.id,
+            this.props.userId, 
+            (this.state.code.match(/\n/g) || []).length);
+      }
+    }
   }
 
   saveFile(){
     this.props.saveFile({
-      user_id: this.props.user_id,
+      user_id: this.props.userId,
       challenge_id: this.props.challenge.id,
       content: this.state.code
     });
