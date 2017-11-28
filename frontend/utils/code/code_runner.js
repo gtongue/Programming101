@@ -21,7 +21,7 @@ const setupTestLogging = () => {
 };
 
 export const testCodeAsync = (codeString, testString) => {
-  runCodeAsync(codeString + formatTest(testString));
+  runCodeAsync(codeString + formatTest(";" + testString));
 };
 
 export const runCodeAsync = (codeString) => {
@@ -80,6 +80,5 @@ export const runCodeAsync = (codeString) => {
       }
     }
   }).on('exit', function() {
-    console.log('Worker is done.');
   });
 };

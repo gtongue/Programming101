@@ -1,6 +1,14 @@
 class Api::SavedfilesController < ApplicationController
   def create
-    @saved_file = SavedFile.create(savedFilesParams())
+    file_params = savedFilesParams;
+    @saved_file = SavedFile.find_by(
+      challenge_id: file_params[:challenge_id],
+      user_id: file_params[:user_id])
+    if(@saved_file)
+      @saved_file.update(file_params);
+    else
+      @saved_file = SavedFile.create(file_params)
+    end
     render :show
   end
 
