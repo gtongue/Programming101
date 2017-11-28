@@ -62,7 +62,7 @@
   right: 0;
   top: 70px;
   width: 300px;
-  border: 1px solid $failed;
+  border-top: 5px solid $failed;
   background: white;
   animation-name: slideInRight;
   animation-duration: 1s;
@@ -73,6 +73,5 @@
 .challenge-errors li {
   width: 100%;
   padding: 20px;
-  border-bottom: 1px solid black;
   color: $failed;
 }

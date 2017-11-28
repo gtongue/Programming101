@@ -9,17 +9,6 @@ const formatTest = code => {
   return code.replace(/Testing./g, "window.programming200env.testing.testingLibrary.");
 };
 
-const setupTestLogging = () => {
-  return `
-  // console.log = (string) => {
-  //   window.programming200env.testing.logSuccess(string);
-  // };
-  let consoleError = console.error;
-  console.error = (string) => {
-    window.programming200env.testing.logFail(string);
-  };`;
-};
-
 export const testCodeAsync = (codeString, testString) => {
   runCodeAsync(codeString + formatTest(";" + testString));
 };
@@ -36,7 +25,6 @@ export const runCodeAsync = (codeString) => {
     if(response.code)
     {
       let consoleLog = console.log;
-      let consoleError = console.error;
 
       console.log = (...strings) => {
         for(let i = 0; i < strings.length; i++)
@@ -54,11 +42,10 @@ export const runCodeAsync = (codeString) => {
       try{
         new Function(formatCode(response.code))();
       }catch(error){
-        window.programming200env.logError(error.message);
+        window.programming200env.logError(error.toString());
       }
       response.code = "";
       console.log = consoleLog;
-      console.error = consoleError;
     }
     if(!response.output)
     {

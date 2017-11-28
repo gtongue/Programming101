@@ -15,10 +15,7 @@ class Login extends React.Component {
   {
     this.props.clearErrors();
   }
-  componentWillReceiveProps(newProps)
-  {
-    console.log(newProps);
-  }
+
   handleInput(type) {
     return (e) => {
       this.setState({[type]: e.target.value });
