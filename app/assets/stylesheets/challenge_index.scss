@@ -17,18 +17,27 @@
   height: 300px;
   background-color: white;
   padding: 10px;
-  border: 1px solid $dark-background;
+  border-bottom: 10px solid grey;
   box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.4);
   transition: border .5s;
   transition: background-color .5s;
   margin: 10px;
 }
 
+
 .challenge-item:hover {
   cursor: pointer;
-  border: 1px solid black;
   background-color: $light-grey;
 }
+
+.completed {
+  border-bottom: 10px solid $passed;
+}
+
+.incomplete {
+  border-bottom: 10px solid rgb(209, 132, 9);
+}
+
 @media screen and (max-width: 1200px){
   .challenge-item {
     width: calc(33.33% - 20px);

@@ -7,6 +7,8 @@
 #  title       :string           not null
 #  skeleton    :text             not null
 #  solution    :text             not null
+#  tests       :text             not null
+#  steps       :text             not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #

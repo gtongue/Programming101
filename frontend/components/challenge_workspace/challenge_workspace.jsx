@@ -27,17 +27,22 @@ class ChallengeWorkspace extends React.Component {
       tests: '',
       steps: ''
     };
+    this.saveFile = this.saveFile.bind(this);
   }
 
   componentDidMount(){
-    if(this.props.challenge && this.props.challenge.skeleton){
-      this.setState({
-        code: this.props.challenge.skeleton,
-        tests: this.props.challenge.tests,
-        steps: this.props.challenge.steps
-      });
+    if(this.props.saved){
+
     }else{
-      this.props.fetchChallenge();
+      if(this.props.challenge && this.props.challenge.skeleton){
+        this.setState({
+          code: this.props.challenge.skeleton,
+          tests: this.props.challenge.tests,
+          steps: this.props.challenge.steps
+        });
+      }else{
+        this.props.fetchChallenge();
+      }
     }
   }
   componentWillUnmount(){
@@ -45,6 +50,7 @@ class ChallengeWorkspace extends React.Component {
     this.props.clearTests();
     this.props.clearTerminal();
   }
+
   componentWillReceiveProps(newProps){
     if(!this.state.tests){
       this.setState({
@@ -55,6 +61,14 @@ class ChallengeWorkspace extends React.Component {
     }
   }
 
+  saveFile(){
+    this.props.saveFile({
+      user_id: this.props.user_id,
+      challenge_id: this.props.challenge.id,
+      content: this.state.code
+    });
+  }
+
   handleInput() {
     return (input) => {
       this.setState({ code: input });
@@ -63,6 +77,7 @@ class ChallengeWorkspace extends React.Component {
 
   onRun(){
     return () => {
+      this.saveFile();
       this.props.clearTerminal();
       this.props.clearErrors();
       runCodeAsync(this.state.code);
@@ -71,6 +86,7 @@ class ChallengeWorkspace extends React.Component {
   
   onTest(){
     return () => {
+      this.saveFile();      
       this.props.clearTerminal();
       this.props.clearErrors();
       this.props.clearTests();

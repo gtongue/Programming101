@@ -19,11 +19,14 @@ class User < ApplicationRecord
   validates :password_digest, presence: true
   validates :password, length: { minimum: 6 }, allow_nil: true
 
+  has_many :saved_files
+  has_many :completed_challenges
+
   attr_reader :password
   after_initialize :ensure_session_token
   
   def self.find_by_credentials(username, password)
-    user = User.find_by(username: username)
+    user = User.includes(:saved_files, :completed_challenges).find_by(username: username)
     return nil if !user || !user.is_password?(password)
     user
   end

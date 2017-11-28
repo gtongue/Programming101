@@ -22,13 +22,57 @@ Challenge.create({
   language_id: 1,
   title: "Merge Sort",
   skeleton: "
-  function mergeSort(arr){
+function mergeSort(arr){
 
-  }
+}
 
-  function merge(arr1, arr2){
+function merge(arr1, arr2){
 
-  }
+}
+  ",
+  tests: %q[Testing.isEqual(mergeSort([1,2,3,4,5]), [1,2,4,5], "Doesn't edit original array.");
+  Testing.isEqual(mergeSort([]), [], "Works with empty array");
+  Testing.isEqual(mergeSort([4,2,3,2,5]), [2,2,3,4,5], "Sorts array.");],
+  solution: "TODO",
+  steps: %q[* MVP's
+  - `Working code editor`
+  - `Testing library`
+  - `User show page with progress`
+  - `Search challenges`]
+})
+Challenge.create({
+  language_id: 1,
+  title: "Merge Sort",
+  skeleton: "
+function mergeSort(arr){
+
+}
+
+function merge(arr1, arr2){
+
+}
+  ",
+  tests: %q[Testing.isEqual(mergeSort([1,2,3,4,5]), [1,2,4,5], "Doesn't edit original array.");
+  Testing.isEqual(mergeSort([]), [], "Works with empty array");
+  Testing.isEqual(mergeSort([4,2,3,2,5]), [2,2,3,4,5], "Sorts array.");],
+  solution: "TODO",
+  steps: %q[* MVP's
+  - `Working code editor`
+  - `Testing library`
+  - `User show page with progress`
+  - `Search challenges`]
+})
+Challenge.create({
+  language_id: 1,
+  title: "Merge Sort",
+  skeleton: "
+function mergeSort(arr){
+
+}
+
+function merge(arr1, arr2){
+
+}
   ",
   tests: %q[Testing.isEqual(mergeSort([1,2,3,4,5]), [1,2,4,5], "Doesn't edit original array.");
   Testing.isEqual(mergeSort([]), [], "Works with empty array");
@@ -45,4 +89,9 @@ Challenge.create({
 
 TagsJoin.create({challenge_id: 1, tag_id: 2})
 TagsJoin.create({challenge_id: 1, tag_id: 4})
+TagsJoin.create({challenge_id: 2, tag_id: 1})
+TagsJoin.create({challenge_id: 2, tag_id: 3})
 
+SavedFile.create({user_id: 1, challenge_id: 1, content: 'SAVING WOOO'});
+SavedFile.create({user_id: 1, challenge_id: 2, content: 'SAVING WOOO'});
+CompletedChallenge.create({user_id: 1, challenge_id: 1});

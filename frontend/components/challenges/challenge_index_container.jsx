@@ -10,7 +10,9 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const mapStateToProps = state => ({
-  challenges: values(state.entities.challenges)
+  challenges: values(state.entities.challenges),
+  completed: state.session.currentUser.completedChallenges,
+  saved: state.session.currentUser.savedFiles
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ChallengeIndex);

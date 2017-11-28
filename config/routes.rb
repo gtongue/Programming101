@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy], controller: :session
     resources :users, only: [:create]
     resources :challenges, only: [:index, :show]
+    resources :savedfiles, only: [:show, :create]
   end
   root to: 'root#root'
 end

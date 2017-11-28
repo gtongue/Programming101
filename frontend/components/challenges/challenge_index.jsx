@@ -25,7 +25,14 @@ class ChallengeIndex extends React.Component {
     return (
       <div className = "challenge-index">
         {this.state.challenges.map( challenge => (
-          <div key = {challenge.id} className = "challenge-item"
+          <div key = {challenge.id} 
+              className = {
+                this.props.completed.includes(challenge.id) ? 
+                "challenge-item completed"  : 
+                this.props.saved.includes(challenge.id) ?
+                "challenge-item incomplete" :
+                "challenge-item"
+              }
               onClick = {this.handleClick(challenge.id)}>
             <div className = "challenge-title">
               {challenge.title}
@@ -44,3 +51,4 @@ class ChallengeIndex extends React.Component {
   }
 }
 export default ChallengeIndex;
+
