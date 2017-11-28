@@ -1,6 +1,7 @@
 import {RECEIVE_CHALLENGE,
         RECEIVE_CHALLENGES} from '../actions/challenge_actions';
 import { SAVE_FILE } from '../actions/saved_file_actions';
+import { LOGOUT_CURRENT_USER } from '../actions/sessions';
 import { merge } from 'lodash';
 
 const _emptyChallenges = {};
@@ -22,6 +23,8 @@ export default (state = _emptyChallenges, action) => {
         }
       }
       return newState;
+    case LOGOUT_CURRENT_USER:
+      return _emptyChallenges; 
     default: 
       return state;
   }

@@ -1,4 +1,5 @@
 import { SAVE_FILE, RECEIVE_FILE } from '../actions/saved_file_actions';
+import { LOGOUT_CURRENT_USER } from '../actions/sessions';
 import { merge } from 'lodash';
 
 const _emptyFiles = {};
@@ -19,7 +20,9 @@ export default (state = _emptyFiles, action) => {
       // }
       // newState.push(action.file);
       // return newState;
-      return merge({}, state, action.file);      
+      return merge({}, state, action.file);     
+    case LOGOUT_CURRENT_USER:
+      return _emptyFiles; 
     default:
       return state;
   }
