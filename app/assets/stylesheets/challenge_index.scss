@@ -21,6 +21,7 @@
   box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.4);
 
   transition: background-color .5s, width .1s;
+  // transition: opacity .1s, width .1s, height .1s, background-color .5s;
   margin: 10px;
 }
 
@@ -52,7 +53,7 @@
   display: flex;
   width: 100%;
   color: $background;
-  font-size: 25px;
+  font-size: 20px;
   text-align: center;
   padding-bottom: 10px;
   margin-bottom: 10px;

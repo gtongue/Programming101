@@ -34,11 +34,20 @@ function merge(arr1, arr2){
   Testing.isEqual(mergeSort([]), [], "Works with empty array");
   Testing.isEqual(mergeSort([4,2,3,2,5]), [2,2,3,4,5], "Sorts array.");],
   solution: "TODO",
-  steps: %q[* MVP's
-  - `Working code editor`
-  - `Testing library`
-  - `User show page with progress`
-  - `Search challenges`]
+  steps: %q[    
+  # Testing Steps
+  ## Another Header
+  * Look a list
+    - It has things in it
+    - That hopefully work
+  ```
+   this is maybe code
+   console.log("is it?");
+   for(let ihopeso = 0; ihopeso < 100; i++)
+   {
+  
+   }
+  ```    ]
 })
 Challenge.create({
   language_id: 1,
@@ -100,11 +109,9 @@ function merge(arr1, arr2){
   Testing.isEqual(mergeSort([]), [], "Works with empty array");
   Testing.isEqual(mergeSort([4,2,3,2,5]), [2,2,3,4,5], "Sorts array.");],
   solution: "TODO",
-  steps: %q[* MVP's
-  - `Working code editor`
-  - `Testing library`
-  - `User show page with progress`
-  - `Search challenges`]
+  steps: %q[
+
+  ]
 })
 Challenge.create({
   language_id: 1,

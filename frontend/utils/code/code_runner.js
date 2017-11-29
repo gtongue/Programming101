@@ -2,6 +2,13 @@ import { spawn } from 'threads';
 
 const formatCode = code => {
   code = '"use strict" \n' + code;
+  // (while|for)(.*?)[\{]
+  // code = code.replace(/(while|for)(.*?)[\{]/g, "replaceme");
+  code = "let loopCountingVariable = 0;" + code;
+  code = code.replace(/for/g, "loopCountingVariable = 0;for");
+  code = code.replace(/while/g, "loopCountingVariable = 0;while");
+  code = code.replace(/{/g, "{loopCountingVariable+=1; if(loopCountingVariable > 100000) {throw `Possible infinite loop`;}");
+  console.log(code);
   return code;
 };
 
@@ -25,7 +32,7 @@ export const runCodeAsync = (codeString) => {
     if(response.code)
     {
       let consoleLog = console.log;
-
+      let code = formatCode(response.code);
       console.log = (...strings) => {
         for(let i = 0; i < strings.length; i++)
         { 
@@ -40,7 +47,7 @@ export const runCodeAsync = (codeString) => {
         }
       };
       try{
-        new Function(formatCode(response.code))();
+        new Function(code)();
       }catch(error){
         window.programming200env.logError(error.toString());
       }

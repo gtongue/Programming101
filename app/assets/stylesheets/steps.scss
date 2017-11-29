@@ -3,10 +3,44 @@
 .steps {
   background-color: $light-grey;
   height: 100%;
+  padding: 10px;
+  overflow-x: auto;
+  color: $background;
+}
+.steps > * {
+  padding: 5px;
+  margin: 5px;
 }
 
-.steps ul{
-  list-style-type: circle;
-  padding: 10px;
-  padding-left: 25px; 
-} 
+.steps ul {
+  padding-left: 15px; 
+  list-style: circle;
+}
+.steps > ul{
+  list-style-type: disc;
+}
+.steps li {
+  padding: 5px;
+}
+.steps h1 {
+  font-size: 24px;
+  text-align: center;
+  color: $light-background;
+  border-bottom: 1px solid black;
+}
+
+.steps h2 {
+  font-size: 20px;
+}
+
+.steps pre{
+  background-color: #272822;
+  padding: 25px;
+}
+
+.steps code {
+  // font-family: 'Roboto Mono';
+  font-size: 14px;
+  font-weight: 300;
+  color: white;
+}
