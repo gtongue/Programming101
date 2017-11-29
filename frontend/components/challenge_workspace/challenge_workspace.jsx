@@ -106,6 +106,7 @@ class ChallengeWorkspace extends React.Component {
       mode: "javascript",
       matchBrackets: true,
       autoCloseBrackets: true,
+      tabSize: 4
     };
     return (
       <div className= "challenge cf">

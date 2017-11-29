@@ -3,7 +3,11 @@ import React from 'react';
 class ChallengeIndex extends React.Component {
   constructor(props){
     super(props);
-    this.state = {challenges: props.challenges};
+    this.state = {
+      challenges: props.challenges,
+      search: ''
+    };
+    this.filterResults = this.filterResults.bind(this);
   }
 
   componentDidMount()
@@ -21,21 +25,57 @@ class ChallengeIndex extends React.Component {
     };
   }
 
+  handleSearch(){
+    return (e) => {
+      this.setState({ search: e.target.value });
+    };
+  }
+
+  filterResults(){
+    let filteredResult = [];
+    this.state.challenges.forEach((challenge => {
+      let searchString = challenge.tags.join(" ");
+      searchString += " " + challenge.language_name;
+      searchString += " " + challenge.title;
+
+      if(searchString.toLowerCase().includes(this.state.search.toLowerCase()))
+      {
+        filteredResult.push(challenge);
+      }
+    }));
+    return filteredResult;
+  }
+
   render(){
+    let searchResults = this.filterResults();
     return (
       <div className = "challenge-index">
+        <div className = "challenge-search-container">
+          <input 
+            type = "text" 
+            className = "challenge-search"
+            placeholder = "Search"
+            onChange = {this.handleSearch()} />
+        </div>
         {this.state.challenges.map( challenge => (
           <div key = {challenge.id} 
               className = {
-                this.props.completed.includes(challenge.id) ? 
+                (this.props.completed.includes(challenge.id) ? 
                 "challenge-item completed"  : 
                 this.props.saved.includes(challenge.id) ?
                 "challenge-item incomplete" :
-                "challenge-item"
+                "challenge-item") + (
+                  !searchResults.includes(challenge) ? " challenge-hide" : ""
+                )
               }
               onClick = {this.handleClick(challenge.id)}>
             <div className = "challenge-title">
-              {challenge.title}
+              <p>
+                {challenge.title}
+              </p>
+              <div className = "challenge-language">
+              {challenge.language_name}
+              </div>
             </div>
             <div className = "challenge-tags">
               {challenge.tags.map(tag => (

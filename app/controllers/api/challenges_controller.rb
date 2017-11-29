@@ -1,7 +1,7 @@
 class Api::ChallengesController < ApplicationController
 
   def index
-    @challenges = Challenge.all.includes(:tags)
+    @challenges = Challenge.all.includes(:tags, :language)
     render :index
   end
 
