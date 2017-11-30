@@ -1,0 +1,60 @@
+1
+_
+Merge Sort
+_
+Merge sort is an extremely common sorting algorithm because of it's consistent speed.
+_
+function mergeSort(arr){
+
+}
+function merge(arr1, arr2){
+
+}
+_
+Testing.isEqual(mergeSort([1,2,3,4,5]), [1,2,3,4,5], "Doesn't change sorted array.");
+Testing.isEqual(mergeSort([]), [], "Works with empty array");
+Testing.isEqual(mergeSort([1]), [1], "Works with single number");
+Testing.isEqual(mergeSort([4,2,3,2,5]), [2,2,3,4,5], "Sorts array 1.");
+Testing.isEqual(mergeSort([4,2,3,2,5,6]), [2,2,3,4,5,6], "Sorts array 2.");
+_
+## Hopefully this works
+This is a list
+  - I think
+  - Not sure
+```
+this should be code
+for(let i = 0; i < 100; i++){
+
+}
+```
+__
+1
+_
+Merge Sort
+_
+Merge sort is an extremely common sorting algorithm because of it's consistent speed.
+_
+function mergeSort(arr){
+
+}
+function merge(arr1, arr2){
+
+}
+_
+Testing.isEqual(mergeSort([1,2,3,4,5]), [1,2,3,4,5], "Doesn't change sorted array.");
+Testing.isEqual(mergeSort([]), [], "Works with empty array");
+Testing.isEqual(mergeSort([1]), [1], "Works with single number");
+Testing.isEqual(mergeSort([4,2,3,2,5]), [2,2,3,4,5], "Sorts array 1.");
+Testing.isEqual(mergeSort([4,2,3,2,5,6]), [2,2,3,4,5,6], "Sorts array 2.");
+_
+## Hopefully this works
+This is a list
+  - I think
+  - Not sure
+```
+this should be code
+for(let i = 0; i < 100; i++){
+
+}
+```
+__

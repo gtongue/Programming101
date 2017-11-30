@@ -17,7 +17,6 @@ export default (state = _emptyChallenges, action) => {
       let newState = merge({}, state);
       let keys = Object.keys(newState);
       for(let i = 0; i < keys.length; i++){
-
         if(action.file[keys[i]]){
           newState[keys[i]].skeleton = action.file[keys[i]].content;
         }

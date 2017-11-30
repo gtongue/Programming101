@@ -15,6 +15,8 @@ import ChallengeIndexContainer from
 
 import AccountContainer from '../components/user/account_container';
 
+import HomeContainer from '../components/home/home_container';
+
 export default () => (
   <div className = "app">
     <Route path = "/" component={HeaderContainer} />
@@ -24,6 +26,7 @@ export default () => (
       <ProtectedRoute path = "/challenges/:challengeId" component={ChallengeWorkspaceContainer} />
       <ProtectedRoute path = "/challenges" component={ChallengeIndexContainer} />
       <ProtectedRoute path = "/account" component={AccountContainer} />
+      <ProtectedRoute path = "/" component = {HomeContainer}/>
     </Switch>
     <Route path = "/" component={Footer} />
   </div>

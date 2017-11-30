@@ -24,7 +24,7 @@ export default (state = _emptySession, action) => {
     case COMPLETE_CHALLENGE:
       if(!newState.currentUser.completedChallenges.includes(action.challenge.challenge_id)){
         newState.currentUser.completedChallenges.push(action.challenge.challenge_id);
-        newState.currentUser.numLines += parseInt(action.challenge.numLines);
+        newState.currentUser.numLines = parseInt(newState.currentUser.numLines ) + parseInt(action.challenge.numLines);
       }
       return newState;
     default:

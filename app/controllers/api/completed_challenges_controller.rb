@@ -11,7 +11,7 @@ class Api::CompletedChallengesController < ApplicationController
   end
 
   def index
-    @completed_challenges = CompletedChallenge.order(created_at: :desc)
+    @completed_challenges = CompletedChallenge.includes(:user, :challenge).order(created_at: :desc).limit(10);
     render :index
   end
 

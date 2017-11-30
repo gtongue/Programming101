@@ -1,0 +1,26 @@
+@import "variables";
+
+.home-user {
+  display: flex;
+  float: left;
+  justify-content: space-between;
+  align-items: center;
+  width: 300px;
+  padding: 10px;
+  margin: 10px;
+  box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.4);    
+  transition: background-color .25s;
+  background-color: $grey;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.home-user h1 {
+  font-size: 20px;
+  padding: 3px 0;
+}
+
+.home-user:hover {
+  background-color: $really-dark-grey;
+}
+
