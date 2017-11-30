@@ -73,11 +73,14 @@ class ChallengeIndex extends React.Component {
               <p>
                 {challenge.title}
               </p>
-              <div className = "challenge-language">
-              {challenge.language_name}
-              </div>
+            </div>
+            <div className = "challenge-description">
+              {challenge.description}
             </div>
             <div className = "challenge-tags">
+              <div className = "challenge-language">
+                {challenge.language_name}
+              </div>
               {challenge.tags.map(tag => (
                 <div key = {tag} className = "challenge-tag">
                   {tag}

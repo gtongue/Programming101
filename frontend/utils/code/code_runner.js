@@ -8,7 +8,6 @@ const formatCode = code => {
   code = code.replace(/for/g, "loopCountingVariable = 0;for");
   code = code.replace(/while/g, "loopCountingVariable = 0;while");
   code = code.replace(/{/g, "{loopCountingVariable+=1; if(loopCountingVariable > 100000) {throw `Possible infinite loop`;}");
-  console.log(code);
   return code;
 };
 

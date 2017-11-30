@@ -1,0 +1,1 @@
+json.completed_challenges @completed_challenges

@@ -4,12 +4,12 @@
   width: 100%;
   margin-top: 5px;
   height: calc(50%);
-  background-color: $light-grey;
+  background-color: $dark-grey;
   display: flex;
   flex-direction: column;
   padding: 10px;
   color: black;
-  border: 1px solid $dark-background; 
+  border: 1px solid $light-background; 
   overflow: auto;
 }
 
@@ -17,7 +17,7 @@
   width: 100%;
   padding: 20px;
   font-size: 16px;
-  border-bottom: 1px solid $dark-background;
+  border-bottom: 1px solid $light-background;
   margin: 0 auto;
 
 }

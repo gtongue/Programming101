@@ -65,6 +65,8 @@ html, body{
   overflow: hidden;
   height: 100vh;
   tab-size: 2;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .cf:after {

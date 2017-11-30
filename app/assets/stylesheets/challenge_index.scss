@@ -12,22 +12,25 @@
 
 .challenge-item {
   position: relative;
+  flex-direction: column;
   margin: 0;
   width: calc(20% - 20px);
-  height: 300px;
-  background-color: white;
-  padding: 10px;
+  height: 200px;
+  background-color: $grey;
+  // padding: 10px;
   border-bottom: 10px solid grey;
   box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.4);
-
+  // background: #A445FF linear-gradient(136.51deg, #5599E8 0%, #9258FA 77.64%, #9951FC 86.04%, #9F4AFE 94.19%, #A445FF 100%);
+  
   transition: background-color .5s, width .1s;
   // transition: opacity .1s, width .1s, height .1s, background-color .5s;
   margin: 10px;
+  overflow: hidden;
 }
 
 .challenge-item:hover {
   cursor: pointer;
-  background-color: $light-grey;
+  background-color: $dark-grey;
 }
 
 .completed {
@@ -38,7 +41,7 @@
   border-bottom: 10px solid rgb(209, 132, 9);
 }
 
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 1300px){
   .challenge-item {
     width: calc(33.33% - 20px);
   }
@@ -50,14 +53,13 @@
 }
 
 .challenge-title {
-  display: flex;
   width: 100%;
-  color: $background;
-  font-size: 20px;
+  background-color: $item-header;
+  color: white;
+  font-size: 24px;
+  margin: 0 auto;
   text-align: center;
-  padding-bottom: 10px;
-  margin-bottom: 10px;
-  border-bottom: 1px solid $dark-background;
+  padding: 10px;
 }
 .challenge-title p {
   margin: auto 0;
@@ -67,25 +69,29 @@
   text-align: center;
   padding: 10px;
   font-size: 12px;
-  margin: 10px auto;
   text-transform: capitalize;
-  box-shadow: 1px 2px 8px 0 rgba(0, 0, 0, 0.4);  
-  width: 50%;
+  // box-shadow: 1px 2px 8px 0 rgba(0, 0, 0, 0.2);  
   background-color: $javascript;
 }
 
 .challenge-tags {
   display: flex;
+  font-size: 12px;  
   position: absolute;
   bottom: 0;
   right: 0;
 }
 
+.challenge-tags > * {
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
 .challenge-tag {
+  text-align: center;
   padding: 10px;
-  margin: 10px;
   color: white;
-  background-color: $background;
+  background-color: $tag-color;
 }
 
 .challenge-search-container {
@@ -111,4 +117,12 @@
   margin: 0;
   width: 0;
   overflow: hidden;
+}
+
+.challenge-description{
+  padding: 10px;
+  overflow: hidden;
+  font-size: 18px;
+  color: $background;
+  text-overflow: ellipsis;
 }

@@ -10,6 +10,11 @@ class Api::CompletedChallengesController < ApplicationController
     render :show
   end
 
+  def index
+    @completed_challenges = CompletedChallenge.order(created_at: :desc)
+    render :index
+  end
+
   private
   def challengeParams
     params.require(:completedchallenge).permit(:user_id, :challenge_id, :lines_written)

@@ -5,6 +5,7 @@ class CreateChallenges < ActiveRecord::Migration[5.1]
       t.string :title, null: false
       t.text :skeleton, null: false
       t.text :solution, null: false
+      t.text :description, nullL: false
       t.text :tests, null: false
       t.text :steps, null: false
       t.timestamps

@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20171127220252) do
     t.string "title", null: false
     t.text "skeleton", null: false
     t.text "solution", null: false
+    t.text "description"
     t.text "tests", null: false
     t.text "steps", null: false
     t.datetime "created_at", null: false
