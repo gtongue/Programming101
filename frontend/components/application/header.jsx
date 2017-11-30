@@ -6,25 +6,31 @@ class Header extends React.Component{
     super(props);
     this.openMenu = this.openMenu.bind(this);
     this.closeMenu = this.closeMenu.bind(this);
+    this.handleHamburger = this.handleHamburger.bind(this);
     this.open = false;
   }
-
   componentDidMount()
   {
-    let hamburger = $('.hamburger');
-    hamburger.click(() => {
-      if (  hamburger.css( "transform" ) === 'none' ){
-        this.openMenu();
-      } else {
-        this.closeMenu();
-      }
-    });
-
     $(".app").click( evt => {
       if(this.open && !evt.target.className.includes("hamburger")){
         this.closeMenu();
       }
     });
+  }
+
+  componentWillUnmount()
+  {
+    $(".app").off("click");
+  }
+
+  handleHamburger()
+  {
+    let hamburger = $('.hamburger');
+    if (  hamburger.css( "transform" ) === 'none' ){
+      this.openMenu();
+    } else {
+      this.closeMenu();
+    }
   }
 
   openMenu()
@@ -47,6 +53,7 @@ class Header extends React.Component{
 
   render(){
     let { currentUser, logout } = this.props;
+    console.log(this.props);
     const display = currentUser ?  (
       <div className = "user-info">
         <p>Hello, {currentUser.username} </p>
@@ -64,18 +71,22 @@ class Header extends React.Component{
       <header className = "nav-bar">
         <div className = "opaque" />
         <div className = "title">
-          <i className ="fa fa-bars fa-lg hamburger" aria-hidden="true"></i>
-          <div className = "hamburger-menu">
-            <Link to = '/' 
-                  className = "hamburger-link"
-                  onClick = {this.closeMenu}> Home </Link>
-            <Link to = {`/users/${currentUser.id}`}
-                  className = "hamburger-link"
-                  onClick = {this.closeMenu}> My Account </Link>
-            <Link to = '/challenges' 
-                  className = "hamburger-link"
-                  onClick = {this.closeMenu}> Challenges </Link>
-          </div>
+          {currentUser ? 
+              <i className ="fa fa-bars fa-lg hamburger" aria-hidden="true" onClick = {this.handleHamburger}></i>
+
+            : ""}
+          {currentUser ? 
+                        <div className = "hamburger-menu">
+                        <Link to = '/' 
+                              className = "hamburger-link"
+                              onClick = {this.closeMenu}> Home </Link>
+                        <Link to = {`/users/${currentUser.id}`}
+                              className = "hamburger-link"
+                              onClick = {this.closeMenu}> My Account </Link>
+                        <Link to = '/challenges' 
+                              className = "hamburger-link"
+                              onClick = {this.closeMenu}> Challenges </Link>
+                      </div> : ""}
           <label className = "nav-bar-title1">Programming</label>
           <label className = "nav-bar-title2">200</label>
         </div>
