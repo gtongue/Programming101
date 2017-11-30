@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { generateIcon } from '../../utils/user_icon_util';
 
 class Header extends React.Component{
   constructor(props){
@@ -56,8 +57,13 @@ class Header extends React.Component{
     console.log(this.props);
     const display = currentUser ?  (
       <div className = "user-info">
-        <p>Hello, {currentUser.username} </p>
-        <button onClick = {logout}>Logout </button>
+        <Link to = {`/users/${currentUser.id}`}>
+          <div className = "user-display"> 
+            {generateIcon(currentUser.username, 100, "")} 
+            {currentUser.username} 
+            <button onClick = {logout}>Logout </button>
+          </div>
+        </Link>
       </div>
     )
     :(
@@ -87,8 +93,10 @@ class Header extends React.Component{
                               className = "hamburger-link"
                               onClick = {this.closeMenu}> Challenges </Link>
                       </div> : ""}
-          <label className = "nav-bar-title1">Programming</label>
-          <label className = "nav-bar-title2">200</label>
+          <div className = "nav-bar-title" onClick = {() => this.props.history.push("/")}>
+            <label className = "nav-bar-title1">Programming</label>
+            <label className = "nav-bar-title2">200</label>
+          </div>
         </div>
         <div className = "session-display">
           {display}

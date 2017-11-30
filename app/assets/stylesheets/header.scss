@@ -15,6 +15,10 @@
   border-bottom: 1px solid $background;
 }
 
+.nav-bar-title {
+  margin: auto 0;
+}
+
 .title, 
 .session-display {
   display: flex;
@@ -43,6 +47,7 @@
 .nav-bar-title2 {
   margin: auto 5px;
   padding: 5px;
+  cursor: pointer;  
 }
 
 .nav-bar-title1 {
@@ -153,4 +158,28 @@ button:hover {
   .session-display {
     display: none;
   }
+}
+
+.user-display{
+  display: flex;
+  align-content: center;
+  align-items: center;
+  padding: 10px;
+  text-transform: capitalize;
+}
+
+.user-display > * {
+  padding: 0 10px;
+}
+.user-display button {
+  padding: 5px 20px;
+  margin-left: 10px;
+}
+.user-info a {
+  display: flex;
+}
+
+.user-info img {
+  height: 35px;
+  width: 57px;
 }

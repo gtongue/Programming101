@@ -20,7 +20,6 @@
   text-transform: capitalize;
   font-size: 20px;
   font-weight: bold;
-  width: 20%;
 }
 
 .account-show h1 {
@@ -36,12 +35,13 @@
   align-items: center;  
   flex-direction: row;
   justify-content: space-around;
+  text-transform: capitalize;
   height: 100px;
 }
 
 .account-title * {
-  padding-top: 5px;
-  padding-bottom: 20px;
+  // padding-top: 5px;
+  // padding-bottom: 20px;
   text-align: center;
 }
 

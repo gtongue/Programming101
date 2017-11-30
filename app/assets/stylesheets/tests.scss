@@ -7,9 +7,9 @@
   background-color: $dark-grey;
   display: flex;
   flex-direction: column;
+  font-weight: 500;
   padding: 10px;
   color: black;
-  border: 1px solid $light-background; 
   overflow: auto;
 }
 
