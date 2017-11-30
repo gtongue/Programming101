@@ -69,7 +69,7 @@ class Header extends React.Component{
             <Link to = '/' 
                   className = "hamburger-link"
                   onClick = {this.closeMenu}> Home </Link>
-            <Link to = '/account' 
+            <Link to = {`/users/${currentUser.id}`}
                   className = "hamburger-link"
                   onClick = {this.closeMenu}> My Account </Link>
             <Link to = '/challenges' 

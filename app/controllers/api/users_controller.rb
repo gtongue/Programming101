@@ -5,8 +5,13 @@ class Api::UsersController < ApplicationController
       render json: @user.errors.full_messages, status: 401
     else
       login!(@user)
-      render :show
+      render :login
     end
+  end
+
+  def show
+    @user = User.includes(:completed_challenges).find(params[:id])
+    render :show
   end
 
   private

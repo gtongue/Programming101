@@ -26,7 +26,7 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
   
   def self.find_by_credentials(username, password)
-    user = User.includes(:saved_files, :completed_challenges).find_by(username: username)
+    user = User.includes(:saved_files, :completed_challenges, :challenge).find_by(username: username)
     return nil if !user || !user.is_password?(password)
     user
   end

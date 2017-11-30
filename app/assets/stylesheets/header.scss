@@ -47,14 +47,16 @@
 
 .nav-bar-title1 {
   margin-right: 0px;
-  border: 2px solid $background;
+  border: 2px solid $white;
 }
 
 .nav-bar-title2 {
   margin-left: 0px;
-  border: 2px solid $background;  
-  background-color: $background;
-  color: white;@media screen and (max-width: 1200px){
+  border: 2px solid $white;  
+  background-color: $white;
+  font-weight: 400;
+  color: black;
+  @media screen and (max-width: 1200px){
     .challenge-item {
       width: calc(33.33% - 20px);
     }
