@@ -20,12 +20,23 @@ class Home extends React.Component {
     ];
     return (
       <div className = "home cf">
-        <UserInfo 
-          messages = {[this.props.user.username]} 
-          username = {this.props.user.username}
-          onClick = {() => this.props.history.push(`/users/${this.props.user.id}`)}
-          onClickIcon = {() => this.props.history.push(`/users/${this.props.user.id}`)}
-          style = {{marginLeft: 0}}/>
+        <div className = "home-welcome">
+        <div>
+          <UserInfo 
+            messages = {["Welcome back" + this.props.user.username]} 
+            username = {this.props.user.username}
+            onClick = {() => this.props.history.push(`/users/${this.props.user.id}`)}
+            onClickIcon = {() => this.props.history.push(`/users/${this.props.user.id}`)}
+            style = {{marginLeft: 0}}/>
+          
+          <div className = "home-date">
+            {(new Date()).toDateString()}
+          </div>
+        </div>
+        <div className = "home-all-challenges" onClick = {() => this.props.history.push("/challenges")}>
+          <h1>Go to all challenges</h1>
+        </div>
+        </div>
         <CompletedChallenges completedChallenges = {this.props.completedChallenges} history = {this.props.history}/>
         <div className = "home-challenge-container">
           {this.props.challenges.slice(0,3).map((challenge, idx) => (

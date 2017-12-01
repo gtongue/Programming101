@@ -92,15 +92,14 @@
 
 
 .account-doughnut {
-  float: left;
-  width: 50%;
-  height: 50%;
+  width: 75%;
+  height: 75%;
+  margin: auto auto;
   overflow: none;
 }
 .account-line { 
-  float: left;
   height: 50%;
-  width: 50%;
+  width: 100%;
   overflow: none;
 }
 
@@ -140,4 +139,18 @@
 }
 .account-complete-challenge:hover {
   background-color: $background;
-}  
+}
+
+.account-left {
+  display: flex;
+  float: left;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+}
+.account-right {
+  display: flex;
+  width: 50%;
+  height: 100%;
+  float: left;
+}

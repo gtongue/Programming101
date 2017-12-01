@@ -6,7 +6,7 @@
 
 .home {
   height: $body-height;
-  min-width: 1300px;
+  // min-width: 1300px;
   overflow-x: auto;
   overflow-y: hidden;
   padding: 10px;
@@ -16,19 +16,10 @@
   float: left;
   width: calc(100% - 750px);
   cursor: pointer;
-  min-width: 500px;
   height: 100%;
 }
 
-.home > .home-user {
-  width: 400px;
-  height: 60px;
-  margin: 0px 15px;
-}
 
-.home > .home-user .user-messages h1 {
-  font-size: 30px;
-}
 
 .home-challenge {
   height: calc(33.33% - 13.5px);
@@ -105,9 +96,8 @@
   flex-direction: column;
   // justify-content: flex-start;
   // align-items: flex-end;
-
-
 }
+
 
 .challenge-header h1 {
   text-align: center;
@@ -121,3 +111,82 @@
 .challenge-header h2 {
   color: $white;
 }
+
+@media screen and (max-width: 1250px){
+  .challenge-header h2 {
+    display: none;
+  }
+  .challenge-header h1 {
+    border-bottom: none;
+  }
+}
+@media screen and (max-width: 1050px){
+  .challenge-header {
+    display: none;
+  }
+}
+
+
+.home-welcome {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  float: left;
+  margin-right: 10px;
+  width: 410px;
+  height: 100%;
+}
+
+.home-welcome .home-user {
+  width: 100%;
+  height: 60px;
+  min-height: 60px;
+  margin-bottom: 10px;
+}
+
+.home-welcome .home-user .user-messages h1 {
+  font-size: 25px;
+  width: 130%;
+}
+.home-welcome .home-user img {
+  margin: 0;
+  margin-right: 10px;
+}
+
+.home-date {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  color: $light-background;
+  width: 100%;
+  min-height: 100px;
+  height: 20%;
+  margin-top: 10px;
+  // background-color: $lighter-background;
+  background-color: $grey;
+}
+
+.home-all-challenges {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 1px;
+  background-color: $light-background;
+  transition: background-color .3s;
+  height: 75px;
+  width: 100%;
+}
+
+.home-all-challenges h1 {
+  color: $white;
+  width: 100%;
+  font-size: 30px;
+  text-align: center;
+  padding: 20px;
+}
+
+.home-all-challenges:hover {
+  background-color: $really-dark-grey;
+}  
+

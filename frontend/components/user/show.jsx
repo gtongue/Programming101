@@ -110,7 +110,7 @@ class Show extends React.Component{
         }
       ]
     };
-    const dodata = {
+    const completedData = {
       labels: [
         'Completed',
         'Left'
@@ -165,17 +165,18 @@ class Show extends React.Component{
           ))}
         </div>
         <div className = "account-stats">
-          <div className = "account-line" >
-            <Line data = {challengesOvertime} options = {{responsive: true, maintainAspectRatio: false}}/>
+          <div className = "account-left">
+            <div className = "account-line" >
+              <Line data = {challengesOvertime} options = {{responsive: true, maintainAspectRatio: false}}/>
+            </div>
+            <div className = "account-line" >
+              <Line data = {linesOverTime} options = {{responsive: true, maintainAspectRatio: false}}/>
+            </div>
           </div>
-          <div className = "account-doughnut">
-            <Doughnut data = {dodata} options = {{responsive: true, maintainAspectRatio: false, cutoutPercentage: 70} }/>
-          </div>
-          <div className = "account-line" >
-            <Line data = {linesOverTime} options = {{responsive: true, maintainAspectRatio: false}}/>
-          </div>
-          <div className = "account-doughnut">
-            <Doughnut data = {dodata} options = {{responsive: true, maintainAspectRatio: false}}/>
+          <div className = "account-right">
+            <div className = "account-doughnut">
+              <Doughnut data = {completedData} options = {{responsive: true, maintainAspectRatio: false, cutoutPercentage: 70} }/>
+            </div>
           </div>
         </div>
       </div>
