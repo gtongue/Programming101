@@ -25,7 +25,7 @@ __
 _
 Basic Arrays
 _
-easy
+easy, arrays
 _
 Arrays allow us to store a list of variables.
 _
@@ -69,6 +69,199 @@ _
 __
 1
 _
+Math Intro
+_
+easy, library
+_
+Javascript comes with a Math library with many helpful functions
+_
+function squareRoot(num){
+
+}
+function round(num){
+
+}
+_
+Testing.isEqual(squareRoot(4), 2, `Square Root works with even numbers`);
+Testing.isEqual(squareRoot(5), Math.sqrt(5), `Square Root works with odd numbers`);
+Testing.isEqual(round(5), 5, `Round doesn't edit whole numbers`);
+Testing.isEqual(round(4.6), 5, `Round rounds up`);
+Testing.isEqual(round(4.4), 4, `Round rounds down`);
+_
+# Math Intro
+## Javascript built in Math library provides us with tons of useful functions!
+## Try console logging Math.pow(8,4).
+  * That is 8 to the power of 4.
+## Fill in the squareRoot function using the Math library
+## Fill in the round function using the Math library
+__
+1
+_
+Array Access
+_
+easy, arrays
+_
+Arrays can be seen as a list of variables. Let's learn how to access the data once it's inside!
+_
+let arr = [1,2,3,4,5,6,7];
+let firstElement = arr[0];
+let secondElement;
+let middleElement;
+_
+Testing.isEqual(secondElement, 2, `Second element is the second element in the array`);
+Testing.isEqual(middleElement, 4, `Middle element is the middle element in the array`);
+_
+# Array Access
+## Array's are accessed using brackets. 
+## They are indexed starting at 0. Meaning the array [1,2,3] would have the indexes [0,1,2].
+## The number 1 is at the 0th index and so on.
+__
+1
+_
+Array Manipulation
+_
+easy, arrays
+_
+Arrays can be mutated(edited) once created as long as it wasn't declared with the const keyword.
+_
+let arr = [1,2,3,4,5,6,7];
+arr[0] = "hello";
+_
+Testing.isEqual(arr[6], 0, `7th element in the array is now 0`);
+Testing.isEqual(arr[5], true, `6th element in the array is now true`);
+Testing.isEqual(arr.length, 8, `There is one more element then previously`);
+_
+# Array Manipulation
+## Array's not only can accessed using brackets but also mutated by using an equals sign.
+- Set the 5th index to true
+- Set the 6th index to 0
+- Push any new element onto the array (Look at the MDN docs if you are confused here)
+__
+1
+_
+Loops
+_
+easy, arrays, loops
+_
+Loops allow us to run the same code multiple times without rewriting the same line over and over.
+_
+let arr = [1,2,3,4,5,6,7];
+let total = 0;
+for(let i = 0; i < arr.length; i++){
+  
+}
+_
+Testing.isEqual(loopCountingVariable !== 0 , true , `Loop is executed`);
+Testing.isEqual(total, 1+2+3+4+5+6+7, `Adds all the elements in the array`);
+_
+# Loops
+__
+1
+_
+Unique Substrings
+_
+medium, strings
+_
+Return an array of the unique substrings from a string
+_
+function uniqueSubstrings(string){
+
+}
+_
+Testing.isEqual(uniqueSubstrings("str"), ["s","st","str","t","tr","r"], `Returns the unique substrings`);
+_
+# Unique Substrings
+## Return an array of the unique substrings from a string
+__
+1
+_
+Casesar Cipher
+_
+medium, strings
+_
+Return a string where every character has been shifted n characters.
+_
+function casesarCipher(string, shift){
+
+}
+_
+Testing.isEqual(casesarCipher("aaa",11),"lll", `Encodes simple word`);
+Testing.isEqual(casesarCipher("zzz",1),"aaa", `Wraps around z`);
+Testing.isEqual(casesarCipher("catz haz",2),"ecvb jcvb", `Works with multiple words`);
+_
+# Caesar Cipher
+__
+1
+_
+Factors
+_
+medium, numbers
+_
+Return an array of factors of the passed in number in ascending order
+_
+function factors(num){
+
+}
+_
+Testing.isEqual(factors(10),[1,2,5,10], `Returns the factors of 10`);
+Testing.isEqual(factors(13),[1,13], `Returns the factors of 13`);
+_
+# Factors
+__
+1
+_
+Two Sum
+_
+medium, arrays, numbers
+_
+Returns a boolean wheather or not there is a pair of numbers that add to 0
+_
+function twoSum(arr){
+
+}
+_
+Testing.isEqual(twoSum([5,1,-7,-5]), true, `Finds a matching pair`);
+Testing.isEqual(twoSum([5,1,-7,-4]), false, `Finds no matching pair`);
+_
+# Two Sum
+## Returns a boolean wheather or not there is a pair of numbers that add to 0
+__
+1
+_
+Is Prime?
+_
+medium, numbers
+_
+Returns a boolean wheather or not a number is prime
+_
+function isPrime(num){
+
+}
+_
+Testing.isEqual(isPrime(10), false, `Returns false when 10`);
+Testing.isEqual(isPrime(2), true, `Returns true when 2`);
+_
+# Is Prime?
+__
+1
+_
+Nth Prime
+_
+medium-hard, numbers
+_
+Returns the nth prime number
+_
+function nthPrime(n){
+
+}
+_
+Testing.isEqual(nthPrime(1), 2, `Returns the first prime number`);
+Testing.isEqual(nthPrime(5), 11, `Returns the fifth prime number`);
+_
+# Is Prime?
+__
+1
+_
 Merge Sort
 _
 hard,sorting
@@ -90,4 +283,25 @@ Testing.isEqual(mergeSort([4,2,3,2,5,6]), [2,2,3,4,5,6], "Sorts array 2.");
 _
 # Merge Sort
 ## [Khan Academy Link](https://www.khanacademy.org/computing/computer-science/algorithms/merge-sort/a/overview-of-merge-sort)
+__
+1
+_
+Bubble Sort
+_
+medium,sorting
+_
+Bubble sort, sometimes referred to as sinking sort, is a simple sorting algorithm that repeatedly steps through the list to be sorted.
+_
+function bubbleSort(arr){
+
+}
+_
+Testing.isEqual(bubbleSort([1,2,3,4,5]), [1,2,3,4,5], "Doesn't change sorted array.");
+Testing.isEqual(bubbleSort([]), [], "Works with empty array");
+Testing.isEqual(bubbleSort([1]), [1], "Works with single number");
+Testing.isEqual(bubbleSort([4,2,3,2,5]), [2,2,3,4,5], "Sorts array 1.");
+Testing.isEqual(bubbleSort([4,2,3,2,5,6]), [2,2,3,4,5,6], "Sorts array 2.");
+_
+# Bubble Sort
+## [Stoimen's Web Log](http://www.stoimen.com/blog/2010/07/09/friday-algorithms-javascript-bubble-sort/)
 __
