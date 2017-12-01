@@ -47,9 +47,12 @@
   z-index: 0;
   animation-name: fadeIn;
   animation-duration: 2s;
-  height: 80%;
-  width: 50%;
-  background-color: white;
+  height: 525px;
+  width: 1000px;
+  // background-color: white;
+  background-image: image-url("signup.png");
+  background-size: cover;
+  
 }
 
 .session-div::after,

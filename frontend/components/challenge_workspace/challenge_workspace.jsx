@@ -88,12 +88,12 @@ class ChallengeWorkspace extends React.Component {
       this.saveFile();
       this.props.clearTerminal();
       this.props.clearErrors();
-      runCodeAsync(this.state.code);
       if(this.state.success.length === 0){
         setTimeout(() => $('.challenge-success').css("animation-name", "slideOutRight"), 2000);
         setTimeout(() => this.setState({success: []}), 3000);
       }
       this.setState({success: ["Running Code..."]});      
+      runCodeAsync(this.state.code);
     };
   }
   
@@ -119,15 +119,22 @@ class ChallengeWorkspace extends React.Component {
       mode: "javascript",
       matchBrackets: true,
       autoCloseBrackets: true,
-      tabSize: 4
+      tabSize: 2
     };
     return (
       <div className= "challenge cf">
         {
-          this.state.completed ? (
+          (this.state.completed) ? (
             <div className = "completion-modal-container">
               <div className = "completion-modal">
-                <h1> Congratualations! You Completed { /*this.props.challenge.title*/ }</h1>
+                <div className = "modal-top">
+                  <h1> Congratulations! You Completed { this.props.challenge.title }</h1>
+                  <h2> You wrote {(this.state.code.match(/\n/g) || []).length + 1} lines!</h2>
+                </div>
+                <div className = "modal-buttons">
+                  <button onClick = {() => this.props.history.push('/')}>Home</button>
+                  <button onClick = {() => this.props.history.push('/challenges')}>More Challenges</button>
+                </div>
               </div>
             </div>
           ) : ""

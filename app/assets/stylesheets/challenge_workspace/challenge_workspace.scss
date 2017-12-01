@@ -148,18 +148,61 @@
 .completion-modal {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   margin: auto 0;
   animation-name: slideInDown;
   animation-duration: 1s;
   width: 80%;
   height: 600px;
-  padding: 15px;
-  background-color: white;
+  // padding: 15px;
+  background-color: $grey;
+}
+.modal-top{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 70%;
+  background: $passed linear-gradient(304.95deg, #05b95d 0%, #16D4BE 100%);
+}
+.completion-modal h1 {
+  font-size: 60px;
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+  margin: auto 0;
+  font-weight: 300;
+  color: white;
+  padding-bottom: 5px;
+}
+.completion-modal h2 {
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+  margin: auto 0;
+  font-weight: 300;
+  color: white;
+  padding-bottom: 5px;
+  font-size: 40px;
+}
+.modal-buttons {
+  display: flex;
+  justify-content: space-around;
+  height: 75px;
+  width: 100%;
 }
 
-.completion-modal h1 {
-  font-size: 34px;
-  margin: 0 auto;
-  padding-bottom: 5px;
-  border-bottom: 1px solid $really-dark-grey;
+.modal-buttons button {
+  background-color: rgba($color: #000000, $alpha: 0.0);
+  color: black;
+  font-size: 30px;
+  width: 40%;
+  height: 75px;
+  margin: -50px 0;
+  transition: transform .3s ease;
+}
+
+.modal-buttons button:hover {
+  background-color: rgba($color: #000000, $alpha: 0.0);
+  color: $lighter-background;
+  transform: translate(0,-5px);
 }

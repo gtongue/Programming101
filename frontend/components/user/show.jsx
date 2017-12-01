@@ -175,7 +175,7 @@ class Show extends React.Component{
           </div>
           <div className = "account-right">
             <div className = "account-doughnut">
-              <Doughnut data = {completedData} options = {{responsive: true, maintainAspectRatio: false, cutoutPercentage: 80} }/>
+              <Doughnut data = {completedData} options = {{responsive: true, maintainAspectRatio: false, cutoutPercentage: 60} }/>
             </div>
           </div>
         </div>
