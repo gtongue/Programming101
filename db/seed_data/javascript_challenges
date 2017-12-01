@@ -1,32 +1,65 @@
 1
 _
-Merge Sort
+Variables
 _
-Merge sort is an extremely common sorting algorithm because of it's consistent speed.
+Variables are how we store information. Examples of varialbes can be numbers, strings, booleans, and more!
 _
-function mergeSort(arr){
+let number;
+let string;
+let boolean;
+_
+Testing.isEqual(string, "hello world", "Declare the variable string = 'hello world'");
+Testing.isEqual(boolean, false, "Declare the variable boolean = false");
+Testing.isEqual(number, 5, "Declare the variable number = 5");
+_
+# Variables
+## To declare a variable we can use the let, const, or var keyword. We will discuss the differences later.
+## Declare a variable of type string and boolean
+  * Try to declare a variable called number with the value 5
+  * Try to declare a variable called string with the value "hello world" 
+  * Try to declare a variable called boolean with the value false 
+__
+1
+_
+Basic Arrays
+_
+Arrays allow us to store a list of variables.
+_
+let numberArr = [];
+let stringArr = [];
+let combinedArr = [];
+_
+Testing.isEqual(numberArr, [1,2,3,4], `Declare an array of numbers with the values [1,2,3,4]`);
+Testing.isEqual(stringArr, ["hello","arrays"], `Declare an array of strings with the values ["hello", "arrays"]`);
+Testing.isEqual(combinedArr, [1,"hello",2,"world",true], `Declare an array of combined values [1,"hello",2,"world",true]`);
+_
+# Basic Arrays
+## To declare an array we use brackets. Inside of the brackets can be whatever variables you want such as [1,2,3]
+## Declare three different arrays
+  * Try to declare an array with the four numbers 1,2,3,4
+  * Try to declare an array with the two strings "hello" and "world" 
+  * Try to declare an array with different types of values [1,"hello",2,"world",true]
+__
+1
+_
+Function Intro
+_
+Functions are a section of code that we can use to perform a specific task
+_
+function subtractTwoNumbers(number1, number2){
+  return number1 - number2;
+}
+
+function addTwoNumbers(number1, number2){
 
 }
-function merge(arr1, arr2){
-
-}
 _
-Testing.isEqual(mergeSort([1,2,3,4,5]), [1,2,3,4,5], "Doesn't change sorted array.");
-Testing.isEqual(mergeSort([]), [], "Works with empty array");
-Testing.isEqual(mergeSort([1]), [1], "Works with single number");
-Testing.isEqual(mergeSort([4,2,3,2,5]), [2,2,3,4,5], "Sorts array 1.");
-Testing.isEqual(mergeSort([4,2,3,2,5,6]), [2,2,3,4,5,6], "Sorts array 2.");
+Testing.isEqual(addTwoNumbers(5,-4), 1, `Function adds two numbers together`);
 _
-## Hopefully this works
-This is a list
-  - I think
-  - Not sure
-```
-this should be code
-for(let i = 0; i < 100; i++){
-
-}
-```
+# Function Intro
+## To declare we use the function keyword followed by curly braces marking the beginning and end of the function 
+## Fill in the function addTwoNumbers
+  * add number1 and number2 and return the result
 __
 1
 _

@@ -11,6 +11,7 @@ class Api::UsersController < ApplicationController
 
   def show
     @user = User.includes(:completed_challenges).find(params[:id])
+    @challenges = Challenge.all
     render :show
   end
 

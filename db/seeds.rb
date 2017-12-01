@@ -94,3 +94,23 @@ TagsJoin.create({challenge_id: 1, tag_id: 4})
 TagsJoin.create({challenge_id: 3, tag_id: 2})
 TagsJoin.create({challenge_id: 3, tag_id: 4})
 TagsJoin.create({challenge_id: 2, tag_id: 3})
+
+challenge = CompletedChallenge.new({user_id: 1, challenge_id: 1, lines_written: 10});
+SavedFile.create({user_id: 1, challenge_id: 1, content: "TODO"});
+challenge.created_at = Date.new(2007, 5, 12)
+challenge.save!
+
+challenge = CompletedChallenge.new({user_id: 1, challenge_id: 2, lines_written: 23});
+SavedFile.create({user_id: 1, challenge_id: 2, content: "TODO"});
+challenge.created_at = Date.new(2007, 6, 12)
+challenge.save!
+
+challenge = CompletedChallenge.new({user_id: 1, challenge_id: 3, lines_written: 42});
+SavedFile.create({user_id: 1, challenge_id: 3, content: "TODO"});
+challenge.created_at = Date.new(2008, 5, 12)
+challenge.save!
+
+# challenge = CompletedChallenge.new({user_id: 1, challenge_id: 4, lines_written: 19});
+# SavedFile.create({user_id: 1, challenge_id: 4, content: "TODO"});
+# challenge.created_at = Date.new(2008, 12, 12)
+# challenge.save!

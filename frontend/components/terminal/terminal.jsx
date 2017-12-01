@@ -24,16 +24,9 @@ class Terminal extends React.Component{
   render()
   {
     return (
-      // <div className = "terminal-container">
-      //   <div className = "terminal-header">
-      //     <p>
-      //       Terminal
-      //     </p>
-      //   </div>
-        <textarea className = "terminal" 
-          value = {this.state.output}
-        />
-      // </div>
+      <textarea className = "terminal" 
+        value = {this.state.output}
+      />
     );
   }
 

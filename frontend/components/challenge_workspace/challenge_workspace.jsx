@@ -61,7 +61,7 @@ class ChallengeWorkspace extends React.Component {
         this.props.completeChallenge(
             this.props.challenge.id,
             this.props.userId, 
-            (this.state.code.match(/\n/g) || []).length);
+            (this.state.code.match(/\n/g) || []).length + 1);
       }
     }
   }
