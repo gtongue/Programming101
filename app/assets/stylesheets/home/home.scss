@@ -134,6 +134,7 @@
   float: left;
   margin-right: 10px;
   width: 410px;
+  font-weight: 300;    
   height: 100%;
 }
 
@@ -158,13 +159,13 @@
   justify-content: center;
   align-items: center;
   font-size: 30px;
-  color: $light-background;
+  color: $white;
   width: 100%;
   min-height: 100px;
   height: 20%;
   margin-top: 10px;
-  // background-color: $lighter-background;
-  background-color: $grey;
+  background-color: $lighter-background;
+  // background-color: $grey;
 }
 
 .home-all-challenges {
