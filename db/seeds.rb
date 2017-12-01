@@ -1,5 +1,18 @@
 
-
+Language.create!([
+  {name: "javascript"},
+  {name: "ruby"},
+  {name: "html"},
+  {name: "css"}
+])
+User.create!({username: "demo", email: "demo", password_digest: "$2a$10$fCYrmNv.7/4nJWR8Ee5ZZeBXY93XJtv2HKj.Y8CW8zxRbHPedlBJO", session_token: "LzocqmwCs5Q7XYtzLKHcvg"})
+users = User.create!([
+  {username: "garrett", email: "demo1", password_digest: "$2a$10$RRE2sSLJ8LEppWlpuRKNrO3U/bsI78NV9vL8Lv.ZU53OY9Gsh7Tpe", session_token: "M315w1vsgXUgjxdO7uD7QQ"},
+  {username: "patrick", email: "demo2", password_digest: "$2a$10$IuaV1fu2rXErJMUDKFuKVOCAuc5DhSybu1LhEkP5i8Y5RS1ELLHpi", session_token: "h3iRH6H6idJD_ks59JtCRw"},
+  {username: "adam", email: "demo3", password_digest: "$2a$10$qWwdJ57397fcNAk8ChmC.OtWex0O0DqExP7pgcAPDF4dLwIO/uG3O", session_token: "6fFBWNiKwe8-TaMhH2xMzA"},
+  {username: "julien", email: "demo4", password_digest: "$2a$10$nUktC/96WvVdO80NWEOYZuIvYqmsrmOm0OcPUeefM2mX.iwmOlkfq", session_token: "CP96YdDDeFsW7D-iRN16pg"},
+  {username: "kevin", email: "sdfsd", password_digest: "$2a$10$iJQV9K7qrvPY/uXE.afVW.zYZp2iUT3z6IyzpC//cHVY0oCTzM7jq", session_token: "PytYVitP26P9dZw2_TdjCg"}
+])
 Challenge.create!([
   {language_id: 1, title: "Variables", skeleton: "let number;\nlet string;\nlet boolean;", solution: "TODO", description: "Variables are how we store information. Examples of varialbes can be numbers, strings, booleans, and more!", tests: "Testing.isEqual(string, \"hello world\", \"Declare the variable string = 'hello world'\");\nTesting.isEqual(boolean, false, \"Declare the variable boolean = false\");\nTesting.isEqual(number, 5, \"Declare the variable number = 5\");", steps: "# Variables\n## To declare a variable we can use the let, const, or var keyword. We will discuss the differences later.\n## Declare a variable of type string and boolean\n  * Try to declare a variable called number with the value 5\n  * Try to declare a variable called string with the value \"hello world\" \n  * Try to declare a variable called boolean with the value false "},
   {language_id: 1, title: "Basic Arrays", skeleton: "let numberArr = [];\nlet stringArr = [];\nlet combinedArr = [];", solution: "TODO", description: "Arrays allow us to store a list of variables.", tests: "Testing.isEqual(numberArr, [1,2,3,4], `Declare an array of numbers with the values [1,2,3,4]`);\nTesting.isEqual(stringArr, [\"hello\",\"arrays\"], `Declare an array of strings with the values [\"hello\", \"arrays\"]`);\nTesting.isEqual(combinedArr, [1,\"hello\",2,\"world\",true], `Declare an array of combined values [1,\"hello\",2,\"world\",true]`);", steps: "# Basic Arrays\n## To declare an array we use brackets. Inside of the brackets can be whatever variables you want such as [1,2,3]\n## Declare three different arrays\n  * Try to declare an array with the four numbers 1,2,3,4\n  * Try to declare an array with the two strings \"hello\" and \"arrays\" \n  * Try to declare an array with different types of values [1,\"hello\",2,\"world\",true]"},
@@ -23,12 +36,7 @@ CompletedChallenge.create!([
   {user_id: 1, challenge_id: 5, lines_written: 4},
   {user_id: 1, challenge_id: 7, lines_written: 5}
 ])
-Language.create!([
-  {name: "javascript"},
-  {name: "ruby"},
-  {name: "html"},
-  {name: "css"}
-])
+
 SavedFile.create!([
   {user_id: 1, challenge_id: 1, content: "let number = 5;\nlet string = \"hello world\";\nlet boolean = false;"},
   {user_id: 1, challenge_id: 3, content: "function subtractTwoNumbers(number1, number2){\n  return number1 - number2;\n}\n\nfunction addTwoNumbers(number1, number2){\n\treturn number1 + number2;\n}"},
@@ -80,14 +88,7 @@ TagsJoin.create!([
   {challenge_id: 15, tag_id: 5},
   {challenge_id: 15, tag_id: 10}
 ])
-User.create!({username: "demo", email: "demo", password_digest: "$2a$10$fCYrmNv.7/4nJWR8Ee5ZZeBXY93XJtv2HKj.Y8CW8zxRbHPedlBJO", session_token: "LzocqmwCs5Q7XYtzLKHcvg"})
-users = User.create!([
-  {username: "garrett", email: "demo1", password_digest: "$2a$10$RRE2sSLJ8LEppWlpuRKNrO3U/bsI78NV9vL8Lv.ZU53OY9Gsh7Tpe", session_token: "M315w1vsgXUgjxdO7uD7QQ"},
-  {username: "patrick", email: "demo2", password_digest: "$2a$10$IuaV1fu2rXErJMUDKFuKVOCAuc5DhSybu1LhEkP5i8Y5RS1ELLHpi", session_token: "h3iRH6H6idJD_ks59JtCRw"},
-  {username: "adam", email: "demo3", password_digest: "$2a$10$qWwdJ57397fcNAk8ChmC.OtWex0O0DqExP7pgcAPDF4dLwIO/uG3O", session_token: "6fFBWNiKwe8-TaMhH2xMzA"},
-  {username: "julien", email: "demo4", password_digest: "$2a$10$nUktC/96WvVdO80NWEOYZuIvYqmsrmOm0OcPUeefM2mX.iwmOlkfq", session_token: "CP96YdDDeFsW7D-iRN16pg"},
-  {username: "kevin", email: "sdfsd", password_digest: "$2a$10$iJQV9K7qrvPY/uXE.afVW.zYZp2iUT3z6IyzpC//cHVY0oCTzM7jq", session_token: "PytYVitP26P9dZw2_TdjCg"}
-])
+
 
 allChallenges = Challenge.all
 users.each do |user|

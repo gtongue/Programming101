@@ -5,6 +5,9 @@
 
 Programming 200 is a full-stack web applicaiton that takes inspirtation from codecademy, codewars, and codefights. The app allows users to take programming challenges and track their progress. The backend is using Ruby of Rails 5.1.4 with a PostgreSQL database. The frontend is using React Redux. 
 
+# Why Rails and React/Redux?
+<!-- This project was created completed in two weeks -->
+
 # Features
 ## Home Page
 - Hamburger Menu
@@ -27,7 +30,7 @@ Programming 200 is a full-stack web applicaiton that takes inspirtation from cod
 ## User Authentication
 ![](readme-assets/signup.png)
 
-## Challenges
+## Challenge Workspace
 - Code editor with execution
 - Terminal
 - Tests
@@ -107,7 +110,7 @@ export const runCodeAsync = (codeString) => {
 ![](readme-assets/print_out.png)
 
 # Plans
-- Expand the number of languages (ruby, css, html)
-- Expand the number of challenges
+- Expand the number of languages supported (ruby, css, html). Possibly by using Amazon's lambda service
+- Expand the number of challenges to 50+
 - More extensive testing library
-- More efficient
+- More efficient terminal output and error handling
