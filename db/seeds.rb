@@ -6,7 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create({username: "demo", email: "demo", password: "password"});
+user1 = User.create({username: "demo", email: "demo", password: "password"});
+user2 = User.create({username: "gtongue", email: "demo1", password: "password"});
+user3 = User.create({username: "john", email: "demo2", password: "password"});
+user4 = User.create({username: "adam", email: "demo3", password: "password"});
+user5 = User.create({username: "demo2", email: "demo4", password: "password"});
 
 Language.create({name: "javascript"});
 Language.create({name: "ruby"});
@@ -66,6 +70,12 @@ while(javascriptChallengeString != "")
   nextValue = javascriptChallengeString[0...nextIndex-1]
   javascriptChallengeString = javascriptChallengeString[nextIndex+2..-1]
   challenge.title = nextValue
+  
+  nextIndex = javascriptChallengeString.index("_")
+  nextValue = javascriptChallengeString[0...nextIndex-1]
+  javascriptChallengeString = javascriptChallengeString[nextIndex+2..-1]
+  tags = nextValue.split(",")
+  
   nextIndex = javascriptChallengeString.index("_")
   nextValue = javascriptChallengeString[0...nextIndex-1]
   javascriptChallengeString = javascriptChallengeString[nextIndex+2..-1]
@@ -87,26 +97,68 @@ while(javascriptChallengeString != "")
   end
   challenge.solution = "TODO"
   challenge.save!
+  tags.each do |tag|
+    dbtag = Tag.find_by(tag: tag)
+    if dbtag
+      TagsJoin.create({tag_id: dbtag.id, challenge_id: challenge.id})
+    else
+      dbtag = Tag.create({tag: tag})
+      TagsJoin.create({tag_id: dbtag.id, challenge_id: challenge.id})
+    end
+  end
 end
 
-TagsJoin.create({challenge_id: 1, tag_id: 2})
-TagsJoin.create({challenge_id: 1, tag_id: 4})
-TagsJoin.create({challenge_id: 3, tag_id: 2})
-TagsJoin.create({challenge_id: 3, tag_id: 4})
-TagsJoin.create({challenge_id: 2, tag_id: 3})
+# TagsJoin.create({challenge_id: 1, tag_id: 2})
+# TagsJoin.create({challenge_id: 1, tag_id: 4})
+# TagsJoin.create({challenge_id: 3, tag_id: 2})
+# TagsJoin.create({challenge_id: 3, tag_id: 4})
+# TagsJoin.create({challenge_id: 2, tag_id: 3})
 
-challenge = CompletedChallenge.new({user_id: 1, challenge_id: 1, lines_written: 10});
-SavedFile.create({user_id: 1, challenge_id: 1, content: "TODO"});
+challenge = CompletedChallenge.new({user_id: user1.id, challenge_id: 1, lines_written: 10});
 challenge.created_at = Date.new(2007, 5, 12)
 challenge.save!
 
-challenge = CompletedChallenge.new({user_id: 1, challenge_id: 2, lines_written: 23});
-SavedFile.create({user_id: 1, challenge_id: 2, content: "TODO"});
+challenge = CompletedChallenge.new({user_id: user1.id, challenge_id: 2, lines_written: 23});
 challenge.created_at = Date.new(2007, 6, 12)
 challenge.save!
 
-challenge = CompletedChallenge.new({user_id: 1, challenge_id: 3, lines_written: 42});
-SavedFile.create({user_id: 1, challenge_id: 3, content: "TODO"});
+challenge = CompletedChallenge.new({user_id: user1.id, challenge_id: 3, lines_written: 42});
+challenge.created_at = Date.new(2008, 5, 12)
+challenge.save!
+
+challenge = CompletedChallenge.new({user_id: user2.id, challenge_id: 1, lines_written: 10});
+challenge.created_at = Date.new(2007, 5, 12)
+challenge.save!
+
+challenge = CompletedChallenge.new({user_id: user2.id, challenge_id: 2, lines_written: 23});
+challenge.created_at = Date.new(2007, 6, 12)
+challenge.save!
+
+challenge = CompletedChallenge.new({user_id: user2.id, challenge_id: 3, lines_written: 42});
+challenge.created_at = Date.new(2008, 5, 12)
+challenge.save!
+
+challenge = CompletedChallenge.new({user_id: user3.id, challenge_id: 1, lines_written: 10});
+challenge.created_at = Date.new(2007, 5, 12)
+challenge.save!
+
+challenge = CompletedChallenge.new({user_id: user3.id, challenge_id: 2, lines_written: 23});
+challenge.created_at = Date.new(2007, 6, 12)
+challenge.save!
+
+challenge = CompletedChallenge.new({user_id: user3.id, challenge_id: 3, lines_written: 42});
+challenge.created_at = Date.new(2008, 5, 12)
+challenge.save!
+
+challenge = CompletedChallenge.new({user_id: user4.id, challenge_id: 1, lines_written: 10});
+challenge.created_at = Date.new(2007, 5, 12)
+challenge.save!
+
+challenge = CompletedChallenge.new({user_id: user4.id, challenge_id: 2, lines_written: 23});
+challenge.created_at = Date.new(2007, 6, 12)
+challenge.save!
+
+challenge = CompletedChallenge.new({user_id: user4.id, challenge_id: 3, lines_written: 42});
 challenge.created_at = Date.new(2008, 5, 12)
 challenge.save!
 

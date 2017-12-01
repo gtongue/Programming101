@@ -1,0 +1,44 @@
+/* line 3, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/home/user-info.scss */
+.home-user {
+  display: flex;
+  float: left;
+  justify-content: space-between;
+  align-items: center;
+  width: 300px;
+  transition: background-color .25s;
+  background-color: #dadada;
+  text-transform: capitalize;
+}
+
+/* line 14, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/home/user-info.scss */
+.home-user h1 {
+  font-size: 20px;
+  padding: 3px 0;
+}
+
+/* line 23, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/home/user-info.scss */
+.home-user img {
+  transition: transform .3s ease;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+/* line 29, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/home/user-info.scss */
+.home-user img:hover {
+  transform: scale(1.1);
+}
+
+/* line 33, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/home/user-info.scss */
+.completed-left-side {
+  height: 90%;
+  padding: 5px 0px 5px 20px;
+  cursor: pointer;
+  width: 60%;
+  transition: transform .3s ease;
+}
+
+/* line 41, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/home/user-info.scss */
+.completed-left-side:hover {
+  color: #286594;
+  transform: translate(5px, 0px);
+}

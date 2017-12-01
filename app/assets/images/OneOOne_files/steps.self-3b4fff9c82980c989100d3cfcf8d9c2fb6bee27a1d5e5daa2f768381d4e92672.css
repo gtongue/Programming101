@@ -1,0 +1,56 @@
+/* line 3, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/challenge_workspace/steps.scss */
+.steps {
+  background-color: #a1a1a1;
+  height: 100%;
+  padding: 10px;
+  overflow-x: auto;
+  color: #2a343b;
+}
+
+/* line 10, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/challenge_workspace/steps.scss */
+.steps > * {
+  padding: 5px;
+  margin: 5px;
+}
+
+/* line 15, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/challenge_workspace/steps.scss */
+.steps ul {
+  padding-left: 15px;
+  list-style: circle;
+}
+
+/* line 19, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/challenge_workspace/steps.scss */
+.steps > ul {
+  list-style-type: disc;
+}
+
+/* line 22, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/challenge_workspace/steps.scss */
+.steps li {
+  padding: 5px;
+}
+
+/* line 25, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/challenge_workspace/steps.scss */
+.steps h1 {
+  font-size: 24px;
+  text-align: center;
+  color: #324452;
+  border-bottom: 1px solid black;
+}
+
+/* line 32, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/challenge_workspace/steps.scss */
+.steps h2 {
+  font-size: 20px;
+}
+
+/* line 36, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/challenge_workspace/steps.scss */
+.steps pre {
+  background-color: #272822;
+  padding: 25px;
+}
+
+/* line 41, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/challenge_workspace/steps.scss */
+.steps code {
+  font-size: 14px;
+  font-weight: 300;
+  color: white;
+}

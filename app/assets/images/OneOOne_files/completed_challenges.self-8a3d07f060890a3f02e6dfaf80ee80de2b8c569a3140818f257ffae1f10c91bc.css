@@ -1,0 +1,43 @@
+/* line 3, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/home/completed_challenges.scss */
+.home-completed-display {
+  float: right;
+  width: 320px;
+  height: 100%;
+  background-color: #dadada;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+/* line 10, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/home/completed_challenges.scss */
+.home-completed-display .home-user {
+  margin-bottom: 0;
+  margin-top: 0;
+  width: 100%;
+  box-shadow: none;
+  border-bottom: 1px solid #a1a1a1;
+  height: 9%;
+  min-height: 60px;
+}
+/* line 26, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/home/completed_challenges.scss */
+.home-completed-display .home-user h1 {
+  font-size: 16px;
+}
+/* line 29, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/home/completed_challenges.scss */
+.home-completed-display .home-user h1:last-child {
+  font-size: 24px;
+  color: #324452;
+}
+/* line 34, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/home/completed_challenges.scss */
+.home-completed-display .home-user:last-of-type {
+  border-bottom: none;
+  margin-bottom: 10px;
+}
+
+/* line 39, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/home/completed_challenges.scss */
+.home-completed-display > h1 {
+  text-align: center;
+  color: white;
+  height: 60px;
+  font-size: 24px;
+  padding: 5px;
+  background-color: #324452;
+}

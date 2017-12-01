@@ -1,0 +1,206 @@
+/* line 3, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/header.scss */
+.nav-bar {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 50px;
+  background-color: #324452;
+  font-size: 20px;
+  font-weight: 300;
+  border-bottom: 1px solid #2a343b;
+  z-index: 1;
+}
+
+/* line 19, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/header.scss */
+.nav-bar-title {
+  margin: auto 0;
+}
+
+/* line 23, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/header.scss */
+.title,
+.session-display {
+  display: flex;
+  margin: auto 25px;
+  height: 30px;
+}
+
+/* line 30, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/header.scss */
+.nav-links,
+.nav-bar p {
+  margin: auto 5px;
+  padding: 5px;
+  text-decoration: none;
+  transition: background-color .5s;
+  border-radius: 3px;
+}
+
+/* line 39, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/header.scss */
+.nav-links {
+  font-weight: 500;
+}
+
+/* line 43, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/header.scss */
+.nav-links:hover {
+  background-color: rgba(204, 204, 204, 0.39);
+}
+
+/* line 47, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/header.scss */
+.nav-bar-title1,
+.nav-bar-title2 {
+  margin: auto 5px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+/* line 54, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/header.scss */
+.nav-bar-title1 {
+  margin-right: 0px;
+  border: 2px solid white;
+}
+
+/* line 59, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/header.scss */
+.nav-bar-title2 {
+  margin-left: 0px;
+  border: 2px solid white;
+  background-color: white;
+  font-weight: 400;
+  color: black;
+}
+@media screen and (max-width: 1200px) {
+  /* line 66, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/header.scss */
+  .nav-bar-title2 .challenge-item {
+    width: calc(33.33% - 20px);
+  }
+}
+
+/* line 72, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/header.scss */
+.user-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* line 78, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/header.scss */
+button {
+  background-color: #193441;
+  letter-spacing: 1px;
+  border: none;
+  border-style: none;
+  color: white;
+  font-weight: 300;
+  font-size: 20px;
+  border-radius: 0px;
+  text-align: center;
+  padding: 5px 15px;
+  transition: background-color .5s;
+  cursor: pointer;
+}
+
+/* line 94, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/header.scss */
+button:hover {
+  background-color: #5c5c5c;
+}
+
+/* line 98, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/header.scss */
+.hamburger {
+  cursor: pointer;
+  margin: auto 0;
+  margin-right: 10px;
+  transition: transform .5s;
+  z-index: 200;
+}
+
+/* line 106, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/header.scss */
+.hamburger-menu {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 100%;
+  top: 0px;
+  background: #5c5c5c;
+  padding-top: 100px;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  transform: translate(-350px, 0);
+  transition: transform 0.5s;
+  z-index: 100;
+}
+
+/* line 123, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/header.scss */
+.hamburger-link {
+  text-align: center;
+  font-size: 30px;
+  margin: 0 auto;
+  padding: 25px 0;
+  width: 80%;
+  border-bottom: 1px solid #2a343b;
+  font-weight: 400;
+  color: white;
+  transition: color .5s;
+}
+
+/* line 135, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/header.scss */
+.hamburger-link:hover {
+  color: #2a343b;
+}
+
+/* line 139, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/header.scss */
+.hamburger-check {
+  width: 50px;
+  height: 50px;
+  display: block;
+}
+
+/* line 145, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/header.scss */
+.opaque {
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  transition: opacity .5s;
+  background-color: black;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 50;
+}
+
+@media screen and (max-width: 500px) {
+  /* line 159, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/header.scss */
+  .session-display {
+    display: none;
+  }
+}
+/* line 164, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/header.scss */
+.user-display {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  padding: 10px;
+  text-transform: capitalize;
+}
+
+/* line 172, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/header.scss */
+.user-display > * {
+  padding: 0 10px;
+}
+
+/* line 175, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/header.scss */
+.user-display button {
+  padding: 5px 20px;
+  margin-left: 10px;
+}
+
+/* line 179, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/header.scss */
+.user-info a {
+  display: flex;
+}
+
+/* line 183, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/header.scss */
+.user-info img {
+  height: 35px;
+  width: 57px;
+}

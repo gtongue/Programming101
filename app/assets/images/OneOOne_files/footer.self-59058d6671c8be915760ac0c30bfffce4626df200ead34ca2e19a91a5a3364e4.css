@@ -1,0 +1,22 @@
+/* line 2, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/footer.scss */
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #324452;
+  height: 40px;
+}
+
+/* line 10, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/footer.scss */
+.footer i {
+  margin: 5px 0;
+  padding: 0px 10px;
+  color: white;
+  transition: color .5s;
+  cursor: pointer;
+}
+
+/* line 18, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/footer.scss */
+.footer i:hover {
+  color: #2a343b;
+}

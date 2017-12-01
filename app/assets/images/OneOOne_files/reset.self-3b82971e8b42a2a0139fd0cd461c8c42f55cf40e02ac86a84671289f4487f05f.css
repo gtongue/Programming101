@@ -1,0 +1,85 @@
+/* line 1, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/reset.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td, header {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  text-decoration: none;
+  font-weight: inherit;
+  font-style: inherit;
+  color: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+  box-sizing: inherit;
+}
+
+/* line 23, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/reset.scss */
+:focus {
+  outline: 0;
+}
+
+/* line 27, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/reset.scss */
+body {
+  line-height: 1;
+  color: black;
+  background: white;
+  box-sizing: border-box;
+}
+
+/* line 33, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/reset.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 36, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/reset.scss */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+/* line 41, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/reset.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+}
+
+/* line 45, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/reset.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+}
+
+/* line 49, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/reset.scss */
+blockquote, q {
+  quotes: "" "";
+}
+
+/* line 53, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/reset.scss */
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* line 64, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/reset.scss */
+html, body {
+  overflow: hidden;
+  height: 100vh;
+  tab-size: 2;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* line 72, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/reset.scss */
+.cf:after {
+  content: "";
+  display: block;
+  clear: both;
+}

@@ -1,21 +1,18 @@
-@import "variables";
-
-.session-div 
-{
-  // background-color: red;
+/* line 3, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/session.scss */
+.session-div {
   margin: 0 auto;
   display: flex;
   justify-content: center;
   width: 100%;
-  height: calc(100% - #{$header-size});
+  height: calc(100% - 75px);
   margin: auto auto;
 }
+
 @keyframes slideInLeft {
   from {
     transform: translate3d(-150%, 0, 0);
     visibility: visible;
   }
-
   to {
     transform: translate3d(0, 0, 0);
   }
@@ -24,40 +21,40 @@
   from {
     opacity: 0;
   }
-
   to {
     opacity: 1;
   }
 }
-
-.signup-div 
-{
-  // background-color: red;
+/* line 33, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/session.scss */
+.signup-div {
   margin: 0 auto;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  height: calc(100% - #{$header-size});
+  height: calc(100% - 75px);
   margin: auto auto;
 }
 
+/* line 46, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/session.scss */
 .signup-info {
   z-index: 0;
   animation-name: fadeIn;
   animation-duration: 2s;
+  animation-delay: .25s;
   height: 80%;
   width: 50%;
   background-color: white;
 }
 
+/* line 56, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/session.scss */
 .session-div::after,
 .signup-div::after {
   content: "";
-  background-image: image-url("background.png");
+  background-image: url(/assets/background-3f04408e8e2b36c2c709f5119d4e49096df225738214e6eb25b1422e28f2e15d.png);
   object-fit: cover;
-  opacity: .3;  
+  opacity: .3;
   position: absolute;
   top: 0;
   left: 0;
@@ -66,10 +63,9 @@
   z-index: -1;
 }
 
-
+/* line 71, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/session.scss */
 .session-form,
-.signup-form
-{
+.signup-form {
   background-color: white;
   color: black;
   margin: auto 0;
@@ -84,13 +80,16 @@
   z-index: 0;
 }
 
+/* line 88, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/session.scss */
 .signup-form {
   animation-name: slideInLeft;
-  animation-duration: 1.5s;
+  animation-delay: .25s;
+  animation-duration: 1.25s;
 }
 
+/* line 94, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/session.scss */
 .session-form h2,
-.signup-form h2{
+.signup-form h2 {
   font-size: 30px;
   margin: 0 auto;
   border-bottom: 1px solid #cdcdcd;
@@ -99,6 +98,7 @@
   width: 80%;
 }
 
+/* line 104, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/session.scss */
 .session-form label,
 .signup-form label {
   margin: 0 auto;
@@ -106,9 +106,10 @@
   text-align: center;
   font-size: 20px;
   padding-bottom: 10px;
-  overflow: hidden;  
+  overflow: hidden;
 }
 
+/* line 114, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/session.scss */
 .session-form input,
 .signup-form input {
   font-size: 14px;
@@ -119,11 +120,13 @@
   text-align: center;
 }
 
+/* line 124, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/session.scss */
 .session-form button,
-.signup-form button{
+.signup-form button {
   height: 50px;
 }
 
+/* line 129, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/session.scss */
 .errors {
   text-align: center;
   color: red;

@@ -2,6 +2,8 @@
 _
 Variables
 _
+easy
+_
 Variables are how we store information. Examples of varialbes can be numbers, strings, booleans, and more!
 _
 let number;
@@ -22,6 +24,8 @@ __
 1
 _
 Basic Arrays
+_
+easy
 _
 Arrays allow us to store a list of variables.
 _
@@ -44,6 +48,8 @@ __
 _
 Function Intro
 _
+easy
+_
 Functions are a section of code that we can use to perform a specific task
 _
 function subtractTwoNumbers(number1, number2){
@@ -64,6 +70,8 @@ __
 1
 _
 Merge Sort
+_
+hard,sorting
 _
 Merge sort is an extremely common sorting algorithm because of it's consistent speed.
 _

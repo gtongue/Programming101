@@ -23,7 +23,7 @@ class Home extends React.Component {
         <div className = "home-welcome">
         <div>
           <UserInfo 
-            messages = {["Welcome back" + this.props.user.username]} 
+            messages = {["Welcome back: " + this.props.user.username]} 
             username = {this.props.user.username}
             onClick = {() => this.props.history.push(`/users/${this.props.user.id}`)}
             onClickIcon = {() => this.props.history.push(`/users/${this.props.user.id}`)}
@@ -59,6 +59,9 @@ class Home extends React.Component {
               </div>
               <div className = "challenge-bottom">
                 <div className = "challenge-tags">
+                  <div className = "challenge-language">
+                    {challenge.language_name}
+                  </div>
                   {challenge.tags.map(tag => (
                     <div key = {challenge.id + " " + tag} className = "challenge-tag">
                       {tag}

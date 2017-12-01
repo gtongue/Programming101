@@ -35,8 +35,11 @@ class Signup extends React.Component {
 
   render() {
     return (
-      <div className='session-div'>
-        <form className = 'session-form'>
+      <div className='signup-div'>
+        <div className = 'signup-info'>
+          This is where stuff will go
+        </div>
+        <form className = 'signup-form'>
           {this.props.errors ? <div className="errors"> {this.props.errors.toString()} </div>: ""}
           <h2>Sign Up</h2>
           <label htmlFor="username">

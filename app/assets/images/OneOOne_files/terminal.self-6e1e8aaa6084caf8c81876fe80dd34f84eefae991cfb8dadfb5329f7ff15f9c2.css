@@ -1,0 +1,18 @@
+/* line 21, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/challenge_workspace/terminal.scss */
+.terminal {
+  width: 100%;
+  height: calc(50% - 5px);
+  padding: 10px;
+  display: block;
+  margin: 0;
+  margin-bottom: 5px;
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.9);
+  line-height: 150%;
+  font-size: 16px;
+  font-weight: 200;
+  color: #00dd00;
+  font-family: 'Roboto Mono', monospace;
+  resize: none;
+  border: none;
+}

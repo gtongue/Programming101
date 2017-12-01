@@ -1,0 +1,218 @@
+/* line 7, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/home/home.scss */
+.home {
+  height: calc(100% - 90px);
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 10px;
+}
+
+/* line 15, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/home/home.scss */
+.home-challenge-container {
+  float: left;
+  width: calc(100% - 750px);
+  cursor: pointer;
+  height: 100%;
+}
+
+/* line 24, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/home/home.scss */
+.home-challenge {
+  height: calc(33.33% - 13.5px);
+  width: 100%;
+  background-color: #a1a1a1;
+  transform: translate(0px, 0px);
+  transition: transform .3s ease;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+/* line 34, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/home/home.scss */
+.home-challenge-title {
+  display: flex;
+  width: 100%;
+  background-color: #324452;
+  height: 60px;
+}
+
+/* line 41, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/home/home.scss */
+.home-challenge-title h1 {
+  color: white;
+  margin: auto 0;
+  width: 100%;
+  font-size: 28px;
+  text-align: center;
+  background-color: #324452;
+}
+
+/* line 50, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/home/home.scss */
+.home-challenge:hover {
+  transform: translate(0px, -5px);
+}
+
+/* line 54, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/home/home.scss */
+.challenge-top {
+  height: 60%;
+  overflow: hidden;
+}
+
+/* line 59, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/home/home.scss */
+.gradient1 {
+  background: #4D5CC8 linear-gradient(101.12deg, #9E4FE0 0%, #4D5CC8 100%);
+}
+
+/* line 63, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/home/home.scss */
+.gradient2 {
+  background: #A445FF linear-gradient(136.51deg, #5599E8 0%, #9258FA 77.64%, #9951FC 86.04%, #9F4AFE 94.19%, #A445FF 100%);
+}
+
+/* line 67, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/home/home.scss */
+.gradient3 {
+  background: #FF478B linear-gradient(55.93deg, #8525F1 0%, #FF478B 100%);
+}
+
+/* line 71, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/home/home.scss */
+.challenge-bottom {
+  height: 40%;
+  background-color: #dadada;
+  overflow: hidden;
+}
+
+/* line 77, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/home/home.scss */
+.challenge-image {
+  height: 60%;
+  position: relative;
+  top: 15%;
+  left: 25px;
+}
+
+/* line 84, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/home/home.scss */
+.image-container {
+  position: absolute;
+  height: 100%;
+}
+
+/* line 89, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/home/home.scss */
+.challenge-header {
+  height: 100px;
+  padding: 20px 0px 0 10px;
+  width: 65%;
+  margin-right: 25px;
+  display: flex;
+  float: right;
+  flex-direction: column;
+}
+
+/* line 102, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/home/home.scss */
+.challenge-header h1 {
+  text-align: center;
+  color: white;
+  border-bottom: 1px solid white;
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-size: 24px;
+}
+
+/* line 111, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/home/home.scss */
+.challenge-header h2 {
+  color: white;
+}
+
+@media screen and (max-width: 1250px) {
+  /* line 116, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/home/home.scss */
+  .challenge-header h2 {
+    display: none;
+  }
+
+  /* line 119, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/home/home.scss */
+  .challenge-header h1 {
+    border-bottom: none;
+  }
+}
+@media screen and (max-width: 1050px) {
+  /* line 124, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/home/home.scss */
+  .challenge-header {
+    padding: 0;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  /* line 129, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/home/home.scss */
+  .challenge-header h1 {
+    font-size: 18px;
+  }
+
+  /* line 132, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/home/home.scss */
+  .challenge-bottom .challenge-tags {
+    display: none;
+  }
+}
+/* line 138, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/home/home.scss */
+.home-welcome {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  float: left;
+  margin-right: 10px;
+  width: 410px;
+  font-weight: 300;
+  height: 100%;
+}
+
+/* line 149, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/home/home.scss */
+.home-welcome .home-user {
+  width: 100%;
+  height: 60px;
+  min-height: 60px;
+  margin-bottom: 10px;
+}
+
+/* line 156, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/home/home.scss */
+.home-welcome .home-user .user-messages h1 {
+  font-size: 25px;
+  width: 130%;
+}
+
+/* line 160, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/home/home.scss */
+.home-welcome .home-user img {
+  margin: 0;
+  margin-right: 10px;
+}
+
+/* line 165, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/home/home.scss */
+.home-date {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  color: white;
+  width: 100%;
+  min-height: 100px;
+  height: 20%;
+  margin-top: 10px;
+  background-color: #286594;
+}
+
+/* line 179, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/home/home.scss */
+.home-all-challenges {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 1px;
+  background-color: #324452;
+  transition: background-color .3s;
+  height: 75px;
+  width: 100%;
+}
+
+/* line 190, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/home/home.scss */
+.home-all-challenges h1 {
+  color: white;
+  width: 100%;
+  font-size: 30px;
+  text-align: center;
+  padding: 20px;
+}
+
+/* line 198, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/home/home.scss */
+.home-all-challenges:hover {
+  background-color: #5c5c5c;
+}

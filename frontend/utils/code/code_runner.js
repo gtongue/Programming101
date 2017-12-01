@@ -35,14 +35,14 @@ export const runCodeAsync = (codeString) => {
       console.log = (...strings) => {
         for(let i = 0; i < strings.length; i++)
         { 
-          if(typeof strings[i] === 'object')
-          {
-            response.output +=  strings[i] + " {" + "\n";
-            Object.keys(strings[i]).forEach(key => (response.output += "\u0020\u0020\u0020\u0020" + key + "\n"));
-            response.output += "}" + "\n";
-          }else{
-            response.output += strings[i] + "\n";
-          }
+          // if(typeof strings[i] === 'object')
+          // {
+          //   response.output +=  strings[i] + " {" + "\n";
+          //   Object.keys(strings[i]).forEach(key => (response.output += "\u0020\u0020\u0020\u0020" + key + "\n"));
+          //   response.output += "}" + "\n";
+          // }else{
+            response.output += "=>  " + strings[i] + "\n";
+          // }
         }
       };
       try{

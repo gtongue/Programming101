@@ -122,6 +122,14 @@
 }
 @media screen and (max-width: 1050px){
   .challenge-header {
+    padding: 0;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .challenge-header h1 {
+    font-size: 18px;
+  }
+  .challenge-bottom .challenge-tags {
     display: none;
   }
 }

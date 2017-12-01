@@ -1,0 +1,175 @@
+/* line 3, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/account.scss */
+.account-show {
+  background-color: #dadada;
+  width: calc(100%-20px);
+  height: calc(calc(100% - 90px) - 40px);
+  margin: 20px;
+  padding: 20px;
+  color: #324452;
+  overflow: hidden;
+  box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.4);
+}
+
+/* line 16, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/account.scss */
+.account-show h2 {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  text-transform: capitalize;
+  font-size: 20px;
+  padding: 5px;
+  font-weight: bold;
+}
+
+/* line 26, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/account.scss */
+.account-show h1 {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 24px;
+  width: 60%;
+}
+
+/* line 34, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/account.scss */
+.account-title {
+  display: flex;
+  float: left;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+  text-transform: capitalize;
+  height: 100px;
+  width: calc(65% - 20px);
+}
+
+/* line 45, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/account.scss */
+.account-title * {
+  text-align: center;
+}
+
+/* line 51, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/account.scss */
+.account-stats,
+.account-completed {
+  margin: 10px;
+  float: right;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* line 60, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/account.scss */
+.account-completed {
+  width: calc(33% - 10px);
+  height: calc(100% - 10px);
+  background-color: #324452;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* line 69, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/account.scss */
+.account-stats {
+  width: calc(66% - 30px);
+  height: calc(100% - 110px);
+}
+
+/* line 73, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/account.scss */
+.account-info {
+  width: calc(66% - 30px);
+  height: 100px;
+}
+
+/* line 78, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/account.scss */
+.account-image {
+  width: 100px;
+}
+
+/* line 82, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/account.scss */
+.account-name {
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+
+/* line 88, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/account.scss */
+.account-title img {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 94, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/account.scss */
+.account-doughnut {
+  width: 75%;
+  height: 75%;
+  margin: auto auto;
+  overflow: none;
+}
+
+/* line 100, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/account.scss */
+.account-line {
+  height: 50%;
+  width: 100%;
+  overflow: none;
+}
+
+/* line 106, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/account.scss */
+.account-show canvas {
+  max-width: 100%;
+  min-width: 100%;
+  max-height: 100%;
+  min-height: 100%;
+}
+
+/* line 113, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/account.scss */
+.account-completed-title {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  background-color: #2a343b;
+}
+
+/* line 120, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/account.scss */
+.account-completed-title h1 {
+  color: white;
+  margin: 0 auto;
+  border: none;
+}
+
+/* line 125, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/account.scss */
+.account-complete-challenge {
+  color: #dadada;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  padding: 0 10px;
+  transition: background-color .3s;
+  cursor: pointer;
+  border-bottom: 1px solid #dadada;
+}
+
+/* line 136, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/account.scss */
+.account-complete-challenge h2 {
+  font-size: 16px;
+  width: 33.333%;
+}
+
+/* line 140, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/account.scss */
+.account-complete-challenge:hover {
+  background-color: #2a343b;
+}
+
+/* line 144, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/account.scss */
+.account-left {
+  display: flex;
+  float: left;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+}
+
+/* line 151, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/account.scss */
+.account-right {
+  display: flex;
+  width: 50%;
+  height: 100%;
+  float: left;
+}

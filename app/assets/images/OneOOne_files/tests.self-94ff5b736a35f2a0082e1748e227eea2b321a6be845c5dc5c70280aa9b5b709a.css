@@ -1,0 +1,37 @@
+/* line 3, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/tests.scss */
+.tests {
+  width: 100%;
+  margin-top: 5px;
+  height: calc(50%);
+  background-color: #a1a1a1;
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  padding: 10px;
+  color: black;
+  overflow: auto;
+}
+
+/* line 16, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/tests.scss */
+.test-index {
+  width: 100%;
+  padding: 20px;
+  font-size: 16px;
+  border-bottom: 1px solid #324452;
+  margin: 0 auto;
+}
+
+/* line 24, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/tests.scss */
+.test-index i {
+  float: right;
+}
+
+/* line 28, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/tests.scss */
+.fail {
+  color: #b61e1e;
+}
+
+/* line 32, /Users/garretttongue/Documents/Fullstack/One-O-One/app/assets/stylesheets/tests.scss */
+.success {
+  color: #126112;
+}

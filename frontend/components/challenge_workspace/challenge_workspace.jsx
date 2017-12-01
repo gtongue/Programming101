@@ -25,7 +25,9 @@ class ChallengeWorkspace extends React.Component {
       code: '',
       output: '',
       tests: '',
-      steps: ''
+      steps: '',
+      success: [],
+      completed: false
     };
     this.saveFile = this.saveFile.bind(this);
   }
@@ -62,6 +64,7 @@ class ChallengeWorkspace extends React.Component {
             this.props.challenge.id,
             this.props.userId, 
             (this.state.code.match(/\n/g) || []).length + 1);
+        this.setState({completed: true});
       }
     }
   }
@@ -86,6 +89,11 @@ class ChallengeWorkspace extends React.Component {
       this.props.clearTerminal();
       this.props.clearErrors();
       runCodeAsync(this.state.code);
+      if(this.state.success.length === 0){
+        setTimeout(() => $('.challenge-success').css("animation-name", "slideOutRight"), 2000);
+        setTimeout(() => this.setState({success: []}), 3000);
+      }
+      this.setState({success: ["Running Code..."]});      
     };
   }
   
@@ -95,6 +103,11 @@ class ChallengeWorkspace extends React.Component {
       this.props.clearTerminal();
       this.props.clearErrors();
       this.props.clearTests();
+      if(this.state.success.length === 0){        
+        setTimeout(() => $('.challenge-success').css("animation-name", "slideOutRight"), 2000);
+        setTimeout(() => this.setState({success: []}), 3000);
+      }
+      this.setState({success: ["Running Tests..."]});
       testCodeAsync(this.state.code, this.state.tests);
     };
   }
@@ -110,6 +123,15 @@ class ChallengeWorkspace extends React.Component {
     };
     return (
       <div className= "challenge cf">
+        {
+          this.state.completed ? (
+            <div className = "completion-modal-container">
+              <div className = "completion-modal">
+                <h1> Congratualations! You Completed { /*this.props.challenge.title*/ }</h1>
+              </div>
+            </div>
+          ) : ""
+        }
         <div className = "left-side">
           <StepsContainer steps = {this.state.steps}/>
         </div>
@@ -123,9 +145,9 @@ class ChallengeWorkspace extends React.Component {
             }}
             options={options} />
           <div className="editor-footer">
-            <button className = "editor-button">
+            {/* <button className = "editor-button">
                     Save
-            </button>
+            </button> */}
             <button className = "editor-button"
                     onClick = {this.onTest()}
                     >
@@ -151,6 +173,16 @@ class ChallengeWorkspace extends React.Component {
                 </li>
               ))}
             </ul>
+
+        :""}
+        {this.state.success.length > 0 ? 
+          <ul className = "challenge-success">
+            {this.state.success.map(error => (
+              <li key = {error}>
+                {error}
+              </li>
+            ))}
+          </ul>
         :""}
       </div>
     );

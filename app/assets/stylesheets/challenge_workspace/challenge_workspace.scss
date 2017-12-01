@@ -53,6 +53,7 @@
   margin-right: 5px;
 }
 
+//https://github.com/daneden/animate.css
 @keyframes slideInRight {
   from {
     transform: translate3d(100%, 0, 0);
@@ -63,11 +64,32 @@
     transform: translate3d(0, 0, 0);
   }
 }
+@keyframes slideOutRight {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    visibility: hidden;
+    transform: translate3d(100%, 0, 0);
+  }
+}
+@keyframes slideInDown {
+  from {
+    transform: translate3d(0, -150%, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+//
 
 .challenge-errors {
   position: absolute;
   right: 0;
-  top: 70px;
+  top: 140px;
   width: 300px;
   border-top: 5px solid $failed;
   background: white;
@@ -76,9 +98,68 @@
   z-index: 100;
 }
 
-
 .challenge-errors li {
   width: 100%;
   padding: 20px;
   color: $failed;
+  border-bottom: 1px solid $failed;  
+}
+
+.challenge-errors li:last-of-type{
+  border-bottom: none;
+}
+
+.challenge-success {
+  position: absolute;
+  right: 0;
+  top: 70px;
+  width: 300px;
+  border-top: 5px solid $passed;
+  background: white;
+  animation-name: slideInRight;
+  animation-duration: 1s;
+  z-index: 100;
+}
+
+.challenge-success li {
+  width: 100%;
+  padding: 20px;
+  color: $passed;
+  border-bottom: 1px solid $passed;
+}
+
+.challenge-success li:last-of-type{
+  border-bottom: none;
+}
+
+.completion-modal-container {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  background-color: rgba(0, 0, 0, .4);
+  overflow: hidden;
+  top: 50px;
+  left: 0;
+  bottom: 40px;
+  right: 0;
+  z-index: 10;
+}
+
+.completion-modal {
+  display: flex;
+  flex-direction: column;
+  margin: auto 0;
+  animation-name: slideInDown;
+  animation-duration: 1s;
+  width: 80%;
+  height: 600px;
+  padding: 15px;
+  background-color: white;
+}
+
+.completion-modal h1 {
+  font-size: 34px;
+  margin: 0 auto;
+  padding-bottom: 5px;
+  border-bottom: 1px solid $really-dark-grey;
 }
