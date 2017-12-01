@@ -16,7 +16,7 @@ class Signup extends React.Component {
     this.props.clearErrors();
   }
   handleInput(type) {
-    return (e) => {
+  return (e) => {
       this.setState({[type]: e.target.value });
     };
   }

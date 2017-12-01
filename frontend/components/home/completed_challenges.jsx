@@ -18,7 +18,8 @@ export default ({ completedChallenges, history }) => (
             completedChallenge.challengeName]
         } 
         username = {completedChallenge.username}
-        onClick = {() => history.push('/challenges/' + completedChallenge.challengeId)}/>
+        onClick = {() => history.push('/challenges/' + completedChallenge.challengeId)}
+        onClickIcon = {() => history.push(`/users/${completedChallenge.userId}`)}/>
     ))}
   </div>
 );

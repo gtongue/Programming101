@@ -25,11 +25,12 @@ const iconRange = (string) => {
 //http://tinygraphs.com/labs/isogrids/hexa/tinygraphs?theme=sugarsweets&numcolors=4&size=220&fmt=svg
 //http://tinygraphs.com/labs/isogrids/hexa/tinygraphs?theme=heatwave&numcolors=4&size=220&fmt=svg
 const themes = ["frogideas", "sugarsweets", "heatwave", "daisygarden", "seascape","bythepool","duskfalling","berrypie"];
-export const generateIcon = (username, size, className) =>
+export const generateIcon = (username, size, className, onClickIcon) =>
 {
     let num = iconRange(username);
     return (
       <img 
+      onClick = {onClickIcon}
       className = {className} 
       src={`http://tinygraphs.com/labs/isogrids/hexa/${username}?theme=${themes[num]}&numcolors=4&size=${size}&fmt=svg`}/>
     );

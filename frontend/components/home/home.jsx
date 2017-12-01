@@ -24,6 +24,7 @@ class Home extends React.Component {
           messages = {[this.props.user.username]} 
           username = {this.props.user.username}
           onClick = {() => this.props.history.push(`/users/${this.props.user.id}`)}
+          onClickIcon = {() => this.props.history.push(`/users/${this.props.user.id}`)}
           style = {{marginLeft: 0}}/>
         <CompletedChallenges completedChallenges = {this.props.completedChallenges} history = {this.props.history}/>
         <div className = "home-challenge-container">

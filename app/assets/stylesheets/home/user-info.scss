@@ -6,12 +6,9 @@
   justify-content: space-between;
   align-items: center;
   width: 300px;
-  padding: 10px;
-  margin: 0 10px;
   box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.4);    
   transition: background-color .25s;
   background-color: $grey;
-  cursor: pointer;
   text-transform: capitalize;
 }
 
@@ -20,7 +17,29 @@
   padding: 3px 0;
 }
 
-.home-user:hover {
-  background-color: $really-dark-grey;
+// .home-user:hover {
+//   background-color: $really-dark-grey;
+// }
+
+.home-user img {
+  transition: transform .3s ease;
+  cursor: pointer;  
+  margin: 0 auto;
 }
 
+.home-user img:hover {
+  transform: scale(1.1);
+}
+
+.completed-left-side {
+  height: 90%;
+  padding: 5px 0px 5px 20px;
+  cursor: pointer;  
+  width: 60%;
+  // border-right: 1px solid $dark-grey;  
+  transition: transform .3s ease;
+}
+.completed-left-side:hover {
+  color: $lighter-background;
+  transform: translate(5px, 0px);  
+}

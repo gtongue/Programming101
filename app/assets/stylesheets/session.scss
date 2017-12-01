@@ -6,12 +6,24 @@
   margin: 0 auto;
   display: flex;
   justify-content: center;
-  position: absolute;
   top: $header-size;
   left: 0;
   width: 100%;
   height: calc(100% - #{$header-size});
   margin: auto auto;
+}
+
+.session-div::after {
+  content: "";
+  background-image: image-url("background.png");
+  object-fit: cover;
+  opacity: .3;  
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
 }
 
 .session-form
@@ -22,6 +34,7 @@
   display: flex;
   height: 450px;
   width: 450px;
+  opacity: 1;
   flex-direction: column;
   justify-content: space-between;
   padding: 20px;

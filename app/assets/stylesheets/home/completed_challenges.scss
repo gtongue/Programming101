@@ -8,13 +8,21 @@
   overflow-y: auto;
   overflow-x: hidden;
   .home-user{
-  margin-bottom: 0;
+    margin-bottom: 0;
     margin-top: 0;
+    width: 100%;
     box-shadow: none;
-    border-bottom: 1px solid $light-background;
+    border-bottom: 1px solid $dark-grey;
     height: 9%;
     min-height: 60px;
   }
+  // .home-user::after{
+  //   content: "";
+  //   width: 100%;
+  //   height: 1px;
+  //   background-color: black;
+  //   position: absolute;
+  // }
   .home-user h1 {
     font-size: 16px;
   }
@@ -22,9 +30,7 @@
     font-size: 24px;
     color: $light-background;
   }
-  .home-user:first-of-type{
-    margin-top: 10px;
-  }
+
   .home-user:last-of-type{
     border-bottom: none;
     margin-bottom: 10px;

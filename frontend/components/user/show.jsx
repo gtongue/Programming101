@@ -37,18 +37,22 @@ class Show extends React.Component{
   }
 
   componentWillMount(){
-    this.props.fetchUser();   
+    this.props.fetchUser(this.props.match.params.userId);   
   }
 
   componentWillReceiveProps(newProps){
-    this.setState({
-      username: newProps.user.username,
-      numLines: newProps.user.numLines,
-      completedChallenges: newProps.user.completedChallenges,
-      linesOverTime: newProps.user.linesOverTime,
-      challengesOverTime: newProps.user.challengesOverTime,
-      completionData: newProps.user.completionData      
-    });
+    if(newProps.user){
+      this.setState({
+        username: newProps.user.username,
+        numLines: newProps.user.numLines,
+        completedChallenges: newProps.user.completedChallenges,
+        linesOverTime: newProps.user.linesOverTime,
+        challengesOverTime: newProps.user.challengesOverTime,
+        completionData: newProps.user.completionData      
+      });
+    }else {
+      this.props.fetchUser(newProps.match.params.userId);   
+    }
   }
 
   render(){
