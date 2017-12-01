@@ -6,7 +6,9 @@
 Programming 200 is a full-stack web applicaiton that takes inspirtation from codecademy, codewars, and codefights. The app allows users to take programming challenges and track their progress. The backend is using Ruby of Rails 5.1.4 with a PostgreSQL database. The frontend is using React Redux. 
 
 # Why Rails and React/Redux?
-<!-- This project was created completed in two weeks -->
+- This project was created completely in two weeks meaning I had to pick what technologies I was going to use very carefully. Rails is built in such a way that it was perfect for this project. Powerful and very quick to get up and running. 
+
+- React/Redux was the obvious choice for frontend. The constant one state in a project such as this allows for much easier database access and state management. On top of that having the automatic re-rendering of components when their state changes or they receive new props is an incredibly powerful tool that allows quick a robust development.
 
 # Features
 ## Home Page
