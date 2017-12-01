@@ -18,47 +18,6 @@ Challenge.create!([
   {language_id: 1, title: "Bubble Sort", skeleton: "function bubbleSort(arr){\n\n}", solution: "TODO", description: "Bubble sort, sometimes referred to as sinking sort, is a simple sorting algorithm that repeatedly steps through the list to be sorted.", tests: "Testing.isEqual(bubbleSort([1,2,3,4,5]), [1,2,3,4,5], \"Doesn't change sorted array.\");\nTesting.isEqual(bubbleSort([]), [], \"Works with empty array\");\nTesting.isEqual(bubbleSort([1]), [1], \"Works with single number\");\nTesting.isEqual(bubbleSort([4,2,3,2,5]), [2,2,3,4,5], \"Sorts array 1.\");\nTesting.isEqual(bubbleSort([4,2,3,2,5,6]), [2,2,3,4,5,6], \"Sorts array 2.\");", steps: "# Bubble Sort\n## [Stoimen's Web Log](http://www.stoimen.com/blog/2010/07/09/friday-algorithms-javascript-bubble-sort/)"}
 ])
 CompletedChallenge.create!([
-  {user_id: 2, challenge_id: 1, lines_written: 127},
-  {user_id: 2, challenge_id: 3, lines_written: 106},
-  {user_id: 2, challenge_id: 14, lines_written: 140},
-  {user_id: 3, challenge_id: 12, lines_written: 82},
-  {user_id: 3, challenge_id: 7, lines_written: 134},
-  {user_id: 3, challenge_id: 11, lines_written: 118},
-  {user_id: 3, challenge_id: 3, lines_written: 80},
-  {user_id: 3, challenge_id: 4, lines_written: 96},
-  {user_id: 3, challenge_id: 1, lines_written: 47},
-  {user_id: 3, challenge_id: 9, lines_written: 147},
-  {user_id: 3, challenge_id: 8, lines_written: 103},
-  {user_id: 3, challenge_id: 10, lines_written: 25},
-  {user_id: 3, challenge_id: 2, lines_written: 62},
-  {user_id: 3, challenge_id: 5, lines_written: 71},
-  {user_id: 3, challenge_id: 6, lines_written: 72},
-  {user_id: 3, challenge_id: 14, lines_written: 47},
-  {user_id: 3, challenge_id: 15, lines_written: 85},
-  {user_id: 3, challenge_id: 13, lines_written: 113},
-  {user_id: 4, challenge_id: 12, lines_written: 77},
-  {user_id: 4, challenge_id: 13, lines_written: 124},
-  {user_id: 4, challenge_id: 8, lines_written: 123},
-  {user_id: 4, challenge_id: 2, lines_written: 109},
-  {user_id: 4, challenge_id: 4, lines_written: 127},
-  {user_id: 4, challenge_id: 9, lines_written: 27},
-  {user_id: 4, challenge_id: 1, lines_written: 109},
-  {user_id: 4, challenge_id: 15, lines_written: 116},
-  {user_id: 4, challenge_id: 7, lines_written: 67},
-  {user_id: 5, challenge_id: 7, lines_written: 110},
-  {user_id: 5, challenge_id: 4, lines_written: 115},
-  {user_id: 5, challenge_id: 15, lines_written: 95},
-  {user_id: 5, challenge_id: 1, lines_written: 106},
-  {user_id: 5, challenge_id: 5, lines_written: 51},
-  {user_id: 5, challenge_id: 12, lines_written: 107},
-  {user_id: 5, challenge_id: 6, lines_written: 75},
-  {user_id: 5, challenge_id: 13, lines_written: 98},
-  {user_id: 5, challenge_id: 3, lines_written: 88},
-  {user_id: 5, challenge_id: 14, lines_written: 51},
-  {user_id: 5, challenge_id: 11, lines_written: 81},
-  {user_id: 5, challenge_id: 9, lines_written: 149},
-  {user_id: 5, challenge_id: 8, lines_written: 85},
-  {user_id: 5, challenge_id: 2, lines_written: 107},
   {user_id: 1, challenge_id: 1, lines_written: 3},
   {user_id: 1, challenge_id: 3, lines_written: 7},
   {user_id: 1, challenge_id: 5, lines_written: 4},
@@ -121,11 +80,26 @@ TagsJoin.create!([
   {challenge_id: 15, tag_id: 5},
   {challenge_id: 15, tag_id: 10}
 ])
-User.create!([
-  {username: "demo", email: "demo", password_digest: "$2a$10$fCYrmNv.7/4nJWR8Ee5ZZeBXY93XJtv2HKj.Y8CW8zxRbHPedlBJO", session_token: "LzocqmwCs5Q7XYtzLKHcvg"},
+User.create!({username: "demo", email: "demo", password_digest: "$2a$10$fCYrmNv.7/4nJWR8Ee5ZZeBXY93XJtv2HKj.Y8CW8zxRbHPedlBJO", session_token: "LzocqmwCs5Q7XYtzLKHcvg"})
+users = User.create!([
   {username: "garrett", email: "demo1", password_digest: "$2a$10$RRE2sSLJ8LEppWlpuRKNrO3U/bsI78NV9vL8Lv.ZU53OY9Gsh7Tpe", session_token: "M315w1vsgXUgjxdO7uD7QQ"},
   {username: "patrick", email: "demo2", password_digest: "$2a$10$IuaV1fu2rXErJMUDKFuKVOCAuc5DhSybu1LhEkP5i8Y5RS1ELLHpi", session_token: "h3iRH6H6idJD_ks59JtCRw"},
   {username: "adam", email: "demo3", password_digest: "$2a$10$qWwdJ57397fcNAk8ChmC.OtWex0O0DqExP7pgcAPDF4dLwIO/uG3O", session_token: "6fFBWNiKwe8-TaMhH2xMzA"},
   {username: "julien", email: "demo4", password_digest: "$2a$10$nUktC/96WvVdO80NWEOYZuIvYqmsrmOm0OcPUeefM2mX.iwmOlkfq", session_token: "CP96YdDDeFsW7D-iRN16pg"},
   {username: "kevin", email: "sdfsd", password_digest: "$2a$10$iJQV9K7qrvPY/uXE.afVW.zYZp2iUT3z6IyzpC//cHVY0oCTzM7jq", session_token: "PytYVitP26P9dZw2_TdjCg"}
 ])
+
+allChallenges = Challenge.all
+users.each do |user|
+  allChallenges = allChallenges.shuffle
+  numChallenges = rand(0..allChallenges.length)
+  userChallenges = allChallenges.slice(0,numChallenges)
+  userChallenges.each do |userChallenge|
+    CompletedChallenge.create({
+      user_id: user.id, 
+      challenge_id: userChallenge.id, 
+      lines_written: rand(15..150), 
+      created_at:rand(Date.civil(2016,12,1)..Date.civil(2017,12,1))
+    })
+  end
+end
