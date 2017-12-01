@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default (props) => (
+export default () => (
   <div className = "footer">
     <a href="https://github.com/gtongue/Programming101">
       <i className ="fa fa-github fa-2x" aria-hidden="true"></i>

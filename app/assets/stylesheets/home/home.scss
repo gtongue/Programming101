@@ -1,9 +1,117 @@
 @import "variables";
 
 .home > *{
-  margin: 10px;
+  // margin: 10px;
 }
 
 .home {
   height: $body-height;
+  min-width: 1300px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 10px;
+}
+
+.home-challenge-container {
+  float: left;
+  width: calc(100% - 750px);
+  cursor: pointer;
+  min-width: 500px;
+  height: 100%;
+}
+
+.home > .home-user {
+  width: 400px;
+}
+
+.home-challenge {
+  height: calc(33.33% - 13.5px);
+  width: 100%;
+  background-color: $dark-grey;
+  transform: translate(0px, 0px);
+  transition: transform .3s ease;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.home-challenge-title{
+  display: flex;
+  width: 100%;
+  background-color: $light-background;
+  height: 60px;
+}
+
+.home-challenge-title h1{
+  color: white;
+  margin: auto 0;
+  width: 100%;
+  font-size: 28px;
+  text-align: center;
+  background-color: $light-background;
+}
+
+.home-challenge:hover {
+  transform: translate(0px, -5px);
+}
+
+.challenge-top {
+  height: 60%;
+  overflow: hidden;
+}
+
+.gradient1 {
+  background: #4D5CC8 linear-gradient(101.12deg, #9E4FE0 0%, #4D5CC8 100%);  
+}
+
+.gradient2 {
+  background: #A445FF linear-gradient(136.51deg, #5599E8 0%, #9258FA 77.64%, #9951FC 86.04%, #9F4AFE 94.19%, #A445FF 100%);  
+}
+
+.gradient3 {
+  background: #FF478B linear-gradient(55.93deg, #8525F1 0%, #FF478B 100%);
+}
+
+.challenge-bottom {
+  height: 40%;
+  background-color: $grey;
+  overflow: hidden;  
+}
+
+.challenge-image {
+  height: 60%;
+  position: relative;
+  top: 15%;
+  left: 25px;
+}
+
+.image-container {
+  position: absolute;
+  height: 100%;
+}
+
+.challenge-header {
+  height: 100px;
+  padding: 20px 0px 0 10px;
+  width: 65%;
+  margin-right: 25px;
+  display: flex;
+  float: right;
+  flex-direction: column;
+  // justify-content: flex-start;
+  // align-items: flex-end;
+
+
+}
+
+.challenge-header h1 {
+  text-align: center;
+  color: $white;
+  border-bottom: 1px solid white;
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-size: 24px;
+}
+
+.challenge-header h2 {
+  color: $white;
 }

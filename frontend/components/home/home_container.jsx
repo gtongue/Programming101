@@ -1,13 +1,17 @@
 import { connect } from 'react-redux';
-import { fetchCompletedChallenges } from '../../actions/challenge_actions';
+import { fetchCompletedChallenges, fetchChallenges } from '../../actions/challenge_actions';
+import { values } from 'lodash';
+
 import Home from './home';
 
 const mapDispatchToProps = dispatch => ({
-  fetchCompletedChallenges: () => dispatch(fetchCompletedChallenges())
+  fetchCompletedChallenges: () => dispatch(fetchCompletedChallenges()),
+  fetchChallenges: () => dispatch(fetchChallenges())
 });
 
 const mapStateToProps = state => ({
   completedChallenges: state.entities.completedChallenges,
+  challenges: values(state.entities.challenges),
   user: state.session.currentUser
 });
 

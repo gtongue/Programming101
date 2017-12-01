@@ -3,8 +3,8 @@
 .home-completed-display{
   float: right;
   width: 320px;
-  height: calc(100% - 20px);
-  background-color: $white;
+  height: 100%;
+  background-color: $grey;
   overflow-y: auto;
   overflow-x: hidden;
   .home-user{
@@ -33,6 +33,7 @@
 .home-completed-display > h1 {
   text-align: center;
   color: $white;
+  height: 60px;
   font-size: 24px;
   padding: 5px;
   background-color: $light-background;

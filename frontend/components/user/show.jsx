@@ -5,7 +5,6 @@ import { Line, Doughnut } from 'react-chartjs-2';
 class Show extends React.Component{
   constructor(props){
     super(props);
-    console.log(props);
     if(!this.props.user)
     {
       this.state = {
@@ -148,7 +147,7 @@ class Show extends React.Component{
             <h1> Completed Challenges </h1>
           </div>
           {this.state.completedChallenges.map((challenge) => (
-            <div className = "account-complete-challenge" onClick = {() => this.props.history.push(`/challenges/${challenge.challengeId}`)}>
+            <div key = {challenge.challengeId} className = "account-complete-challenge" onClick = {() => this.props.history.push(`/challenges/${challenge.challengeId}`)}>
               <h2>
                 {challenge.challengeName}
               </h2>

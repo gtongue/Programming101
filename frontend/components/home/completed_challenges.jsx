@@ -12,6 +12,7 @@ export default ({ completedChallenges, history }) => (
       //   {completedChallenge.challengeName}
       // </div>
       <UserInfo 
+        key = {completedChallenge.challengeId + completedChallenge.username}
         messages = {
           [completedChallenge.username + " completed",
             completedChallenge.challengeName]
